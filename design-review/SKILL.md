@@ -23,6 +23,7 @@ Before reading the design, load the knowledge base. This is not optional — sur
 
 **Always read (every review):**
 - Read `/Users/thanhhapham/Skills/design-review/context/ux-principles.md` — full UX knowledge base (Norman, Maeda, Fitts, Hick, Nielsen, Cognitive Walkthrough, Gestalt, platform standards, accessibility)
+- Read `/Users/thanhhapham/Skills/design-review/context/behavioral-insights.md` — 47 behavioural insights (Coglode): Scarcity, Social Proof, Loss Aversion, Anchoring, Default Effect, Framing, IKEA Effect, Endowed Progress, Reactance, Fast/Slow Thinking, and more
 - Read `/Users/thanhhapham/Skills/design-review/context/core.md` — platform, users, devices, trust, chat
 - Read `/Users/thanhhapham/Skills/design-review/context/brand.md` — visual identity, tone, CarouRed, Fabriga, illustrations
 - Read `/Users/thanhhapham/Skills/design-review/context/copy.md` — sentence case, currency, vocabulary, error messages, CTAs
@@ -40,6 +41,8 @@ Before asking anything, infer what you can directly from the design:
 - User JTBD (what the screen is enabling the user to do)
 - Flow position (entry points and exits visible in the UI)
 - Category (which context file to apply)
+
+**If the frame has annotations:** Read each annotation's text content carefully. Annotations are the designer's behavioral specification — they describe what the design is supposed to do, not just what it looks like. Extract from them: interaction triggers (what the user does), animation behavior (transition type, motion direction, duration, easing), state changes (what appears, disappears, or transforms), and conditional logic (when does this happen vs. that). Use this as your primary source of truth for how the design behaves before forming any finding.
 
 ### Step 4 — Ask only for what the screen cannot tell you
 Combine into one short message.
@@ -96,7 +99,8 @@ Review as a design director who has shipped at scale. Your job is to identify wh
 - Visual hierarchy, spacing, density, contrast
 - Component states (default, loading, empty, error, disabled)
 - Copy — tone, clarity, length, sentence case, active voice
-- Interaction and feedback — gestures, animation intent, perceived performance
+- Interaction, gestures, and feedback — affordances, touch targets, perceived performance
+- Animations and transitions — transition type, duration, easing curves, micro-interactions, loading animations, gesture-to-animation mappings, whether motion adds clarity or noise
 - Accessibility — contrast, touch targets, text scale, screen reader logic
 - Handoff completeness — anything an engineer would need to guess at
 - Business and conversion impact
@@ -118,7 +122,7 @@ Group under relevant themes. Only include a theme if there is something worth sa
 **Themes:**
 - **Strategic direction** — Is the design solving the right problem? Does it serve the business goal and user goal? Does it move the right AOP pillar?
 - **UX flow** — Are entry/exit points clear? Does the sequence of screens make sense? Missing states (empty, error, loading)?
-- **Interaction** — Are affordances clear? Do interactions match user mental models? Are gestures, animations, and feedback right?
+- **Interaction and motion** — Are affordances clear? Do interactions match user mental models? Are gestures and feedback right? For any annotated or visible animation: is the transition type appropriate (slide, fade, snap, spring)? Does duration feel right — fast enough to not bore, slow enough to not disorient? Does the easing curve match the intent (ease-out for elements entering, ease-in for elements leaving, spring for playful moments)? Do micro-interactions confirm actions without distracting? Does motion add clarity or just decoration? Would this animation hold up on a mid-range Android at 3G speed?
 - **Visual polish** — Hierarchy, spacing, density, contrast, component states, accessibility.
 - **Copy** — Tone, clarity, sentence case, active voice, Carousell brand voice.
 
