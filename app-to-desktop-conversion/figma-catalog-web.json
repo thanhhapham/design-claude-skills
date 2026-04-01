@@ -1,0 +1,1273 @@
+{
+  "fileKey": "YP2Ds2F1vBM1KXUYuaFaWa",
+  "libraryName": "Global Design System (Web)",
+  "lastUpdated": "Jan 2026",
+  "webComponents": {
+    "BUTTONS": {
+      "NormalButton": {
+        "description": "Usually used as main CTA",
+        "subTypes": {
+          "Promote": {
+            "description": "The primary button is designed to convey strong emphasis and is reserved for prompting critical actions. The color red is used to represent actions that involve monetary transactions, such as Buy button and buying Bump/Spotlight",
+            "sizes": {
+              "Large": {
+                "componentKey": "59f0d5dad3b2d4a0f796f9d13cd696f2f818e7e4",
+                "figmaName": "Size=Large, Type=Pri Promote, State=Normal",
+                "states": {
+                  "hover": "bab47c06f75fbf6ab90ed3ceccb534e95332a829",
+                  "focus": "f1f70dc2a80723b3f4d0d13317e168209eee1fdd",
+                  "loading": "8bf8d6fdaddf3fc1997a7f2eeea5a5362e5d829f",
+                  "disabled": "8d10b5f84376cac02e321b0c7437982d850360d4"
+                }
+              },
+              "Medium": {
+                "componentKey": "30f94c3037b8148a8c86408f461d8dc7e2bd8694",
+                "figmaName": "Size=Medium, Type=Pri Promote, State=Normal",
+                "states": {
+                  "hover": "b65ec053fefa06d29946432eb5fcdcedebd33e4a",
+                  "focus": "aa745b87933b3d1a53d0cd385d8ab62b255877cf",
+                  "loading": "6727dd25dffc7646d19e8176083aabae01505134",
+                  "disabled": "f4c89701e9ddd2a59a93dadfecff8b8092dad454"
+                }
+              },
+              "Small": {
+                "componentKey": "ed83dd584eb0edf45b0235ee01c2f7d8839dbb67",
+                "figmaName": "Size=Small, Type=Pri Promote, State=Normal",
+                "states": {
+                  "hover": "98d6e1842f0ada7d45ceef1303a66e9d7e2d96d2",
+                  "focus": "6ea23a5f93385bf6447b0d0c252401c0e4c67391",
+                  "loading": "646c7073010b55826abf5628533b29f2c0edf8cd",
+                  "disabled": "8834e6fea26d31dcc6e9bfa94f73c6d1aa8fd3c2"
+                }
+              }
+            }
+          },
+          "Task": {
+            "description": "The primary button is designed to convey strong emphasis and is reserved for prompting critical actions. The color green is used to represent actions that other than monetary transactions",
+            "sizes": {
+              "Large": {
+                "componentKey": "1f31c446138b16834ee1f46210e04e20e9bf419c",
+                "figmaName": "Size=Large, Type=Pri Task, State=Normal",
+                "states": {
+                  "hover": "25deadf324262bd805e809cf40acee88e9fb6845",
+                  "focus": "36fd5ea6cb54f4acd15a311644d92c250e99ee58",
+                  "loading": "e96d8b67902ab3b52adebe32b6a13fb528272fda",
+                  "disabled": "7260dcc954bd5fed01f486e279a2fa18b67a6ebf"
+                }
+              },
+              "Medium": {
+                "componentKey": "052243c5858e59f6e089940528dde22cf04d84c0",
+                "figmaName": "Size=Medium, Type=Pri Task, State=Normal",
+                "states": {
+                  "hover": "ccad28ab7d084abe19be764046e0dbc1a4392103",
+                  "focus": "38399104092da674c19303fabaaac1e5ba3da95a",
+                  "loading": "adef7744195fe698d0e9634a645a6141e6bbcc26",
+                  "disabled": "a0c117561591d6cbdfb07023bf0668edec5dc47c"
+                }
+              },
+              "Small": {
+                "componentKey": "7d7b938133afa770dc0d79c0dc5b430adbe7adbb",
+                "figmaName": "Size=Small, Type=Pri Task, State=Normal",
+                "states": {
+                  "hover": "08645555419e304648e77ce7d165f3a3ff4b8379",
+                  "focus": "6629f346537fbb7c362c82a4e9892878a7e210a8",
+                  "loading": "6c67fb1f4ee61379bb3324cc949b6232a93947be",
+                  "disabled": "e1b97d310a003e438b69dff0527d0a8d83b8cfec"
+                }
+              }
+            }
+          },
+          "SecondaryWhite": {
+            "description": "The secondary button usually used as secondary action when there are multiple buttons",
+            "sizes": {
+              "Large": {
+                "componentKey": "3a16bd98800a0c70a3d88e11bb00b0b2e08eaade",
+                "figmaName": "Size=Large, Type=Secondary-white, State=Normal",
+                "states": {
+                  "hover": "128070a96edaf5bb0f46ff791af874c0ac4c3831",
+                  "focus": "b0adfdf1ba6c85861003f3134164ae4b52e1db5f",
+                  "loading": "91747c7203f7e9ec4f81a3722065fda00ffc948b",
+                  "disabled": "078385cd06a7afb279c23c8bae00d161a1eb7466"
+                }
+              },
+              "Medium": {
+                "componentKey": "7211bf713b28b6fa702d501e1dc5bc8f67729b5e",
+                "figmaName": "Size=Medium, Type=Secondary-white, State=Normal",
+                "states": {
+                  "hover": "362cb764498ca34cb6440f7aabe03a5c304dc880",
+                  "focus": "bd6c43bb6567f59a194bec6c77589d370d6aecb1",
+                  "loading": "531bb0d061689b634c4c1bcf38768419bc6506c4",
+                  "disabled": "1fa1eccab1fdb98efc54e7a0033948ec7ccc69d4"
+                }
+              },
+              "Small": {
+                "componentKey": "0372930bb5f3bf0ae7d4ceb4f62ea24a48370328",
+                "figmaName": "Size=Medium, Type=Secondary-white, State=Normal",
+                "states": {
+                  "hover": "14d5090dbbeea0a49a9bc172bd6a09347d4886eb",
+                  "focus": "f59711a88fbfe4b38cbd30623feef2c09ac8f628",
+                  "loading": "fe0ac61d19420b5957f2ed4c2c5e634fc31dd9f7",
+                  "disabled": "c445363f62a1d499cabcc35a3f88ee982d0461d5"
+                }
+              }
+            }
+          },
+          "SecondaryDark": {
+            "description": "The Secondary-dark button used mostly when the buttons are on an image.",
+            "sizes": {
+              "Large": {
+                "componentKey": "c6a2fedea332166828ae990bbe36914b084b5f70",
+                "figmaName": "Size=Large, Type=Secondary-dark, State=Normal",
+                "states": {
+                  "hover": "497f3aeb079d0ed93519444b8c6493ade83990c4",
+                  "focus": "67f9436f3e33666d1eac7e0eb1872302ae55374e",
+                  "loading": "7fdb0d3f8e40eace1598f326af4c12270c8ec894",
+                  "disabled": "6ca760d30ac06fcefc706175802e3a80604349b4"
+                }
+              },
+              "Medium": {
+                "componentKey": "75cc448bb8a7e8618c0071b206994d9415f0a58a",
+                "figmaName": "Size=Medium, Type=Secondary-dark, State=Normal",
+                "states": {
+                  "hover": "3deca9b95c51a5e9fbdbdb1377782911b57eb32f",
+                  "focus": "62de500427e8f984100d57c1e5ede946b605b8b3",
+                  "loading": "53f8c7b3e8d3284295c7400572790b7b76e2792d",
+                  "disabled": "9dd3d003b22e42ea21533f33e963c9ed66fedfbf"
+                }
+              },
+              "Small": {
+                "componentKey": "6e29cf6dc14ad2269f171a2d8bbec263d3f607ee",
+                "figmaName": "Size=Small, Type=Secondary-dark, State=Normal",
+                "states": {
+                  "hover": "17c57c5218ec47e790f85ac0a9145b20d059170f",
+                  "focus": "4f72e779e91a17bd62d634e4e5af04f33660ccb6",
+                  "loading": "bc8417d08cc6cc2543fd5a8b41f5582dff126886",
+                  "disabled": "238d0883d172e816cda7c6f286de335807c2f816"
+                }
+              }
+            }
+          }
+        }
+      },
+      "RoundedButton": {
+        "description": "Rounded buttons may look like chips but they act like any other button, which means they take you to another link. It's optimal to use rounded buttons when you have 2 or more buttons.",
+        "subTypes": {
+          "Promote": {
+            "description": "The primary button is designed to convey strong emphasis and is reserved for prompting critical actions. The color red is used to represent actions that involve monetary transactions",
+            "sizes": {
+              "Medium": {
+                "componentKey": "f43b18142c6213dba485f872baac73cb2b82746a",
+                "figmaName": "Size=Medium, Type=Pri Promote, State=Default, Shadow=No",
+                "states": {
+                  "hover": "720d7d9a0068d7c58f3d7eae6401483d084d69b4",
+                  "focus": "be6d3ce7a01939885e7599e2854c6e885f593203",
+                  "loading": "06b71451c607d5ee0fa1d03107501e9323788e00",
+                  "disabled": "ec161dd90c4c5b2d622db128ace345acb3f02a1e"
+                }
+              },
+              "MediumShadow": {
+                "componentKey": "3d7e8113beb43bc2166a0230a4092d1b110fda00",
+                "figmaName": "Size=Medium, Type=Pri Promote, State=Default, Shadow=Yes",
+                "states": {
+                  "hover": "415204ea2ebfcb732a64ce49914da49449a72e61",
+                  "focus": "f9d6c169f3e2e046dbb7a56ab8baf4f275f24845",
+                  "loading": "58fc4f8176b3c2948884f7aabbd7452926eae545",
+                  "disabled": "343256d84f794be939b6de59273d6733e96b73ba"
+                }
+              },
+              "Small": {
+                "componentKey": "33bd278b752662ba3f66e36226b3b6ecacf01f03",
+                "figmaName": "Size=Small, Type=Pri Promote, State=Default, Shadow=No",
+                "states": {
+                  "hover": "dbd780c6f5d1a588a46fc1f2d5bd465c016c3bb7",
+                  "focus": "2698ecf336e7892c207fa104871d9e05b800b14a",
+                  "loading": "d8d7d1d98a9399442d9052728da652d428955eed",
+                  "disabled": "2ade26394da6c19c7bc4cdef8f377f57ae7eb3b4"
+                }
+              },
+              "SmallShadow": {
+                "componentKey": "d4918bfe9b3c075df6a5ee88ab588963614c2bd5",
+                "figmaName": "Size=Small, Type=Pri Promote, State=Default, Shadow=Yes",
+                "states": {
+                  "hover": "1ccf20d404fd2fc59a2cf1e8dc81acd2e35ec451",
+                  "focus": "186ad9e4d164a15af538ec425d89f7e1e4605f88",
+                  "loading": "741e3c0a1e5b1278074cd2b73be8f382926a785b",
+                  "disabled": "1308cdc830e0e85cf741284e411adcb8dc8921bd"
+                }
+              }
+            }
+          },
+          "SecondaryDark": {
+            "description": "The primary button is designed to convey strong emphasis and is reserved for prompting critical actions. The color dark gray is used to represent actions that other than monetary transactions",
+            "sizes": {
+              "Medium": {
+                "componentKey": "4f61f0a0e9445f0e5024f2d58f99cf0fe9c5f7ce",
+                "figmaName": "Size=Medium, Type=Secondary-dark, State=Default, Shadow=No",
+                "states": {
+                  "hover": "26d3dd889b3b576e6aa091b13a736597f0348e45",
+                  "focus": "80a3e267c46478c70bbe2b90125240cf11c1f6e5",
+                  "loading": "6948ddfda560a75fd3b0947ed2870e985816f8ff",
+                  "disabled": "e76c8ad32fad3f9748728fe1c51c491b80bfb4fc"
+                }
+              },
+              "MediumShadow": {
+                "componentKey": "3dd634348272bb7415814cc95cb0b03909d78d4d",
+                "figmaName": "Size=Medium, Type=Secondary-dark, State=Default, Shadow=Yes",
+                "states": {
+                  "hover": "fa3d22a0b619887e7ecfb60982ea07fd4ec0bb76",
+                  "focus": "8a196cc0cc50b9f842c41988ac354814803071e1",
+                  "loading": "6f84db1da4319f7a01f18221d4ac210bbb05fc21",
+                  "disabled": "0a096fe58e4012c8a981a9a8c0f81451be11f670"
+                }
+              },
+              "Small": {
+                "componentKey": "78e42181cdaecb8282f6711adbaaaeb5eeb3576d",
+                "figmaName": "Size=Small, Type=Secondary-dark, State=Default, Shadow=No",
+                "states": {
+                  "hover": "421d70f47c466f61a6cce12a3641a5294b5bfc77",
+                  "focus": "3c181c71cb655b0b7ccd5c852fa0b57db045cb65",
+                  "loading": "01d96cfe381cf3f647baa6f9642aecde3a45ba02",
+                  "disabled": "23fb5a1a5bd359ed89c414cb6ced326465e4867c"
+                }
+              },
+              "SmallShadow": {
+                "componentKey": "0255a1ea155c3f5edd4619a73ce3f40f2c153793",
+                "figmaName": "Size=Small, Type=Secondary-dark, State=Default, Shadow=Yes",
+                "states": {
+                  "hover": "aabfe493d8ff1bb2f065e32423daa57f896fd91e",
+                  "focus": "4f486af4ad14aa64f1fb81bfd9749e42328dabfd",
+                  "loading": "17f59e710c9d7dc2ea011e7ed1012dc18496eccd",
+                  "disabled": "314ee7c6968bc503cd7d014e022b81298633f51c"
+                }
+              }
+            }
+          },
+          "SecondaryWhite": {
+            "description": "The secondary button usually be used as secondary action when there are multiple buttons",
+            "sizes": {
+              "Medium": {
+                "componentKey": "fa65068273984daae4b4479ced93b06a889e79f6",
+                "figmaName": "Size=Medium, Type=Secondary-white, State=Default, Shadow=No",
+                "states": {
+                  "hover": "724adcad4529900c03fde62a4ddd5151895ed0e7",
+                  "focus": "5fa3d91a7bca02c6ab16dd622ee688df6a40300c",
+                  "loading": "2f39aa5f0ee289d9422df3c926e95ff151a8e328",
+                  "disabled": "6fac4ab2589f2781e8a977c970094dd6f72368d4"
+                }
+              },
+              "MediumShadow": {
+                "componentKey": "06f7d5dbc480aef8abca9d71c5e5547e6189aea9",
+                "figmaName": "Size=Medium, Type=Secondary-white, State=Default, Shadow=Yes",
+                "states": {
+                  "hover": "87d660176811c6ba8ef36529b5d14645c039efd7",
+                  "focus": "c2c907913bb6dfe37fece120668fc08be693aad8",
+                  "loading": "48dc05b481536a1a6ea3b4191553536f0bcf69c8",
+                  "disabled": "5fb3f9be9d60efcf36c7133eab36e25d52cc38df"
+                }
+              },
+              "Small": {
+                "componentKey": "96c27c3c0bb74ce071d60d80a13640e6e625d140",
+                "figmaName": "Size=Small, Type=Secondary-white, State=Default, Shadow=No",
+                "states": {
+                  "hover": "f89c4f23c9f825bbeff47e864b13264c7b7110d6",
+                  "focus": "82aad509c65416c9edd3eeecda5b0f272e96f20b",
+                  "loading": "c6baf3bd5cbc0db762c22f0aa2e521954b1309f1",
+                  "disabled": "6e84d08abf041da074c64eddb4bd03d0617ca2f0"
+                }
+              },
+              "SmallShadow": {
+                "componentKey": "4aa25ab343554d2633cca5b7b194aa54b1f22e4b",
+                "figmaName": "Size=Small, Type=Secondary-white, State=Default, Shadow=Yes",
+                "states": {
+                  "hover": "988891813d79d8fcc7a74eb261ac3b319d2f644d",
+                  "focus": "53fcf6058611d1ca244184243b789f50fd586930",
+                  "loading": "c3c41fbb09a1a596f20d5a81cf3645f1e476d9ea",
+                  "disabled": "c0883aaffdfd411b9267014a7f80886d3e63ee2d"
+                }
+              }
+            }
+          }
+        }
+      },
+      "TextButton": {
+        "description": "The text button is for low emphasis. They are typically used for less-prominent actions, including those located in snack-bar, banner, card, and other places where actions are additional.",
+        "subTypes": {
+          "Primary": {
+            "description": "The color green is used to represent strong emphasis",
+            "sizes": {
+              "Medium": {
+                "figmaName": "Size=Medium, Type=Primary, State=Normal",
+                "componentKey": "e6e7b646746a6fa0659b141cb148af11146cd2ef",
+                "states": {
+                  "hover": "7acb4590c2a084a8373766bc5e33ae3754facbb9",
+                  "loading": "b50b4aebb59d0c4ae4f041ce117489f312cebde7",
+                  "disabled": "3ab8a462a9b37ea56a7a29f108f7c87d6621be70"
+                }
+              },
+              "Small": {
+                "figmaName": "Size=Small, Type=Primary, State=Normal",
+                "componentKey": "99aa0027a43d466b3938e24862aefd65bb05e3bf",
+                "states": {
+                  "hover": "48cfe61688e893e573d737ea1e3ab0f9860041bb",
+                  "loading": "4debf4a8aa17a88aa2ad9aadc01aae85fe4d5ffd",
+                  "disabled": "2acd2695143eb559676e326a32b8648ddac730c8"
+                }
+              }
+            }
+          },
+          "Neutral": {
+            "description": "The color grey is used to represent less emphasis",
+            "sizes": {
+              "Medium": {
+                "figmaName": "Size=Medium, Type=Neutral, State=Normal",
+                "componentKey": "d463cd83b8eb3dcf4f712ad98dd9fffe6fda96b3",
+                "states": {
+                  "hover": "0bd81bd43e3d698a224d1746929e103b14c3c470",
+                  "loading": "7868d8ff7e62c01527a2ca63d4e58fbf55117f99",
+                  "disabled": "ac49a2033cf2815dc578720d2efe70b61e2daa3a"
+                }
+              },
+              "Small": {
+                "figmaName": "Size=Small, Type=Neutral, State=Normal",
+                "componentKey": "4936178bf037b7b3b8645b76d0f055934b691076",
+                "states": {
+                  "hover": "afd9e302a331539b78602a0c027575b68caa1678",
+                  "loading": "cda754a7edb507176595862a1bf09a2f70460aea",
+                  "disabled": "e751a89183413e6f21281cfb444115c2de157a13"
+                }
+              }
+            }
+          },
+          "Negative": {
+            "description": "The color red is used",
+            "sizes": {
+              "Medium": {
+                "figmaName": "Size=Medium, Type=Negative, State=Normal",
+                "componentKey": "43f2aaebad7091f2b42b420f3ca7640a0283121d",
+                "states": {
+                  "hover": "5a20e6ee219af7366919aeac8f082c02afaa7ca6",
+                  "loading": "d76b0dd80bdec24b1571db9e2619cf07d2d21618",
+                  "disabled": "7444bd90868d67b46d682ddb343b8d7d33c2ce53"
+                }
+              },
+              "Small": {
+                "figmaName": "Size=Small, Type=Negative, State=Normal",
+                "componentKey": "56d271aa61f7f0834a48485d8f5e873887dceb97",
+                "states": {
+                  "hover": "53af4523ec489e779de4085b6cc3173f1efc2783",
+                  "loading": "2bb40119244b6eb99dc0772c61dd57e766b9c61e",
+                  "disabled": "72a86a64305dfa73702c7972e6022cfd9ae5ae14"
+                }
+              }
+            }
+          }
+        }
+      },
+      "IconButton": {
+        "description": "Icon buttons are typically used for navigate between images or close an full page overlay.",
+        "subTypes": {
+          "White": {
+            "description": "Icon button white used on full page image view when the page background is in dark colours or on an image.",
+            "componentKey": "4699d025036ce5443c5c3c27188b82bbea47414b",
+            "figmaName": "State=Default, Type=White",
+            "states": {
+              "hover": "2e478a1d751e6a83e83c8ad22859f675b428dd38",
+              "focus": "d44b5d3e3cc78354b4944f7619d77369048385e2",
+              "disabled": "9f15c3991a2e7f3ac9e4459b4029236c31543357"
+            }
+          },
+          "Dark": {
+            "description": "Icon button dark used on full page image view when the page background is in light colours.",
+            "componentKey": "b23bfd3073bbb66b5e68cb6bdc4f10fedb8056f0",
+            "figmaName": "State=Default, Type=Dark",
+            "states": {
+              "hover": "f1444bbd725e3f4bb20c279184dbab915ab01572",
+              "focus": "e91a0c4b6eb2209a09579d5b54cdbe571859c4b3",
+              "disabled": "2e4ab94bd035402247a9d6fa4542d58571eacf20"
+            }
+          }
+        }
+      }
+    },
+    "LOADING": {
+      "description": "Loading informs users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. They communicate an app's state and indicate available actions, such as whether users can navigate away from the current screen.",
+      "subTypes": {
+        "SmallWithoutText": {
+          "componentKey": "e98c668f5c77bf174c46cfbc8cd05c89c5c7133a"
+        },
+        "NormalWithoutText": {
+          "componentKey": "69a1e4fb655b62de7cc5148478a9647403cba6b2"
+        },
+        "NormalWithText": {
+          "componentKey": "90a831af4fdcb6f6b4599be1e47d9cecd390b208"
+        }
+      }
+    },
+    "SPEECH_BUBBLE": {
+      "description": "The speech bubble is used to bring users' attention to UI elements on the screen and educate them about it. It's usually used for newly added features and as onboarding for new signups.",
+      "subTypes": {
+        "ArrowPositionTop": "6d5aafdbf00b88a1c70d92f8bc796139bd248888",
+        "ArrowPositionLeft": "67358bddcc0b25d10f4bdd2eaf5f119c9bb927d4",
+        "ArrowPositionRight": "4ceedef13851cf216757a9188fc287c395a8a337",
+        "ArrowPositionBottom": "b86d26725e76a92f7034d4e7cb712c0e749d66b8"
+      }
+    },
+    "PAGINATION": {
+      "DotIndicator": {
+        "description": "Dot indicators are used within containers to indicate that there are items on scroll.",
+        "subTypes": {
+          "FourOrLessItems": {
+            "description": "If there are <= 4 items in a gallery, both active and inactive dots remain at the same size.",
+            "componentKey": "b662a486c0439ea20530bca1f69c81ca4f48fd1b"
+          },
+          "MoreThanFourItems": {
+            "description": "If there are > 4 items in a gallery, the active dot will remain in the middle as user scrolls left and right. The inactive dots' sizes shrink as they are scrolled further away from the active dot, creating a parallax effect.",
+            "componentKey": "f8cbc307e02e2ce9ef70c6eb5b3688ad0764cc63"
+          }
+        }
+      },
+      "Pagination": {
+        "description": "The Pagination component helps users browse extensive content, allowing them to find relevant information without excessive scrolling.",
+        "subTypes": {
+          "Numbered": {
+            "description": "Numbered Pagination can be used for search results or any exploratory browsing, where users do not have a predefined target and want to navigate through multiple pages to find relevant content.",
+            "componentKey": "5e3aa601ea3acc513a1b296e94b455877ba65ee7"
+          },
+          "Picker": {
+            "description": "Picker Pagination allows users to select a specific page from a list and navigate to it directly. It is useful in cases where users have a general idea of where to find the information they need.",
+            "componentKey": "ddf40f2c6895610b42c558c80dc60ad727bb5ad9"
+          }
+        }
+      }
+    },
+    "BADGE_AND_TAG": {
+      "ProfileBadge": {
+        "subTypes": {
+          "CarousellAdmin": "6d7bd7b8e000766efce37cb1bb4be015c7aa1f29",
+          "PremiumService": "65f441841cddac789330f646c79231106c4c03f1"
+        }
+      },
+      "NotificationBadge": {
+        "subTypes": {
+          "HighEmphasis": {
+            "description": "Usually used for highlighting more important unread count on a tab, such as chat.",
+            "subTypes": {
+              "Min": {
+                "description": "A simple dot indicator with no numeric value.",
+                "StrokeYes": "7338ff6b28fb43d5f8e8374f13f090c1d3b5f7cb",
+                "StrokeNo": "42cb2cdf5083c0f6cc448c9b3989953837b17d2e"
+              },
+              "OneToTwoDigits": {
+                "description": "Standard badge for counts between 1 and 99.",
+                "StrokeYes": "6d777640329a7b320cd16639fe87900395fe304e",
+                "StrokeNo": "533474d104cf37ce960418b20e4afe142a0f755d"
+              },
+              "Max": {
+                "description": "Badge for high counts, typically displaying '99+'.",
+                "StrokeYes": "9c98ffbc1ee8c029325d363ed8787a008c7fbad2",
+                "StrokeNo": "2850d226ac63a2f31437d3c45eaea2271dde3f46"
+              }
+            }
+          },
+          "MediumEmphasis": {
+            "description": "Usually used for highlighting unread count on a chip or number of users selection in a dropdown list.",
+            "sizes": {
+              "OneToTwoDigits": {
+                "StrokeYes": "bd41b40843510e42f22e98c3f4e61ee854a8d7b4",
+                "StrokeNo": "776df3be8df0de63588c7598b4c2a4445beab803"
+              },
+              "Max": {
+                "StrokeYes": "13b9f5b29e780e82632546c551e7857d62718f7b",
+                "StrokeNo": "279bead1fb6714acdd3e3366f86fcb99055c05e3"
+              }
+            }
+          }
+        }
+      },
+      "Tag": {
+        "ProgramSpecific": {
+          "Certified": {
+            "sizes": {
+              "Small": "8b4bf468451bdc129dc706f3ee889e675f41456c",
+              "Medium": "b80af5032b848fe911991fc935e6a9a942104382"
+            }
+          },
+          "BuyerProtection": {
+            "sizes": {
+              "Small": "debd7af865d9ed853485746cf5ea7dbcda2b78f9",
+              "Medium": "cbf1f50f317db968f421d84d809c7e88edbc1e10"
+            }
+          },
+          "Spotlight": {
+            "sizes": {
+              "Small": "6e4e6da1722ce36f01933112ed93f84e6d2f5eba",
+              "Medium": "7bd3acc3d17500e22d2636a364e5487941b98d13"
+            }
+          }
+        },
+        "Generic": {
+          "Emphasis": {
+            "High": "27f8411526bc5a6046549b515c22a757a23df308",
+            "Medium": "dd6280299ccea9a6bd48b470a3129ac6455e931e",
+            "Low": "8ae203da4cf107b0b3734e1a14b7f0c06b65fd5e"
+          }
+        }
+      }
+    },
+    "NAVIGATION": {
+      "TopNav": {
+        "name": "Country=SG, Logged In=No",
+        "description": "This is the first level of top navigation",
+        "componentKey": "5c258032c82f627252e077073980dff8b425111f"
+      },
+      "Search": {
+        "name": "Type=Search",
+        "description": "This is the second level of top navigation",
+        "componentKey": "c392a78164ba97f83236230e3a2db3718e36be0c"
+      },
+      "Footer": {
+        "name": "Property 1=Bottom part",
+        "description": "Navigation appears on all pages of a website or application. It typically includes links to the most important sections of the site or app.",
+        "componentKey": "0eaad9884ad1d4ed865225b8116ec6d887feceb3"
+      },
+      "Breadcrumb": {
+        "name": "Breadcrumb - Web/2. Component",
+        "description": "Breadcrumb shows the user where they are and enable them to move quickly up to a parent level.",
+        "componentKey": "342267e3cacd732d59781e4eaa047011a866f7c6"
+      },
+      "SubcategoryCard": {
+        "name": "Subcategory card - dWeb/2. Component",
+        "description": "Subcategory cards displays subcategory info and brings user to subcategory pages.",
+        "componentKey": "27b8d87c95d2f6ef6aac3dd321155994e823892d"
+      },
+      "Tabs": {
+        "name": "Tabs - dWeb/2. Component/Horizontal",
+        "description": "Navigation appears on all pages of a website or application. It typically includes links to the most important sections of the site or app.",
+        "componentKey": "c10fc882beeda9e93115787f0c4f55a21035afcf"
+      },
+      "VerticalTabs": {
+        "name": "Vertical Tabs (custom) - dWeb/2. Component",
+        "componentKey": "40831b0f1d1c12f1563a117a47c06882eb8429c2"
+      }
+    },
+    "FEEDBACK_INDICATORS": {
+      "Snackbar": {
+        "description": "Snack bars provide brief messages temporarily at the bottom of the screen. They shouldn't interrupt the user experience, and they will either dismiss automatically through different triggers (such as time or # of browsed listings) or users have the option to dismiss it manually by scrolling down on the snack bar. Only one snack bar may be displayed at one time. A snack bar can only contain a single action. Because they disappear automatically, the action on the snack bar shouldn't be \"Dismiss\" or \"Cancel\".",
+        "componentKey": "6d3f037c3a0cab7e577a20a888970712ac31af0f"
+      },
+      "BannerInline": {
+        "description": "A banner displays a prominent message and related optional actions. It displays important, succinct message, and may provides actions for users to address (or dismiss).",
+        "styles": {
+          "Grey": {
+            "dWeb": "be8aaa1670f05bb976e3dc9d2d13591cb65ec331",
+            "mWeb": "6a2f341005440016ba9167083928b48fb69debed"
+          },
+          "Outlined": {
+            "dWeb": "d7c9c56e874a7e5766fb103ecc2a5848a6838ca1",
+            "mWeb": "1781f9033e2b15afaf535ebf2e7a993186b0850a"
+          },
+          "BackgroundImage": {
+            "dWeb": "061c3c2499d47d780c5c94c5674881522b40ec00",
+            "mWeb": "dfbe67352f1ce5663a09925489b1aa561ffd0b1e"
+          }
+        }
+      },
+      "ErrorMessageGuide": {
+        "description": "A banner displays a prominent message and related optional actions. It displays important, succinct message, and may provides actions for users to address (or dismiss).",
+        "componentKey": "20db0091328a9660607cd1ea7a709551c56048e1"
+      },
+      "AlertMessage": {
+        "description": "Alert message provides important feedback to user within the same container.",
+        "states": {
+          "Error": "1fb51b2ffd7def5731fd2a5aa0d8b32745cf2264",
+          "Success": "64cbc47597982478ac00699289189f18c7497eed",
+          "Warning": "80e7257c6c8ed32eb5d4ecab97df99d502aa6f26",
+          "Info": "439822406ad6b8bf45f22cc4026e498cd32f3328"
+        }
+      }
+    },
+    "OVERLAYS": {
+      "Popover": {
+        "description": "Popovers are small overlays that open on demand. They let people access additional content and actions without cluttering the page.",
+        "subTypes": {
+          "Tooltip": {
+            "description": "The free-text popover is used for additional information. It can present a combination fo content, instructions, or actions for tasks.",
+            "arrowPlacement": {
+              "Top": "f6a356cdad353ac21abbd31bbb4a355c7ba53d77",
+              "Bottom": "dd1dd50317d7483549be9bd52de83824e7b87861",
+              "Left": "9a0434b2b18cd2a72da65e8fba9afd98aa98612e",
+              "Right": "9ee61a8424af60a613e8666686830d26b8894426",
+              "None": "cf644ddefa03aba59af863688cd0fb6ddb0f820c"
+            }
+          },
+          "List": {
+            "description": "The list/dropdown popover is used when presenting a set of actions or entry points to other pages.",
+            "arrowPlacement": {
+              "Top": "05de68510806e437efb14ae8435be3735d40266e",
+              "Bottom": "3d608c41ddc1c28975176d1111b3010bc838ee5c",
+              "None": "578fc65a14f741d91581917fbb99018738c5b48f"
+            }
+          },
+          "Freeform": {
+            "description": "The freeform popover is used when there are instances other than tooltip or list. For example, a calendar popover or search dropdown. It is an empty frame with no default max/min width/height. Depends on parent component and content.",
+            "componentKey": "a20921a0b4142508ad76efc0db543cfd8dc70598"
+          }
+        }
+      },
+      "Modals": {
+        "Desktop": {
+          "sizes": {
+            "Small": {
+              "width": "480px",
+              "componentKey": "daace147ce1a6e4473693159805c1388a85b528b"
+            },
+            "Medium": {
+              "width": "720px",
+              "componentKey": "07259ca21d9c06b8210fb9bcd177539c2cb70839"
+            },
+            "Large": {
+              "width": "1004px",
+              "componentKey": "6f3d9b40e8488cf9d4b3b1cec60ba4ba2b161982"
+            }
+          }
+        },
+        "Mobile": {
+          "sizes": {
+            "FullHeight": {
+              "componentKey": "db09f457aab8cd20df92a70a321f1f23abc01d59"
+            }
+          }
+        }
+      },
+      "Dialog": {
+        "Desktop": {
+          "WithIllustration": "72cee89b7d00b67beec996717c216fb78c2ab576",
+          "NoIllustration": "94df1f4ad11e3dec5bd42439944271eb7f8ef97d"
+        },
+        "Mobile": {
+          "WithIllustration": "a206a77c5f9f5a0f66f79ea46f60b545a31931d3",
+          "NoIllustration": "6708f537b352933b34523701d42b7328cebe8d61"
+        }
+      }
+    },
+    "INPUT": {
+      "Picker": {
+        "SimplePicker": {
+          "description": "Use in a 1-step selection, such as condition, brand selection. Usually open up a bottom sheet with the list of option.",
+          "states": {
+            "Default": "32885c9485b210918b89a1d47442e2a47500d4c1",
+            "Focused": "240a4a078e435cccfcc0d3135ab72d76d60acdf2",
+            "Filled": "e34a37eddc816fd7b86c05a55c5ceb0555160cd4",
+            "Error": "8f4e36298b3fd3e79928376d06e76dacfb9a3a39"
+          }
+        },
+        "DatePicker": {
+          "description": "Use to select a date. To select a range, use 2 date pickers for start and end date. Usually open a native calendar. The calendar can support selecting a range. The resulted start and end date will be shown separately in 2 date picker fields.",
+          "states": {
+            "Default": "698992dd630f27d02299c8208375b5399ab3d9c7",
+            "Focused": "8c91593d77f45cafa51fd55d91d84843f57f7494",
+            "Filled": "be95d30d8151db6ae0600d8319f80a1567664b08",
+            "Error": "0356138d25a80a17028c70573e6e279ddc3a5d38"
+          }
+        },
+        "LayeredPicker": {
+          "description": "Use in multi-step selection, such as category selection and the Certified mobile product selection flow.",
+          "states": {
+            "Default": "429a24255decc765f8838c99be2e705e1c86f904",
+            "Focused": "a104dbf13934627a63460a03e168d1334e49b2dd",
+            "Filled": "f1c49d1462637fb19201a7fcb576ce7e067350fc",
+            "Error": "9934074b93a9078f3fb7ed21db4df739b3c8d39c"
+          }
+        }
+      },
+      "Rating": {
+        "description": "Rating allow users to submit a rating over a scale of 5. This is an input component and it's not used for displaying read-only ratings.",
+        "subTypes": {
+          "RatingInput": {
+            "description": "Rating input used to allow users to give a score out of 5",
+            "componentKey": "f02d39ca00ee4d3413eff192bf9a39ab8b342d41"
+          },
+          "RatingDisplay": {
+            "description": "Rating display used to show the received or aggregated score. It's not editble.",
+            "sizes": {
+              "Small": "eb7ec209560c212864c0cd1b44ceeb8617802339",
+              "Large": "18c01ee1424d2a56fa8cd241d1d8ee5b63ebf528"
+            }
+          }
+        }
+      },
+      "Chip": {
+        "description": "Chips are used for single or multiple selection that lets the user select or unselect. Selection can either be mandatory or optional depending on context. A group of chips are similar options for users to choose between. It could be used simply to select an option e.g. predictive texts and suggested keywords",
+        "subTypes": {
+          "SingleSelect": {
+            "Medium": {
+              "Selected": "e774a4263da412026524787f8e391f95e4d054ed",
+              "Unselected": "db59e77ad3e8969d25b22a585d93b3be33a04418"
+            },
+            "Small": {
+              "Selected": "5af08372c1f0e591f66cd9b8994d688228f31845",
+              "Unselected": "bda54dace8e6f818485a4844407256705f73840c"
+            }
+          },
+          "MultiSelect": {
+            "Medium": {
+              "Selected": "ecc4c951edeca436bf3e137f097dd8ec86a87c2d",
+              "Unselected": "6970521937ec0c3887cdd7f13558616db132031f"
+            },
+            "Small": {
+              "Selected": "68c252c26a02aca5d6b497f95c0c882a73aa3830",
+              "Unselected": "f577f29981edfbc329c61989c4eeb34eb7a45458"
+            }
+          },
+          "WithBadge": {
+            "Medium": {
+              "Selected": "6abd51702b55783e875d5bee03ec4fdbc151906d"
+            },
+            "Small": {
+              "Selected": "a7506f35a6effdbebd8be8ed0e0c652cb4ae18c5"
+            }
+          },
+          "Disabled": {
+            "Medium": "92513560ddd5b4306c67b9f8fdba94da71711145",
+            "Small": "04054c4cb6189216ea107e43180f0633ff264bba"
+          }
+        }
+      },
+      "SearchBar": {
+        "Outlined": {
+          "description": "The Outlined variant is employed when the search bar is situated on a darker background, like an image background. It can also be utilized when we intend to give the search bar a lower emphasis.",
+          "states": {
+            "Default": "25d7ba7f1c06b47ddd5d52777a0fb8f8f5375b4d",
+            "Focused": "5df5848051d0f0a6eff049f2f109fadd518dc5e4",
+            "Typed": "6515094d047f4ef3e8c3029ac84bce866b04ac86",
+            "Filled": "bf1efad1d093faa44c4981586d076d01795a9d10"
+          }
+        },
+        "Filled": {
+          "description": "The Filled variant is applied when the search bar is positioned on a white background, and when a greater emphasis on the search bar is intended.",
+          "states": {
+            "Default": "11b95a465f65b17327ae11f7ebc006bde9751ccf",
+            "Focused": "821fc26ed4432ea9c81b8c2400ce2118298ebcf6",
+            "Typed": "4680cda2dd1decabff9f3cf771683adccd8a2ddc",
+            "Filled": "90159956809e58e2a9c43a8f176d51fa317a6341"
+          }
+        }
+      },
+      "List": {
+        "description": "We combine selector (radio, checkbox, switch) with text to form list item. A \"List\" is made of multiple \"list items\". There is also a list with no selector, usually used in a dropdown menu. This is the plain list.",
+        "subTypes": {
+          "ListItemWithSelector": {
+            "RadioCheckbox": {
+              "Medium": {
+                "Default": "384efa9f2287997798eebc8ccf09fae14a039d76",
+                "Hover": "8ce8685812f340b1f68c0af47a2dc52a0abc149e",
+                "Disabled": "d1817c3e0fb091ad352997f648aaed43b5478780"
+              },
+              "Small": {
+                "Default": "3f9e35a9193d4933ca3b492b2fa842aebdc14bf3",
+                "Hover": "0f785ad4841fb14ed1bbf79c4cf59d3f375b31e8",
+                "Disabled": "baea6840b8da2943300d16e3294041954d06c47c"
+              }
+            },
+            "Chevron": {
+              "Medium": {
+                "Hover": "02d5959c07031c64db36802b1879cfe0ed750f20",
+                "Disabled": "a71948f79345a6212275ce701b66a5db5a816e76"
+              },
+              "Small": {
+                "Hover": "2f1333406f44e55a689e34fbf47da1f9bada920d",
+                "Disabled": "d48026230aab57d5d88bd81089dd25336cd8502f"
+              }
+            },
+            "Switch": {
+              "Medium": {
+                "Hover": "9295141c6c1bc2d1b58628caf2b959504e5c0686",
+                "Disabled": "b8e5c8acddb471e82db2999922bce1f4bff55e5e"
+              },
+              "Small": {
+                "Hover": "1674e6f0c7388dab0db0e76e474425abe31e0604",
+                "Disabled": "65ea6214bc4f26c03428823c41f277b07d0342f8"
+              }
+            }
+          },
+          "PlainListOption": {
+            "Platform": "Dweb",
+            "Sizes": {
+              "Medium": {
+                "Default": "cbb0049370afa195c4f67e98ab6a7f9cbb966467",
+                "Hover": "f761f3cdb6533547f676e40e181604bd39bc60fc",
+                "Selected": "73f02768d50c6a555135f56b93d2a98629237721"
+              },
+              "Small": {
+                "Default": "c6c709754e379cd465931c94dbc418d68c7dd716",
+                "Hover": "aa8a4517ffc0cbf12a26e2135a88c7b92ba9e9d7",
+                "Selected": "7835f9a52359911f30d4d6b5d14580e29273f100"
+              }
+            }
+          },
+          "SelectionList": {
+            "WithSelector": {
+              "DividerYes": "ce669bb63bfbec24ff34e946a198c73f71976e79",
+              "DividerNo": "9028edb099da6cdb77ee704833f6aab91e9e6205"
+            },
+            "Plain": {
+              "DividerYes": "dc83e746eb0dccee1de81479f89a929b0871f63f",
+              "DividerNo": "b5d9fa2a96137f2121da918bf5f14a467bccec41"
+            }
+          }
+        }
+      },
+      "Selector": {
+        "description": "Selector allows you to choose an option",
+        "subTypes": {
+          "Checkbox": {
+            "Enabled": {
+              "Selected": "3f1af32f82f7592c846f69a7f20247c58d1cc135",
+              "Unselected": "409c614b3a0c3c1a2c2492826b2dcb1852508ab0",
+              "Indeterminate": "a6ab67f5f5d8c4a19fcd8d6195000d9c4bfd0171"
+            },
+            "Disabled": {
+              "Selected": "d651b4099f2e00d24ce717002966dfd310bd1c38",
+              "Unselected": "3d81f7e259f39a530e60d9a5ced87f71d2f1c4c0"
+            }
+          },
+          "Radio": {
+            "Enabled": {
+              "Selected": "63b114963e681a22e631ad560cfc6c4b106f354e",
+              "Unselected": "2f301465cd16a0656548c88cc5a66851b7ca053c"
+            },
+            "Disabled": {
+              "Selected": "3de97bb587aa0a56764d0f3d05274d8c194e4535",
+              "Unselected": "14044c16169e68c152b1b691706e67f5020670e4"
+            }
+          },
+          "Switch": {
+            "Enabled": {
+              "On": "58d56a9d57691e5e1132763843255b2348b1aca2",
+              "Off": "fa7e94930e7f7e30abf774e2ee5681805f54a341"
+            },
+            "Disabled": {
+              "On": "05087f1effdfb02a9385b22841137f3cc6e4877d",
+              "Off": "6b31d7c4eec3260ef5c2f40cdfe37102d1c3cbe5"
+            }
+          }
+        }
+      },
+      "TextInput": {
+        "states": {
+          "Default": "e80bcf093613dc8e45e1d22d0b6b08ffeb9db6a2",
+          "Focus": "e5f44e2e0066b33a92a819b1384adc252cce0e81",
+          "Filled": "5be5e661b3a1cc7222b820d1022ec1564755fb07",
+          "Error": "66546ec832afb61a4461ce7c643633f92c5b007c"
+        }
+      },
+      "TextAreaInput": {
+        "states": {
+          "Default": "0901c870aa2ee7d6d782692dd10195af74a98c39",
+          "Focus": "5f5b58ba0baf422c68b0fabe358f035376d84ce9",
+          "Filled": "338c06516dc3a38e1da8e3d3154cfd60379b2542",
+          "Error": "2136aff208654447ed9f637b61b587bb6f69c60e"
+        }
+      },
+      "PhoneInput": {
+        "states": {
+          "Default": "1574df1c75b722087825959ec09b00a36e5eeaaa",
+          "Focus": "e146534c47887d9f60020ed8f3c1facc127f562c",
+          "Filled": "a7adfba18b63cdc464df5d7da0c6d266d0742340",
+          "Error": "c2d9897ee961bbff67edfb3cdc9f1c9012bb9e66"
+        }
+      },
+      "Slider": {
+        "status": {
+          "Default": "5827c9bbd030c825f3601c3ca1120ce74858394a",
+          "Disabled": "6a8042445bfd2da6dda009fbb6e69e010f6960e3"
+        }
+      },
+      "MediaUploader": {
+        "Large": {
+          "Empty": "647bf0106a3286313600f6faf46e72231aae025f",
+          "Focused": "d036d24496e629fe8b5268da80b65d6167ababcc",
+          "Dragged": "627d90976f807c14641b9a58657ec8f362f6b2eb",
+          "Filled": "79c77c16327a5678b2124c6999084274d528a3da",
+          "Cover": "a7711ce7a79033af9a1e8a5858fac13b35a9dba5"
+        },
+        "Small": {
+          "Empty": "36530ce4905597fbd70dad4c8f0060c229f1d343",
+          "Focused": "9be229a5e8bb7ba7b81a1ead3fd994b410ff9530",
+          "Dragged": "57d94d1c04948de688cd19f455066a103d0f8819",
+          "Filled": "c42a1668e4d351f205a70821477f861fd4fa0e00",
+          "Cover": "2af1a1647e2edec3e1800833cf4f83e60393217f"
+        }
+      },
+      "FilterChipCustom": {
+        "states": {
+          "Default": "454488fc871705e72f7b9ed21dd944793521eaaf",
+          "OneSelected": "3112199c4d1b7191b34abda47daeb8554807c9f3",
+          "MultipleSelected": "886c487f2a67c9e067d04014e1e7d0eb03fea36c"
+        }
+      }
+    },
+    "CHAT": {
+      "InboxRow": {
+        "description": "3 column component used in Chat Inbox",
+        "states": {
+          "Read": {
+            "Default": "0686cc9e09733ed38b876ba6302e9e6744e2f5c4",
+            "Hover": "708dc9430b8f29ffaf72b16f6dec82935bcbdc97",
+            "Selected": "2cdb2e05f1128a4838d68df97c3c90dd112c3478"
+          },
+          "Unread": {
+            "Default": "30f4ea74ce013ea338b6866f0faf17dae0810342",
+            "Hover": "e4c8daa17198bea73ad323a178bcd27382fe8841",
+            "Selected": "cbe2b303b5507cba2db8bb35e21a29016e2321ee"
+          }
+        }
+      },
+      "ChatHeader": {
+        "description": "3 column component used in Chat Inbox, Reviews, Support Inbox",
+        "states": {
+          "Normal": {
+            "PromoteCTA": {
+              "SameLine": "776db6e3eccff556f91de0bfdf3a7f9fd1a8ad85",
+              "Overflown": "cbdf834af1771504717d0f420a83434d7a85431e"
+            },
+            "TaskCTA": {
+              "SameLine": "ab013cfec042bd987fda9aede5cc3a821945cc89",
+              "Overflown": "25842c56d4a4b3d50bd525fd9703b5e373a6dbfa"
+            }
+          },
+          "Loading": {
+            "SameLine": "f03f1fba26728e3c53272653e3e931f910f28c8f"
+          }
+        }
+      },
+      "ChatCell": {
+        "Incoming": {
+          "Text": {
+            "SingleLine": "c72fb9d87fecd4efd8e2721544cd57f7c56c3e2a",
+            "MultiLine": "73dba18c5d6279dcabbf473940611897e7c4b18e"
+          },
+          "SpecialStates": {
+            "Typing": "4e12843a529c511444d4ace3bb3695f834ba1e59",
+            "Offer": "7d9924d09c8c6bd8ba51407b03d2750ec18f94cc",
+            "Error": "fe0c0c7a3524df27cc4a7eb0311fe6e376bb7ffe"
+          },
+          "Media": {
+            "Image": "2d5557b1a40d12561b52b077d5e727d429099b7f"
+          }
+        },
+        "Outgoing": {
+          "Text": {
+            "SingleLine": "f8ec74815d0d0ccc444d880493db629cf723c0ee",
+            "MultiLine": "821e8e6ce6e0bad4930175acdb3ed0b58fb39f8d",
+            "Offer": "b976808fa13d1b12e7d453a4eb0b1aa31ff507b1",
+            "Typing": "62ad025f350d06c0d184b70e0b294a2d57c9affa",
+            "Error": "58abfcab6d62d6ffb52b43e958637458550f00c9"
+          },
+          "Media": {
+            "ImageDefault": "c4679b5d8931d0cc507fe81d3758a54a3ce0b67d",
+            "ImageError": "b08620dbc3869e2688012008fe40ce3ca77a5a2c"
+          },
+          "BlockedState": {
+            "TextDefault": "bb6d8fda1a19105b6f8ae357f7c5cf3d02f1fecd",
+            "TextMultiLine": "567041993ea499af1ab9389e05dc60ecf83076af",
+            "ImageDefault": "2bba6016398e8c419832b1f5fce8020274a7676f"
+          }
+        }
+      },
+      "SystemMessage": {
+        "componentKey": "1c1911189fbfc8d38b232b3ecfd13394db99f7b0"
+      },
+      "ChatInput": {
+        "Desktop": {
+          "Default": "d23245938bf483b2ba6bb14759cf0361ce31df7f",
+          "SingleLine": "f8f653177c2cbe203ee63d966c98f0941c349ba3",
+          "MultiLine": "c03ccbaf7802f79095d0061e3cbd8e7edcfeddda"
+        },
+        "Mobile": {
+          "Default": "f753fea51e4f38a87d3cc6311d22258442d06458",
+          "SingleLine": "f2c71295503a4fb2b0af58ef9c6f9857da3e1598",
+          "MultiLine": "e1e9d85fefdd61a0b8002c0384ae7f5fda8f5a19"
+        }
+      }
+    },
+    "ACTIVITY": {
+      "description": "Notification let users to stay informed and engaged by displaying important and relevant contents. It serves as a dynamic feed that aggregates and presents various types of notifications to users in a clear and organized manner.",
+      "subTypes": {
+        "Desktop": {
+          "states": {
+            "Default": "32b2e6c8063616660546811891f645be9c5fa9b8",
+            "Unread": "99ee630558f63f8ab7c76363a0ccd8579d9caa43",
+            "Hover": "0c68bb50df865ab695675ee159498b1995ca0f12"
+          }
+        },
+        "Mobile": {
+          "states": {
+            "Default": "7ece5b787f04fc24e6596201fc8a2a5d7abd4431",
+            "Unread": "6e20f315a05491661d202dd08f9ec891989b5151"
+          }
+        }
+      }
+    },
+    "ADS": {
+      "StandardBanners": {
+        "Horizontal728": "66f4c8bdf02ec00566fc0dfd9f098ae44664d3c0",
+        "Horizontal970": "c914f54e9515e2d324e70139fd073c5ec0086d44",
+        "Square": "c760b138eac9ac7412d752157b06e7bcc0c4b995",
+        "SideRail": "9702f1c79f3ae7009d555fae3d815f6ac94b270d"
+      },
+      "NativeAds": {
+        "FullWidth400px": "84d30a2ccf32856bfe3f38562b49317d3ca05379",
+        "ContentWidth": "3f7fdb2524f4dea02c4e4819e9d819b195481de7",
+        "Video": "072c00042bde9d6ab4c8699b7413f2fab9c5fb45"
+      }
+    },
+    "CARD": {
+      "description": "Cards are surfaces that display content and actions on a single topic. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.",
+      "SelectableCard": {
+        "description": "Selectable card is used to display supplemental information that is important enough to be highlighted, but not necessarily part of the main content. They are commonly used to display different plans, options, or supplementary details, and the selection area encompasses the entire card itself.",
+        "subTypes": {
+          "WithIllustration": {
+            "description": "Use this card when you have visual elements, such as images or icons, that can enhance the user's understanding and selection process.",
+            "subTypes": {
+              "Regular": {
+                "Normal": "f342b90acc9b1b2fa746975f5b5566b0ea04bf59",
+                "Hover": "31ba8de79ce63b2cb1280febe566a9e423a73c91",
+                "Selected": "ca620307079656d2c71f00c2da9767b00abb654f",
+                "Error": "b17e5d86e1039c5361c81d33523c0415ada267f6",
+                "DisabledDefault": "5d054222606465d22b8ac4283db8837b866b7e9b",
+                "DisabledSelected": "a8cc95e85b2f2ec8419bc4f2f953864792a37590"
+              },
+              "Compact": {
+                "Normal": "59778fb0bb1c5d02f17dc71298a7f6a799e96162",
+                "Hover": "24fa593e04d477adfe059f137607dd2249b178b4",
+                "Selected": "82e1754dbf20c930b031c84c869ba0322830afce",
+                "Error": "65d6b887011f6eaec143234e0d6b8070cddda39c",
+                "DisabledDefault": "186f80d1a995f305d7be29139a2fdcc3516d8515",
+                "DisabledSelected": "8cb5d12f13558f4799ec3a2260af70b9d259a455"
+              }
+            }
+          },
+          "TextOnly": {
+            "description": "Use this card when you have more text-based information or detailed descriptions to display for each option.",
+            "subTypes": {
+              "AlignLeft": {
+                "Default": "ad99de567e550ebf2be2ce99b322dc25cc33b7b2",
+                "Hover": "2875bccbf3ffa52423ade2d7d2d5bfdc285ea5af",
+                "Selected": "9ca2dc897b9b59b5e98c040112998d5f2928c8be",
+                "Error": "55e65cd5aec969bedb7601ec8b5f7b45bd2ed752",
+                "DisabledDefault": "e80df7b8dec534cd547945ac5a1edc48081b6c64",
+                "DisabledSelected": "d1d64f31ff5934e2ee1177a23dc3348a68920c04"
+              },
+              "AlignRight": {
+                "Default": "f8a50d211bdbcd40dcc574784d1219c44143168b",
+                "Hover": "861e7b6aa6523d4224706bc668b0e1ccb291101c",
+                "Selected": "a6541b7053293129acc24f002ec5d01fc1184bcd",
+                "Error": "b72064fbef8fb63f1df8a20c544d78786cdef78b",
+                "DisabledDefault": "46c86ce5000636430a30b3b09e0fbe6c68a8ac44",
+                "DisabledSelected": "217ffb02120c0be1c4fc7e7fb9bae342f3086906"
+              }
+            }
+          }
+        }
+      },
+      "ActionableCard": {
+        "description": "Actionable card that serves as a convenient way to provide additional links and information within a layout. It is designed to optimize space while offering users quick access to relevant content.",
+        "subTypes": {
+          "RichInfo": {
+            "Compact": {
+              "description": "Use this card when you want to provide users with more info, choices and actions within a compact layout.",
+              "PlainBackground": {
+                "ShadowNo": {
+                  "CTA": "f378eb000785325c0b827ef6b8a287558727995c",
+                  "Chevron": "d3e5beb1b4286eed99e5106039a3fdc9d7da8943"
+                },
+                "ShadowYes": {
+                  "ActiveCTA": "ce658b0706985b33c8b21a58b7acae57acee3120",
+                  "ActiveChevron": "4603b233dd8795109b7c17d5c72131ded50570bb",
+                  "DisabledCTA": "77a209f9ea4a8a4c1e1f2041d2a1b2aa57a05800",
+                  "DisabledChevron": "6b6d66b8d94032ad59446de760627888f7faf10e"
+                }
+              },
+              "ImageBackground": {
+                "ShadowNo": {
+                  "CTA": "6cb22161fe0b3a2af6f79b0a2b36eef7896e96a2",
+                  "Chevron": "c2030aee0a2faf7ec8becae4a9fc6bbca9426611"
+                },
+                "ShadowYes": {
+                  "ActiveCTA": "cac8ffafcd201be613e6e9c2b9072251e39906bc",
+                  "ActiveChevron": "02b3db1e03c28f6e52ead6a2704ed2c12998b586",
+                  "DisabledCTA": "289cdac70b7e1865a674ef2b23f7f1db33cd29d6",
+                  "DisabledChevron": "8a7c02351a3f67259821ee1518f9a85bac83d4f9"
+                }
+              }
+            },
+            "Regular": {
+              "description": "Use this card when you want to provide users with more info and actions within a standard layout.",
+              "PlainBackground": {
+                "ShadowNo": {
+                  "CTA": "dd0d9376c9de71f34f721990e7c35210767953d0",
+                  "Chevron": "fb370c1d9e24fcde943b5b916a2b572cedef4856"
+                },
+                "ShadowYes": {
+                  "ActiveCTA": "7c0937ba92f2e7c760051fdd2f27005cbe951062",
+                  "ActiveChevron": "c16e30a1428a5fa230f5c3fe357de49906328c5b",
+                  "DisabledCTA": "e7164c613e527c654ec9a4f23141dd0408d9acde",
+                  "DisabledChevron": "e6f9f9ba161bdd5ce59d3e0adbb04a44d3a6da40"
+                }
+              },
+              "ImageBackground": {
+                "ShadowNo": {
+                  "CTA": "26cdedd8f370336b2032fdcbf1a5a21ad797c546",
+                  "Chevron": "6459c759723365621558d9212600d00b023b511d"
+                },
+                "ShadowYes": {
+                  "ActiveCTA": "652e28e15a4ebd58b01fe7820307cf939924ba85",
+                  "ActiveChevron": "d3c102f301639cf2853387a3226dd7b21de7077b",
+                  "DisabledCTA": "03b7df30b833049bd6829e8a68400286b450e1f6",
+                  "DisabledChevron": "99bbfc485f573e9341812ddb9d926829a3c94573"
+                }
+              }
+            }
+          },
+          "SimpleInfo": {
+            "description": "It is suitable for scenarios where users need quick access to relevant information or perform a single primary action.",
+            "ShadowNo": {
+              "Normal": "4367e10e3e9b67441cc68dc5a9223c33f55eae00",
+              "Disabled": "37ebc3f47400959f46879c7f5aea421ae751754e"
+            },
+            "ShadowYes": {
+              "Normal": "c6d1625a0e7821c8e1af07f9d1e5b471dae4fa0c"
+            }
+          }
+        }
+      },
+      "SummaryCard": {
+        "description": "Summary card is designed to provide users with the ability to set preferences or configure options in an intuitive and user-friendly way. It allows users to make selections or adjustments by interacting with the card, and the changes they make are reflected in real-time on the card itself.",
+        "subTypes": {
+          "RichInfo": {
+            "states": {
+              "Normal": "a944ae486d8fbd23a13e9f8189a4674970b036e9",
+              "Hover": "fcea16532e6879d5ace753f6f47b2b60d17ce409",
+              "Error": "66d5fe4fa4e17466ca4958a08756e5a293ee39fe",
+              "Disabled": "66f4e8c05621df319dd357915f829e46063bbcf9"
+            }
+          },
+          "SimpleInfo": {
+            "states": {
+              "Normal": "92d4c6622b4ae2b07b7a2a969a3cc7d0183da3d3",
+              "Hover": "c7b02a1c7825672e7e356b14b0cae130544c4714",
+              "Error": "9f53ee74dc63afd7b31937d601a7b8887976586f",
+              "Disabled": "60c1cd40aca7d02b8c213c99995fa66eb948a7f9"
+            }
+          },
+          "DualAction": {
+            "SelectionType": {
+              "Normal": "408c35d6d365027f39bf5bd03c78d6cbb8132761",
+              "Hover": "d3ee1535e94f9cfaa2daef8b1037b8e54602296b",
+              "Selected": "0b07c98036808b7583241e95a61d6a266ac44141",
+              "Error": "08662aa785934588d955ccc861f065e96ecf21ec",
+              "DisabledDefault": "4d81fb260a07249e1f486836a706eaa5ae7ab816",
+              "DisabledSelected": "0574d71b80fc225de8a32c898339baa353fe8982"
+            },
+            "ActionType": {
+              "Normal": "8ac2cee0e185ed83368899a5859736360c2e951e",
+              "Hover": "a961f54f6e749decc61274dcddcfc1e328802003",
+              "Selected": "f1acc4f463a5fe83facd8373d721a4703605161d",
+              "Error": "16d2f83f66a3b1fccdda92b18feb559c658e84fe",
+              "DisabledDefault": "4d0a03bc939bbd2660b6413e99fa3e6cba9476b8",
+              "DisabledSelected": "b004e850a26b563f454de9aa1d0b47fb3bfc3e6c"
+            }
+          }
+        }
+      }
+    },
+    "LISTING_PRODUCT_CARDS": {
+      "ListingCard": {
+        "description": "Listing card is the component we use to show items on our app. As a buyer, you can see important information about the item at a glance. As a seller, you can take actions on your item easily",
+        "subTypes": {
+          "General": {
+            "Desktop": {
+              "Default": "ef4df6ea1e0e107baf4bcd48811205823610ab8b",
+              "Hover": "bdd66a654fe1d9a748b968fb501602f48700bc3b"
+            },
+            "Mobile": {
+              "Default": "e4cabdeae66cfdb4b45b630ccfd6f3b573178912"
+            }
+          },
+          "Verticals": {
+            "Desktop": {
+              "Default": "6d613b51886515454e2fb95bb1077d89e0dafa99",
+              "Hover": "d0f6df5f37286b6c4b60f0d789b08167a127549c"
+            },
+            "Mobile": {
+              "Default": "c2febaf58ceca602172a5692c1583da015498bbc"
+            }
+          }
+        }
+      },
+      "ProductCard": {
+        "description": "Product card is the component specifically used for Certified items where items are grouped together into the same product.",
+        "subTypes": {
+          "Desktop": {
+            "Default": "80513b749eb30d3c139840773edca04ce67fa44d",
+            "Hover": "9a26f228d8b72ab30c9ea56f1158edbba2eb66ce"
+          },
+          "Mobile": {
+            "Default": "e316a98c291dd0432e47d5f439a00b0cbe5ed7c2"
+          }
+        }
+      }
+    },
+    "TABLE": {
+      "description": "Table component is a UI element used to display structured data in a grid format, typically consisting of rows and columns. It helps users organise, compare, and analyse information efficiently.",
+      "subTypes": {
+        "Header": {
+          "TitleRowMain": "e44e62092a840b1c39e4331a79152dd5dee32314",
+          "TitleGroup": {
+            "Unselected": "1a5716bbf3034d2abc38eb23d9dcc307b166e84d",
+            "Selected": "13111d15b83b6bd6f7481b8299e2a56bb2f02c15"
+          }
+        },
+        "Rows": {
+          "ContentRow": {
+            "Default": "5aea02f695580e9baff641d676cc2cab35fe971d",
+            "Hover": "38415202fe94f3ad1c99ef97ced2e2815f97f4ab",
+            "Active": "da93bda9e798a2d7405fc19b419339fbe6f6a490",
+            "Selected": "14ca096c97332206c0c9a0c3dd926975b88b764e"
+          }
+        }
+      }
+    }
+  },
+  "webFonts": {
+    "Desktop/H1 - Reg - 38": "efc2c2e8ae47b0a489cd2223bed9d2f43f5248bb",
+    "Desktop/H1 - Callout - 38": "9fffc8a4cffd1748a60459ef95fbb2f307b1857c",
+    "Desktop/H2 - Reg - 30": "80c6a1525d99bf460962f1887ed86795cf80d6bf",
+    "Desktop/H2 - Callout - 30": "52021d3a65907d7f4069bc66a186dfefa6195dd1",
+    "Desktop/H3 - Reg - 24": "dc1cfb14fbc85b3e8e680249339d726e16d154b4",
+    "Desktop/H3 - Callout - 24": "56a636fedffcfcdab48b27f2d3c92b0494d4b90f",
+    "Desktop/Large - Reg - 20": "c88563c930133d424e9a3a7f5086da605a724b14",
+    "Desktop/Large - Callout - 20": "4f42101fe46e26247c223b734326cc8947789ac9",
+    "Desktop/Middle - Reg - 16": "c1bb0e53fcdb6d0d553578df7285afec2b500058",
+    "Desktop/Middle - Callout - 16": "97610f255466dfc79d2ff55293e4f9e9f0f5ea40",
+    "Desktop/Small - Reg - 14": "aa9db5caf4ee08e2a52d34f66c2d4a5cf5e4e8a2",
+    "Desktop/Small - Callout - 14": "dd364c1c2ccc97e7d26ca1f64a04daef27386f84",
+    "Desktop/Tiny - Reg - 12": "7c1d7b44a4c14e694fe283eec38f91c1291478f8",
+    "Desktop/Tiny - Callout - 12": "b7fe1a783cd3b57fe1c5aebe3dbbed8eaa3ed11a",
+    "Mobile/H1 - Reg - 32": "c894741a0e30fbe9768fc2e41710b9110c983dd1",
+    "Mobile/H1 - Callout - 32": "fc5a1802710cb3cade2a345cd2299d756419ed0f",
+    "Mobile/H2 - Reg - 22": "041a99c69a29700f8ec238b164bb5577d2959c4a",
+    "Mobile/H2 - Callout - 22": "93b288f5ee13503bf4fa5802f1e5b7ff866ff48c",
+    "Mobile/H3 - Reg - 18": "15f82f12d4ed67131d5d472ea60c6e7cc714e8bb",
+    "Mobile/H3 - Callout - 18": "6560aa226d6e79adf5032721d0fa56c45071d32a",
+    "Mobile/Large - Reg - 18": "e95e27e8d5f839f85c92670e3c9b6044e6addc12",
+    "Mobile/Large - Callout - 18": "19802b5433f0fd320a0187727eab0bb813092b1b",
+    "Mobile/Middle - Reg - 16": "d067ac1c8c7d5674bf7434650bd6db31e194cfcb",
+    "Mobile/Middle - Callout - 16": "cfe26170362b84051371d8c3010edf6d5d6d7928",
+    "Mobile/Small - Reg - 14": "b15c653f967591761bda236a8c16660d8c014001",
+    "Mobile/Small - Callout - 14": "6b031d01214337ffda837d5ed3b4e46e353692fc",
+    "Mobile/Tiny - Reg - 12": "cfad93f9f1a9cd0f2b93513f6ed2a7b07e1809ff",
+    "Mobile/Tiny - Callout - 12": "b0a0666e9dcf7317e7e738e201166bd6f9e04f81"
+  }
+}
