@@ -13,6 +13,10 @@
 
 ### Step 1 — Export the design
 Get the image before asking any questions.
+- If the user provided a Figma URL, extract and save:
+  - `fileKey` — segment between `/design/` and the next `/`
+  - `nodeId` — value of the `node-id` query param, replacing `-` with `:`
+  - Keep these for Step 6.
 - Call `get_selection` to retrieve all selected node IDs.
 - Call `group_nodes` with those IDs to temporarily wrap them into a single group.
 - Call `export_node_as_image` on the resulting group node. If this fails, call `ungroup_nodes` to restore the original structure, then ask the user to narrow their selection and try again.
@@ -61,6 +65,31 @@ If the designer has already answered all of the above upfront, skip directly to 
 
 ### Step 5 — Deliver the review
 Use the frameworks and format below.
+
+### Step 6 — Offer Figma annotation
+After delivering the full review, ask:
+
+> "Want me to annotate these findings directly on the Figma frame?"
+
+If the designer says yes:
+1. Compile findings into the format the `figma-annotate` skill expects — a structured list with number, priority, label, and detail:
+   ```
+   1  HIGH    Finding label (5 words max)    One-sentence detail
+   2  HIGH    Finding label                  One-sentence detail
+   3  MEDIUM  Finding label                  One-sentence detail
+   ...
+   ```
+   - Map review priorities to annotation keys: HIGH findings → `H`, MEDIUM → `M`, LOW → `L`
+   - Limit to the 10 most impactful findings (annotation gets crowded beyond 10)
+   - Label must be 5 words max — compress the finding heading
+   - Detail must be one sentence max — distil the core "what to fix"
+2. Invoke the **`figma-annotate` skill**, passing:
+   - The `fileKey` and `nodeId` saved in Step 1
+   - The compiled findings list above
+   - Mode: **Design Review**
+3. The `figma-annotate` skill will handle all coordinate reading, marker placement, and legend panel creation. Do not attempt to place annotations yourself.
+
+If no Figma URL was provided in Step 1, ask the designer to share the frame URL before proceeding with annotation.
 
 ---
 
