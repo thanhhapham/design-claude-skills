@@ -184,11 +184,12 @@ Read `target.width` from the Step 2 output and set D:
 Compile the final list using real coordinates from Step 2:
 
 ```
-// Design Review mode: [num, priorityKey, rx, ry]
+// Design Review mode: [num, priorityKey, rx, ry, principle]
 // "H" = HIGH, "M" = MEDIUM, "L" = LOW, "E" = Eng Spec
+// principle = short name of the design/UX principle the finding comes from
 const items = [
-  [1, "H", 1430, 1450],   // seller card center in Default SERP screen
-  [2, "H", 3275, 2010],   // CTA bottom bar on Selected Seller screen
+  [1, "H", 1430, 1450, "Fitts's Law"],
+  [2, "H", 3275, 2010, "Nielsen H4: Consistency & Standards"],
   ...
 ];
 ```
@@ -222,7 +223,7 @@ const COL = {
   E: { r:0.12, g:0.44, b:0.85 },  // Eng Spec blue
 };
 
-// [num, priorityKey, rx, ry] — rx/ry are frame-relative pixel positions from Step 2
+// [num, priorityKey, rx, ry, principle] — rx/ry are frame-relative pixel positions from Step 2
 const items = [
   // REPLACE WITH ACTUAL VALUES
 ];
@@ -291,21 +292,43 @@ const oldPanel = Array.from(target.parent.children).find(n => n.name === "🔍 A
 if (oldPanel) oldPanel.remove();
 
 // Single multiline text block — NOT individual card frames per finding
-const title = "REPLACE WITH TITLE";  // e.g. "Design Review — Seller Search"
-const content = [
-  title,
-  "REPLACE WITH SUBTITLE",           // e.g. "10 findings · 3 HIGH · 4 MEDIUM · 3 LOW"
-  "",
-  // Group by priority, e.g.:
-  // "🔴 HIGH",
-  // "1  Finding label — detail text",
-  // "",
-  // "🟠 MEDIUM",
-  // "3  Finding label — detail text",
-  // "",
-  // "⚪ LOW",
-  // "8  Finding label — detail text",
-].join("\n");
+// Build content with position tracking for styled ranges
+let content = "";
+let titleEnd = 0;
+const sectionRanges = [];   // [start, end] for HIGH / MEDIUM / LOW headers
+const principleRanges = []; // [start, end] for "   → Principle" lines
+
+function ap(str) { content += str; }
+function aSection(str) {
+  const s = content.length; content += str;
+  sectionRanges.push([s, content.length]);
+}
+function aPrinciple(str) {
+  const s = content.length; content += str;
+  principleRanges.push([s, content.length]);
+}
+
+const title = "REPLACE WITH TITLE";   // e.g. "Design Review - Seller Search"
+ap(title + "\n");
+titleEnd = title.length;
+ap("REPLACE WITH SUBTITLE\n\n");       // e.g. "10 findings - 3 HIGH - 4 MEDIUM - 3 LOW"
+
+// HIGH section — replace with actual findings
+aSection("HIGH\n");
+ap("1  Finding label - detail text.\n");
+aPrinciple("   \u2192 Principle Name\n");  // e.g. "   → Fitts's Law"
+ap("\n");
+
+// MEDIUM section
+aSection("MEDIUM\n");
+ap("3  Finding label - detail text.\n");
+aPrinciple("   \u2192 Principle Name\n");
+ap("\n");
+
+// LOW section
+aSection("LOW\n");
+ap("8  Finding label - detail text.\n");
+aPrinciple("   \u2192 Principle Name\n");
 
 // Scale panel width proportionally to frame width
 const PW = Math.max(480, Math.round(target.width * 0.17));
@@ -325,19 +348,31 @@ panel.y = target.y;
 
 const t = figma.createText();
 t.characters = content;
-t.fontSize = 13;
+t.fontSize = 18;
 t.fontName = { family: "Inter", style: "Regular" };
 t.fills = [{ type: "SOLID", color: { r:0.85, g:0.85, b:0.95 } }];
-t.x = 24; t.y = 24;
-t.resize(PW - 48, 300);
+t.x = 32; t.y = 32;
+t.resize(PW - 64, 300);
 t.textAutoResize = "HEIGHT";
 panel.appendChild(t);
 
-// Bold + white the title line
-t.setRangeFontName(0, title.length, { family: "Inter", style: "Bold" });
-t.setRangeFills(0, title.length, [{ type: "SOLID", color: { r:1, g:1, b:1 } }]);
+// Title — bold white
+t.setRangeFontName(0, titleEnd, { family: "Inter", style: "Bold" });
+t.setRangeFills(0, titleEnd, [{ type: "SOLID", color: { r:1, g:1, b:1 } }]);
 
-panel.resize(PW, t.height + 48);
+// Section headers — bold white
+for (const [s, e] of sectionRanges) {
+  t.setRangeFontName(s, e, { family: "Inter", style: "Bold" });
+  t.setRangeFills(s, e, [{ type: "SOLID", color: { r:1, g:1, b:1 } }]);
+}
+
+// Principle lines — muted blue, visually subordinate
+const muteColor = [{ type: "SOLID", color: { r:0.45, g:0.62, b:0.88 } }];
+for (const [s, e] of principleRanges) {
+  t.setRangeFills(s, e, muteColor);
+}
+
+panel.resize(PW, t.height + 64);
 figma.closePlugin("Legend panel placed");
 ```
 
@@ -364,6 +399,7 @@ figma.closePlugin("Legend panel placed");
 | LOW       | `#666677` | `{r:0.40, g:0.40, b:0.50}`   |
 | Eng Spec  | `#1E70D9` | `{r:0.12, g:0.44, b:0.85}`   |
 | Legend BG | `#111118` | `{r:0.07, g:0.07, b:0.12}`   |
+| Principle | `#739FE0` | `{r:0.45, g:0.62, b:0.88}`   |
 
 ---
 
