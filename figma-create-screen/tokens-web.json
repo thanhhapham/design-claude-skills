@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "source": "https://www.figma.com/design/kNXLwwYg4MU9bnPRXjZkuH/Web-Fonts---Styles",
+    "note": "Bind using figma.importStyleByKeyAsync(styleKey) then textNode.textStyleId = style.id. 'Callout' = Bold weight in Figma's naming."
+  },
+  "typography": {
+    "note": "Web has both Desktop and Mobile variants. Use Desktop styles for web screens (1440px), Mobile styles for responsive/mobile-web screens.",
+    "figmaStyleName": "{Desktop|Mobile}/{Size} - {Reg|Callout} - {size_number}",
+    "desktop": {
+      "H1/Regular":     { "styleKey": "efc2c2e8ae47b0a489cd2223bed9d2f43f5248bb", "figmaName": "Desktop/H1 - Reg - 38",        "size": 38, "weight": "Reg"     },
+      "H1/Bold":        { "styleKey": "9fffc8a4cffd1748a60459ef95fbb2f307b1857c", "figmaName": "Desktop/H1 - Callout - 38",    "size": 38, "weight": "Callout" },
+      "H2/Regular":     { "styleKey": "80c6a1525d99bf460962f1887ed86795cf80d6bf", "figmaName": "Desktop/H2 - Reg - 30",        "size": 30, "weight": "Reg"     },
+      "H2/Bold":        { "styleKey": "52021d3a65907d7f4069bc66a186dfefa6195dd1", "figmaName": "Desktop/H2 - Callout - 30",    "size": 30, "weight": "Callout" },
+      "H3/Regular":     { "styleKey": "dc1cfb14fbc85b3e8e680249339d726e16d154b4", "figmaName": "Desktop/H3 - Reg - 24",        "size": 24, "weight": "Reg"     },
+      "H3/Bold":        { "styleKey": "56a636fedffcfcdab48b27f2d3c92b0494d4b90f", "figmaName": "Desktop/H3 - Callout - 24",    "size": 24, "weight": "Callout" },
+      "Large/Regular":  { "styleKey": "c88563c930133d424e9a3a7f5086da605a724b14", "figmaName": "Desktop/Large - Reg - 20",     "size": 20, "weight": "Reg"     },
+      "Large/Bold":     { "styleKey": "4f42101fe46e26247c223b734326cc8947789ac9", "figmaName": "Desktop/Large - Callout - 20", "size": 20, "weight": "Callout" },
+      "Middle/Regular": { "styleKey": "c1bb0e53fcdb6d0d553578df7285afec2b500058", "figmaName": "Desktop/Middle - Reg - 16",    "size": 16, "weight": "Reg"     },
+      "Middle/Bold":    { "styleKey": "97610f255466dfc79d2ff55293e4f9e9f0f5ea40", "figmaName": "Desktop/Middle - Callout - 16","size": 16, "weight": "Callout" },
+      "Small/Regular":  { "styleKey": "aa9db5caf4ee08e2a52d34f66c2d4a5cf5e4e8a2", "figmaName": "Desktop/Small - Reg - 14",     "size": 14, "weight": "Reg"     },
+      "Small/Bold":     { "styleKey": "dd364c1c2ccc97e7d26ca1f64a04daef27386f84", "figmaName": "Desktop/Small - Callout - 14", "size": 14, "weight": "Callout" },
+      "Tiny/Regular":   { "styleKey": "7c1d7b44a4c14e694fe283eec38f91c1291478f8", "figmaName": "Desktop/Tiny - Reg - 12",      "size": 12, "weight": "Reg"     },
+      "Tiny/Bold":      { "styleKey": "b7fe1a783cd3b57fe1c5aebe3dbbed8eaa3ed11a", "figmaName": "Desktop/Tiny - Callout - 12",  "size": 12, "weight": "Callout" }
+    },
+    "mobile": {
+      "H1/Regular":     { "styleKey": "c894741a0e30fbe9768fc2e41710b9110c983dd1", "figmaName": "Mobile/H1 - Reg - 32",        "size": 32, "weight": "Reg"     },
+      "H1/Bold":        { "styleKey": "fc5a1802710cb3cade2a345cd2299d756419ed0f", "figmaName": "Mobile/H1 - Callout - 32",    "size": 32, "weight": "Callout" },
+      "H2/Regular":     { "styleKey": "041a99c69a29700f8ec238b164bb5577d2959c4a", "figmaName": "Mobile/H2 - Reg - 22",        "size": 22, "weight": "Reg"     },
+      "H2/Bold":        { "styleKey": "93b288f5ee13503bf4fa5802f1e5b7ff866ff48c", "figmaName": "Mobile/H2 - Callout - 22",    "size": 22, "weight": "Callout" },
+      "H3/Regular":     { "styleKey": "15f82f12d4ed67131d5d472ea60c6e7cc714e8bb", "figmaName": "Mobile/H3 - Reg - 18",        "size": 18, "weight": "Reg"     },
+      "H3/Bold":        { "styleKey": "6560aa226d6e79adf5032721d0fa56c45071d32a", "figmaName": "Mobile/H3 - Callout - 18",    "size": 18, "weight": "Callout" },
+      "Large/Regular":  { "styleKey": "e95e27e8d5f839f85c92670e3c9b6044e6addc12", "figmaName": "Mobile/Large - Reg - 18",     "size": 18, "weight": "Reg"     },
+      "Large/Bold":     { "styleKey": "19802b5433f0fd320a0187727eab0bb813092b1b", "figmaName": "Mobile/Large - Callout - 18", "size": 18, "weight": "Callout" },
+      "Middle/Regular": { "styleKey": "d067ac1c8c7d5674bf7434650bd6db31e194cfcb", "figmaName": "Mobile/Middle - Reg - 16",    "size": 16, "weight": "Reg"     },
+      "Middle/Bold":    { "styleKey": "cfe26170362b84051371d8c3010edf6d5d6d7928", "figmaName": "Mobile/Middle - Callout - 16","size": 16, "weight": "Callout" },
+      "Small/Regular":  { "styleKey": "b15c653f967591761bda236a8c16660d8c014001", "figmaName": "Mobile/Small - Reg - 14",     "size": 14, "weight": "Reg"     },
+      "Small/Bold":     { "styleKey": "6b031d01214337ffda837d5ed3b4e46e353692fc", "figmaName": "Mobile/Small - Callout - 14", "size": 14, "weight": "Callout" },
+      "Tiny/Regular":   { "styleKey": "cfad93f9f1a9cd0f2b93513f6ed2a7b07e1809ff", "figmaName": "Mobile/Tiny - Reg - 12",      "size": 12, "weight": "Reg"     },
+      "Tiny/Bold":      { "styleKey": "b0a0666e9dcf7317e7e738e201166bd6f9e04f81", "figmaName": "Mobile/Tiny - Callout - 12",  "size": 12, "weight": "Callout" }
+    }
+  }
+}

@@ -1,0 +1,727 @@
+{
+  "fileKey": "NmeAXg5CGWRbBtIqxVcf96",
+  "libraryName": "App Components",
+  "lastUpdated": "2026-04-14T15:14:21.540Z",
+  "components": {
+    "BUTTONS": {
+      "Normal Button": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutButton\n\n\niOS: PrimaryPromoteButton, PrimaryTaskButton, SecondaryButton",
+        "defaultKey": "da7d8e4307f4be9b7358340e98f04fc584fbd6b9",
+        "defaultSize": {
+          "w": 86,
+          "h": 40
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "Medium",
+          "Large",
+          "Small"
+        ]
+      },
+      "Text Button": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutButton\n\n\niOS: TextButton",
+        "defaultKey": "d34527d057d71566106f4380c346939c65281aac",
+        "defaultSize": {
+          "w": 80,
+          "h": 24
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "Medium",
+          "Small",
+          "Large"
+        ]
+      },
+      "Icon button": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutIconButton\n\n\niOS: IconDefaultButton, IconSecondaryButton",
+        "defaultKey": "bef3e5e19d544a0d89dbef31404254ccc9e78dd6",
+        "defaultSize": {
+          "w": 40,
+          "h": 40
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "Large",
+          "Medium",
+          "Small"
+        ]
+      },
+      "Rounded button": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutRoundedButton\n\n\niOS: PrimaryPromoteButton, PrimaryTaskButton, SecondaryButton",
+        "defaultKey": "34f5479f37a5fdaf878440d50c5c92bb0c87d06e",
+        "defaultSize": {
+          "w": 63,
+          "h": 32
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "Medium",
+          "Small"
+        ]
+      },
+      "Third-party Icon button": {
+        "description": "",
+        "defaultKey": "86dae6fd43f540a6ff98219c9bde0c89715fb4a9",
+        "defaultSize": {
+          "w": 40,
+          "h": 40
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "Medium",
+          "Large"
+        ]
+      }
+    },
+    "BADGE_AND_TAG": {
+      "Notification Badge": {
+        "description": "[Donut 2.0]\n\n\nAndroid: to be implemented with Jetpack Compose\n\n\niOS: JSBadgeView",
+        "defaultKey": "7d6d9b1019a2c4f5d598a0a6ad91acce1de95ce8",
+        "defaultSize": {
+          "w": 8,
+          "h": 8
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Tag": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutTag\n\n\niOS: Snapsell/ListingCardBadgeView",
+        "defaultKey": "62079858f386eb5193add88d1f260ab5ed80532a",
+        "defaultSize": {
+          "w": 87,
+          "h": 20
+        },
+        "subTypes": [
+          "Program Specific",
+          "Tag Generic"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "Small",
+          "Medium"
+        ]
+      },
+      "Profile badge": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "f144a8e80af83f2db9546de1220574a05c3dfea5",
+        "defaultSize": {
+          "w": 159,
+          "h": 32
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      }
+    },
+    "NAVIGATION": {
+      "Top nav": {
+        "description": "",
+        "defaultKey": "3d1805988268112bf8e75c51934ff7b35dd82a5f",
+        "defaultSize": {
+          "w": 62,
+          "h": 2
+        },
+        "subTypes": [
+          "Progress Bar States"
+        ],
+        "notes": null
+      },
+      "Top Nav": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutCollapsingToolbar\n\n\niOS: Snapsell/SearchTextField, Snapsell/CRSSearchBar",
+        "defaultKey": "608167843374d523d3070dea05964ba5a5a2a129",
+        "defaultSize": {
+          "w": 375,
+          "h": 92
+        },
+        "subTypes": [
+          "Title&Action",
+          "Search"
+        ],
+        "notes": "iOS Normal title variant is 132px tall (includes 44px built-in status bar). Shrunk title is 92px. Place at y=0, do NOT add a separate System/Status bar on top. Use Platform=iOS, Title type=Normal title for standard screens."
+      },
+      "Tab": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutTab\n\n\niOS: Tabman.TMSystemBar",
+        "defaultKey": "526f139f7c8acab4f81642f2c6e74828f337d4bc",
+        "defaultSize": {
+          "w": 76,
+          "h": 48
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Bottom bar": {
+        "description": "[Donut 2.0]\n\n\nAndroid & iOS: (use system bottom bar)",
+        "defaultKey": "aa34133e85746732f44a341fa82540e099833cb9",
+        "defaultSize": {
+          "w": 375,
+          "h": 94
+        },
+        "subTypes": [
+          "Task",
+          "Promote",
+          "Button",
+          "Tab"
+        ],
+        "notes": "Includes built-in home indicator area on iOS. Place at the very bottom of the frame (y = frameHeight - componentHeight)."
+      },
+      "Subcategory card": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "dd4a3190979d68bde426297f66dd1861d38cc7cb",
+        "defaultSize": {
+          "w": 432,
+          "h": 80
+        },
+        "subTypes": [],
+        "notes": null
+      }
+    },
+    "LOADING": {
+      "Loading": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutLoadingView\niOS: CRSProgressHUD\nWeb: cds/Loading",
+        "defaultKey": "a4792ac6e151a2d62833993620d7488793dc3dfb",
+        "defaultSize": {
+          "w": 124,
+          "h": 124
+        },
+        "subTypes": [
+          "Spinner"
+        ],
+        "notes": null
+      }
+    },
+    "FEEDBACK_INDICATORS": {
+      "Banner": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "486b0ddc3aa4d6d94e11eb0df706b9547b547c61",
+        "defaultSize": {
+          "w": 345,
+          "h": 128
+        },
+        "subTypes": [
+          "Default",
+          "Thumbnail/Square"
+        ],
+        "notes": null
+      },
+      "Error Text on left with action": {
+        "description": "",
+        "defaultKey": "884cedbd3e82c0b97a20d2936859911ac1f81fac",
+        "defaultSize": {
+          "w": 363,
+          "h": 32
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "Error Center text": {
+        "description": "",
+        "defaultKey": "bbc0f32743c35cded71d8ef2f895690ad84b7939",
+        "defaultSize": {
+          "w": 363,
+          "h": 32
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "Processing Text on left with action": {
+        "description": "",
+        "defaultKey": "3325992c47550a5835f33b04516bf49c3a3e00dd",
+        "defaultSize": {
+          "w": 375,
+          "h": 32
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "Processing Center text": {
+        "description": "",
+        "defaultKey": "8f477c90cc3f6dce8114da99ef5aa1d57e8897e9",
+        "defaultSize": {
+          "w": 375,
+          "h": 30
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "Info Text on left with action": {
+        "description": "",
+        "defaultKey": "3a939ff6ff482d1ce97d49e649e53a2dd8ff2900",
+        "defaultSize": {
+          "w": 375,
+          "h": 32
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "Info Center text": {
+        "description": "",
+        "defaultKey": "ae140a9cdc81acedd216bbd4dce04b98c4febbe2",
+        "defaultSize": {
+          "w": 375,
+          "h": 32
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "Snack Bar": {
+        "description": "[Donut 2.0]\n\n\nMaximum 2 lines",
+        "defaultKey": "28c0b6eb9f88c819fdc3b769b1c2f70b66c224c5",
+        "defaultSize": {
+          "w": 343,
+          "h": 48
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "inlineError": {
+        "description": "",
+        "defaultKey": "8ef7c4be7da59c4fa7680be40947b3ff1e62796f",
+        "defaultSize": {
+          "w": 327,
+          "h": 276
+        },
+        "subTypes": [],
+        "notes": null
+      }
+    },
+    "OVERLAYS": {
+      "Bottom sheet": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutBottomSheet",
+        "defaultKey": "4aa3cde0dc0ae52a5e794851f3fc47007e9d8fac",
+        "defaultSize": {
+          "w": 375,
+          "h": 570
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Dialog": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutAlertDialog\niOS: AlertKit",
+        "defaultKey": "e266203abc7049d2d608357bc1913d69be5b3b43",
+        "defaultSize": {
+          "w": 280,
+          "h": 80
+        },
+        "subTypes": [
+          "Button layout"
+        ],
+        "notes": null
+      },
+      "Promo bottom sheet": {
+        "description": "",
+        "defaultKey": "86ce85310751d19838d3f5d47af692aedee15c6b",
+        "defaultSize": {
+          "w": 343,
+          "h": 40
+        },
+        "subTypes": [
+          "./Button layout",
+          "./Illustration",
+          "./Header"
+        ],
+        "notes": null
+      }
+    },
+    "TUTORIAL": {
+      "Sparkle": {
+        "description": "[Donut 2.0]\n\n\nAndroid & iOS: a lottie file",
+        "defaultKey": "20bd3a7d2f23280423ac59281d7b5ec7bb61ddb4",
+        "defaultSize": {
+          "w": 51,
+          "h": 51
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      }
+    },
+    "CHAT": {
+      "Chat": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "88db72a126f698f893768ee2952d4f6237a6a7ca",
+        "defaultSize": {
+          "w": 375,
+          "h": 140
+        },
+        "subTypes": [
+          "Inbox row",
+          "Listing thumbnail",
+          "Chat status",
+          "CTA bar",
+          "Navigation",
+          "Listing summary",
+          "Chat input",
+          "Image cell",
+          "Outgoing",
+          "Incoming"
+        ],
+        "notes": null
+      }
+    },
+    "FILTER_CHIP": {
+      "Filter Chip (custom) - app": {
+        "description": "",
+        "defaultKey": "b10dc6ca81da9b8276350334f72ffac669764d60",
+        "defaultSize": {
+          "w": 86,
+          "h": 32
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      }
+    },
+    "CARD": {
+      "Card": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "5a2008f880d273e48c380be374964f7deecae59f",
+        "defaultSize": {
+          "w": 343,
+          "h": 156
+        },
+        "subTypes": [
+          "Selectable card/with illustration",
+          "Selectable card/Text only",
+          "Actionable card/Rich info",
+          "Actionable card/Simple info",
+          "Summary card/Rich info",
+          "Summary card/Simple info",
+          "Summary card/Dual action"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "Regular",
+          "Compact"
+        ]
+      }
+    },
+    "ACTIVITY": {
+      "Notification": {
+        "description": "",
+        "defaultKey": "32102671a1694f13b99dd90ade771ab3c99c6273",
+        "defaultSize": {
+          "w": 103,
+          "h": 24
+        },
+        "subTypes": [
+          "Buttons",
+          "Left column",
+          "Right column",
+          "Default"
+        ],
+        "notes": null
+      }
+    },
+    "ADS": {
+      "Ads 300x250": {
+        "description": "",
+        "defaultKey": "1c31c86ff7b3e509dd0a9fc922db97e76a71f1b5",
+        "defaultSize": {
+          "w": 344,
+          "h": 281
+        },
+        "subTypes": [],
+        "notes": null
+      }
+    },
+    "SPEECH_BUBBLE": {
+      "Speech bubble": {
+        "description": "Android: to be implemented with Jetpack Compose\n\niOS: CRSWhatsNewPopContentView",
+        "defaultKey": "4d2e057bb85b7bc39d1e1adda30f12e818f8e9af",
+        "defaultSize": {
+          "w": 342,
+          "h": 88
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      }
+    },
+    "PAGINATION": {
+      "Dot Indicator": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "a53ce7d2637df89ad9d39ff3ec3af0b4fcb39de6",
+        "defaultSize": {
+          "w": 8,
+          "h": 8
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      }
+    },
+    "LISTING_PRODUCT_CARDS": {
+      "Listing card": {
+        "description": "",
+        "defaultKey": "88dafae2c8e99b08f21f744dac898a06e08ef9e7",
+        "defaultSize": {
+          "w": 164,
+          "h": 316
+        },
+        "subTypes": [
+          "General category",
+          "Verticals"
+        ],
+        "notes": null
+      }
+    },
+    "SYSTEM": {
+      "iOS Keyboard": {
+        "description": "",
+        "defaultKey": "0fdd0a3c177f94293ecf11cc73451aaef75307f1",
+        "defaultSize": {
+          "w": 375,
+          "h": 291
+        },
+        "subTypes": [
+          "Keyboard"
+        ],
+        "notes": null
+      },
+      "iOS Home indicator": {
+        "description": "",
+        "defaultKey": "eae603a70483526172af7242a6a2148b8cdb4f60",
+        "defaultSize": {
+          "w": 375,
+          "h": 34
+        },
+        "subTypes": [
+          "Home indicator"
+        ],
+        "notes": null
+      },
+      "Status bar": {
+        "description": "",
+        "defaultKey": "973a8e2bef8e0575cf177764340e07f6a051fd73",
+        "defaultSize": {
+          "w": 375,
+          "h": 44
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "iOS LockScreenNotification": {
+        "description": "",
+        "defaultKey": "f37a1e139b9326172c7845f84709caeedb43915b",
+        "defaultSize": {
+          "w": 393,
+          "h": 852
+        },
+        "subTypes": [
+          "LockScreenNotification"
+        ],
+        "notes": null
+      }
+    },
+    "INPUT": {
+      "Selection": {
+        "description": "[Donut 2.0]\n\n\nAndroid: Native checkbox w/ custom selected and deselected state\n\n\niOS: Pickle/PhotoGalleryTagLabel",
+        "defaultKey": "06593dfe9d7f33cba2c86bac6b9e2a72fda946bb",
+        "defaultSize": {
+          "w": 24,
+          "h": 24
+        },
+        "subTypes": [
+          "Checkbox",
+          "Checkbox OverImage",
+          "Radio",
+          "Switch"
+        ],
+        "notes": null
+      },
+      "List": {
+        "description": "",
+        "defaultKey": "5a8783eddf7e44cebd57f11b5ed5b291609770c2",
+        "defaultSize": {
+          "w": 16,
+          "h": 16
+        },
+        "subTypes": [
+          "Thumbnail",
+          "List item"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "16",
+          "24",
+          "32",
+          "48"
+        ]
+      },
+      "Star 1. Micro": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutRatingBar\n\n\niOS: Snapsell/ReviewScoreView",
+        "defaultKey": "c6794beb3996acf363879a63421ea2a7a76fecf6",
+        "defaultSize": {
+          "w": 32,
+          "h": 32
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Star_display": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutRatingBar\n\n\niOS: Snapsell/ReviewScoreView",
+        "defaultKey": "f05e974a62710acf92320fbe5720b635314fae53",
+        "defaultSize": {
+          "w": 16,
+          "h": 16
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Stepper": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "0e6f4e56651ea46571c84e6eefcdf6e41ba50c93",
+        "defaultSize": {
+          "w": 121,
+          "h": 56
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Chip": {
+        "description": "[Donut 2.0]\n\n\nAndroid: CdsChip\niOS: SingleSelectChip",
+        "defaultKey": "1244e9b65dc3c98474c1b9b37065be66e23935a4",
+        "defaultSize": {
+          "w": 95,
+          "h": 40
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null,
+        "availableSizes": [
+          "Small",
+          "Medium"
+        ]
+      },
+      "Slider": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "913ac1f117d68404f28a62ceaf53d4f8eef00a1c",
+        "defaultSize": {
+          "w": 343,
+          "h": 56
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Search bar": {
+        "description": "[Donut 2.0]\n\n\nAndroid: CdsSearchBar\niOS: Snapsell/SearchTextField, Snapsell/CRSSearchBar",
+        "defaultKey": "4fd3bf51e12d3160fe4264e4a47b00209edaf3f3",
+        "defaultSize": {
+          "w": 95,
+          "h": 24
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Picker": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "69262ed6e9699b05e931aafa299e83fd57820758",
+        "defaultSize": {
+          "w": 343,
+          "h": 68
+        },
+        "subTypes": [
+          "Simple",
+          "Date",
+          "Layered"
+        ],
+        "notes": null
+      },
+      "Input": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "2c6b3ae9bdd110110e8cfb62b28296cfb519ea71",
+        "defaultSize": {
+          "w": 343,
+          "h": 68
+        },
+        "subTypes": [
+          "Text input",
+          "Phone input",
+          "Text area input"
+        ],
+        "notes": null
+      },
+      "Media uploader": {
+        "description": "",
+        "defaultKey": "2e2af68229d1097957344bbc589faa47d7988eac",
+        "defaultSize": {
+          "w": 88,
+          "h": 88
+        },
+        "subTypes": [
+          "Default"
+        ],
+        "notes": null
+      },
+      "Selection list": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "beb42e793634093426cddf96dd0ecaf3e785af85",
+        "defaultSize": {
+          "w": 343,
+          "h": 264
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "Rating": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "8a876859b3f929f81fd7c742767c4b4b13e5a74e",
+        "defaultSize": {
+          "w": 224,
+          "h": 72
+        },
+        "subTypes": [],
+        "notes": null
+      },
+      "Rating_Display": {
+        "description": "[Donut 2.0]",
+        "defaultKey": "8252b2c9c2b9f6524110c8778d5c09dcf1c9a411",
+        "defaultSize": {
+          "w": 227,
+          "h": 24
+        },
+        "subTypes": [],
+        "notes": null
+      }
+    }
+  }
+}

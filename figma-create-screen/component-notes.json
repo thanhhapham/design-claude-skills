@@ -1,0 +1,9 @@
+{
+  "Top Nav": "iOS Normal title variant is 132px tall (includes 44px built-in status bar). Shrunk title is 92px. Place at y=0, do NOT add a separate System/Status bar on top. Use Platform=iOS, Title type=Normal title for standard screens.",
+  "Chat input": "Default state (h=104) includes a suggestion chips row (~32px) at the top. Use 'State=Typing/Single line' (h=395) or 'State=Filled/Single line' (h=104 without chips) if you want input only without the chip row.",
+  "Bottom bar": "Includes built-in home indicator area on iOS. Place at the very bottom of the frame (y = frameHeight - componentHeight).",
+  "System/Status bar": "Standalone status bar — only use this if the navigation component does NOT include a built-in one. Top Nav already includes a status bar. Do not stack them.",
+  "Chat - App / 2.Component / Chat input": "Same as Chat input — default state has suggestion chips row visible above the text input area.",
+  "Notification - app/2. Component": "Full-width 375px notification card. Height is 325px which includes padding.",
+  "Listing card - app/2.Component/General category": "Standard listing card is 164×316px. Horizontal scrollable variant is 160×312px (slightly smaller for scroll snap)."
+}
