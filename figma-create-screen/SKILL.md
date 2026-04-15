@@ -221,6 +221,30 @@ btn.cornerRadius = 8;
 
 ## Workflow
 
+### Step 0 — Search the design system (MANDATORY, do this first)
+
+Before reading any catalog file or writing any code, call `search_design_system` for every distinct UI element in the screen. This is not optional — skipping it means you may recreate a component that already exists in the library.
+
+**How to do it:**
+- Identify all distinct UI element types in the screen (e.g. button, avatar, badge, input, card, nav bar, tag)
+- Call `search_design_system` once per element type — you can batch related terms in one query
+- For any match returned, use `importComponentByKeyAsync` with the returned key — never hand-draw it
+- Only fall back to custom shapes for elements confirmed to have no DS match (full-bleed backgrounds, image placeholders, gradient scrims)
+
+**Example queries to run:**
+```
+search_design_system("button primary")
+search_design_system("avatar user profile")
+search_design_system("badge tag chip label")
+search_design_system("input text field search bar")
+search_design_system("card product listing")
+search_design_system("bottom nav bar tab")
+```
+
+**Rule:** If `search_design_system` returns a match and you draw a custom shape instead → that is a hard violation of the skill rules. Delete and re-import the real DS component.
+
+---
+
 ### Step 1 — Load the index
 Read the index file first. It contains one entry per component with:
 - `defaultKey` — component key to import
