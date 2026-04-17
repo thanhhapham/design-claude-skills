@@ -12,39 +12,42 @@
 ## Catalog Structure
 
 ```
-figma-catalog-web.json   // Web/Desktop component library
+figma-catalog-app-index.json   // Slim index — load this first (18KB, ~4K tokens)
+figma-catalog-app.json         // Full App/Mobile catalog (92KB — only when needed)
+figma-catalog-web.json         // Web/Desktop component library
 ```
 
-### File Structure
+### Two-file lookup strategy
 
+1. **Load the index first** (`figma-catalog-app-index.json`) — it has one entry per component with `defaultKey`, `defaultSize`, `subTypes`, and `notes`.
+2. **Only open the full catalog** when you need a specific non-default variant or size.
+
+The index entry for each component:
 ```json
 {
-  "fileKey": "ABC123",
-  "fileName": "Global Design System (Web)",
-  "lastUpdated": "2025-01-29T00:00:00Z",
-  "webComponents": {
-    "CATEGORY": {
-      "ComponentName": {
-        "description": "",
-        "subTypes": {
-          "VariantName": {
-            "sizes": {
-              "Large": {
-                "componentKey": "abc123...",
-                "figmaName": "Size=Large, Type=Primary, State=Normal",
-                "states": {
-                  "hover": "def456...",
-                  "disabled": "ghi789..."
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  "Normal Button": {
+    "description": "...",
+    "defaultKey": "da7d8e43...",
+    "defaultSize": { "w": 86, "h": 40 },
+    "availableSizes": ["Small", "Medium", "Large"],
+    "subTypes": ["Default"],
+    "notes": null
   }
 }
 ```
+
+### Key import fallback
+
+If `importComponentByKeyAsync(key)` throws or returns null:
+1. Try the next variant key from the full catalog for the same component
+2. Last resort: `search_design_system` by component name to find the current published key
+
+### Component notes — read before placing
+
+The `notes` field flags composition gotchas:
+- **Top Nav**: iOS Normal title (h=132) has status bar built in — do NOT add a separate status bar
+- **Chat input**: Default state includes suggestion chips row — use `Filled/Single line` if you want input only
+- Always read `notes` before placing a component
 
 ---
 
@@ -225,3 +228,23 @@ When encountering any of the following, stop and ask the user:
 - Component has no catalog equivalent and reconstruction approach is unclear
 - Unclear whether footer should be included
 - Any design decision with multiple valid interpretations
+
+---
+
+## Catalog Refresh
+
+Both `figma-catalog-web.json` and `figma-catalog-app.json` can be regenerated on demand using `generate-catalog.js`.
+
+### How to refresh the app catalog
+
+1. Ensure the Figma desktop app has the **App Components** file (`NmeAXg5CGWRbBtIqxVcf96`) open
+2. Re-run the extraction batches via `use_figma` (see batch groupings in `figma-create-screen` SKILL.md)
+3. Write extracted data to `/tmp/figma_batch_*.json` temp files
+4. Run: `/usr/local/bin/node /Users/thanhhapham/Skills/app-to-desktop-conversion/generate-catalog.js`
+5. Both `figma-catalog-app.json` and `figma-catalog-app-index.json` are regenerated together
+
+### When to refresh
+
+- When new components are added to the Figma design system
+- When component variants are renamed or reorganized
+- When component keys change (e.g., after a library restructure)

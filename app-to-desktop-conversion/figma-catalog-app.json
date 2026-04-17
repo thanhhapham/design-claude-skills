@@ -1,0 +1,2195 @@
+{
+  "fileKey": "NmeAXg5CGWRbBtIqxVcf96",
+  "libraryName": "App Components",
+  "lastUpdated": "2026-04-14T15:14:21.538Z",
+  "appComponents": {
+    "BUTTONS": {
+      "Normal Button": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutButton\n\n\niOS: PrimaryPromoteButton, PrimaryTaskButton, SecondaryButton",
+        "subTypes": {
+          "Default": {
+            "sizes": {
+              "Medium": {
+                "componentKey": "da7d8e4307f4be9b7358340e98f04fc584fbd6b9",
+                "figmaName": "Size=Medium, Type=Pri Promote, State=Normal",
+                "width": 86,
+                "height": 40,
+                "states": {
+                  "Tapped": "6849961d5643607d4abd4719551ad5013519cab5",
+                  "Loading": "d6f1cf7eed5b98392cf0af77d7647f3b6c3427dc",
+                  "Disable": "054473b54ae0320767e423716c1a6cb5eff265cc"
+                }
+              },
+              "Large": {
+                "componentKey": "0f46fd8e0015b3531e4365b89b5ddb440f3d8814",
+                "figmaName": "Size=Large, Type=Pri Promote, State=Normal",
+                "width": 86,
+                "height": 48,
+                "states": {
+                  "Tapped": "bffab38c7aa0cb21b03fcb000ccd5cafcfac6f52",
+                  "Loading": "721a4220afcf74ac101408b54d7ac4d5b8ba8bd1",
+                  "Disable": "43a61cd3bef7719da0d308d7b9cab426081bda53"
+                }
+              },
+              "Small": {
+                "componentKey": "681a94c3c362ff9b5776a804c7dc7b59712ca5e3",
+                "figmaName": "Size=Small, Type=Pri Promote, State=Normal",
+                "width": 73,
+                "height": 32,
+                "states": {
+                  "Tapped": "802531344e80d3346c6c3315914a47971e563622",
+                  "Loading": "0b9f34ec5c4ad5e9dc2b2954b33467c198f0e640",
+                  "Disable": "916634768bc26ca3342b3587ec280b27689a61b6"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Text Button": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutButton\n\n\niOS: TextButton",
+        "subTypes": {
+          "Default": {
+            "sizes": {
+              "Medium": {
+                "componentKey": "d34527d057d71566106f4380c346939c65281aac",
+                "figmaName": "Size=Medium, Type=Teal, State=Default",
+                "width": 80,
+                "height": 24,
+                "states": {
+                  "Tapped": "717bbb11162a371eff4b71edc6c9f087b95d2df5",
+                  "Loading": "0e385a2fd3a071f74dc30fb9e54272653ece5fa7",
+                  "Disabled": "fadc29b6e0a49f5d332cfd0765d2c7decc6e171b"
+                }
+              },
+              "Small": {
+                "componentKey": "5826f31c001b78123e3be170969ed10dfd24ea75",
+                "figmaName": "Size=Small, Type=Teal, State=Default",
+                "width": 69,
+                "height": 20,
+                "states": {
+                  "Tapped": "c75a1e161de2894f1c986afee6555be88753dd28",
+                  "Loading": "445447fb0902ded0960dcd3b0a65c6175f57c20b",
+                  "Disabled": "032658f7ad0935c8e0bcd1d9c4a7405c3e9724a5"
+                }
+              },
+              "Large": {
+                "componentKey": "640b26c1e3c889b0089f5a1e254a2453240c3cb6",
+                "figmaName": "Size=Large, Type=Grey, State=Default",
+                "width": 90,
+                "height": 24,
+                "states": {
+                  "Tapped": "97f44082334e5d40bd36e8a50b9ae71690eedd8d",
+                  "Loading": "1dd66a150bb2b658ebc8fcc2de5ecfbdc38b2dc6",
+                  "Disabled": "6b67cafedfa2a3abce56343135aef706c679d95e"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Icon button": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutIconButton\n\n\niOS: IconDefaultButton, IconSecondaryButton",
+        "subTypes": {
+          "Default": {
+            "sizes": {
+              "Large": {
+                "componentKey": "472e4aeb156bf6463d7896ffe909510cdce4fabe",
+                "figmaName": "Type=Secondary, Size=Large, State=Normal",
+                "width": 48,
+                "height": 48,
+                "states": {
+                  "Disabled": "194a19ce3da6bd9352f5dcdcb65f0bd683257160",
+                  "Tapped": "5a28d49b4201fd4351b67b0b1b9796ff2f025e1e"
+                }
+              },
+              "Medium": {
+                "componentKey": "bef3e5e19d544a0d89dbef31404254ccc9e78dd6",
+                "figmaName": "Type=Primary, Size=Medium, State=Normal",
+                "width": 40,
+                "height": 40,
+                "states": {
+                  "Tapped": "56386be2c6a8e1fbf53c445cd2ebe36e8b3bdcbb",
+                  "Disabled": "786e0d770662ae3d81d81c6b8c822eae4b4c6cd6"
+                }
+              },
+              "Small": {
+                "componentKey": "5259a0931766774336b63709157b807ecaa97d5a",
+                "figmaName": "Type=Primary, Size=Small, State=Normal",
+                "width": 32,
+                "height": 32,
+                "states": {
+                  "Tapped": "685a787442419c1f75476c8f90249b5e13e9fb81",
+                  "Disabled": "38516c772f6871de4648d6c840b92baae5510f49"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Rounded button": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutRoundedButton\n\n\niOS: PrimaryPromoteButton, PrimaryTaskButton, SecondaryButton",
+        "subTypes": {
+          "Default": {
+            "sizes": {
+              "Medium": {
+                "componentKey": "34f5479f37a5fdaf878440d50c5c92bb0c87d06e",
+                "figmaName": "Type=Outlined grey, State=Normal, Size=Medium",
+                "width": 63,
+                "height": 32,
+                "states": {
+                  "Tapped": "f7badc6ed9d21e5f68bc0d851312bfa5934c0e30",
+                  "Disabled": "7f99ae41829a74a84024c1ebeef0a194a6d410c6",
+                  "Loading": "f0472c8917789feaf46bafafa045b0cbd22e013b"
+                }
+              },
+              "Small": {
+                "componentKey": "83a5df1edb09f83baba9e06d7bbb71dcf8322f1e",
+                "figmaName": "Type=Outlined grey, State=Normal, Size=Small",
+                "width": 58,
+                "height": 28,
+                "states": {
+                  "Tapped": "2674d50d3d7fcbe1b45eb15d1d51ffff9aefc19a",
+                  "Disabled": "543a58746f0a59a10c9ee81c1df12e37b201cfce",
+                  "Loading": "302b6feac1cc2c5c3d53001f63a0035fd1d1f413"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Third-party Icon button": {
+        "description": "",
+        "subTypes": {
+          "Default": {
+            "sizes": {
+              "Medium": {
+                "componentKey": "86dae6fd43f540a6ff98219c9bde0c89715fb4a9",
+                "figmaName": "Size=Medium, Type=Whatsapp",
+                "width": 40,
+                "height": 40
+              },
+              "Large": {
+                "componentKey": "ede1e2d5953f26354474467a9204afa1d79a65a0",
+                "figmaName": "Size=Large, Type=Whatsapp",
+                "width": 48,
+                "height": 48
+              }
+            }
+          }
+        }
+      }
+    },
+    "BADGE_AND_TAG": {
+      "Notification Badge": {
+        "description": "[Donut 2.0]\n\n\nAndroid: to be implemented with Jetpack Compose\n\n\niOS: JSBadgeView",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "7d6d9b1019a2c4f5d598a0a6ad91acce1de95ce8",
+                "figmaName": "Type=Min, Emphasis=High, Stroke=no",
+                "width": 8,
+                "height": 8,
+                "states": {
+                  "Min": "1cd802433e710676c61559c73f0507a03d29013f",
+                  "1-2 digits": "502faa27e1e5d7a13392717cf0943d5ea2e7c0ef",
+                  "Max": "52febb117aef6b85f7b85fb875e349820e0a9332"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Tag": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutTag\n\n\niOS: Snapsell/ListingCardBadgeView",
+        "subTypes": {
+          "Program Specific": {
+            "sizes": {
+              "Small": {
+                "componentKey": "c3e894ca96b2f40767b9d0d5b1f584c1e06f3b90",
+                "figmaName": "Type=Spotlight, Size=Small",
+                "width": 55,
+                "height": 16
+              },
+              "Medium": {
+                "componentKey": "62079858f386eb5193add88d1f260ab5ed80532a",
+                "figmaName": "Type=Certified, Size=Medium",
+                "width": 87,
+                "height": 20
+              }
+            }
+          },
+          "Tag Generic": {
+            "variants": {
+              "Emphasis=Low": {
+                "componentKey": "327d20fe2869122060e546f76a13c3dcd80689fe",
+                "figmaName": "Emphasis=Low",
+                "width": 84,
+                "height": 20
+              },
+              "Emphasis=Medium": {
+                "componentKey": "b242b07ecae797b412d3c8aaa9643b9f8c341520",
+                "figmaName": "Emphasis=Medium",
+                "width": 84,
+                "height": 20
+              },
+              "Emphasis=High": {
+                "componentKey": "12668f84cd0f9a4d45edf4a4d42706c70c63a04f",
+                "figmaName": "Emphasis=High",
+                "width": 84,
+                "height": 20
+              }
+            }
+          }
+        }
+      },
+      "Profile badge": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "f144a8e80af83f2db9546de1220574a05c3dfea5",
+                "figmaName": "Type=Admin",
+                "width": 159,
+                "height": 32,
+                "states": {
+                  "Admin": "f144a8e80af83f2db9546de1220574a05c3dfea5",
+                  "Pro seller": "3a2c693246ae014c4f998f304771d3469561ff08"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "NAVIGATION": {
+      "Top nav": {
+        "description": "",
+        "subTypes": {
+          "Progress Bar States": {
+            "variants": {
+              "Default": {
+                "componentKey": "3d1805988268112bf8e75c51934ff7b35dd82a5f",
+                "figmaName": "State=Active",
+                "width": 62,
+                "height": 2,
+                "states": {
+                  "Active": "3d1805988268112bf8e75c51934ff7b35dd82a5f",
+                  "Inactive": "cc9e24d0f3aaa49b59cb71877a361ca66881b346"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Top Nav": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutCollapsingToolbar\n\n\niOS: Snapsell/SearchTextField, Snapsell/CRSSearchBar",
+        "subTypes": {
+          "Title&Action": {
+            "variants": {
+              "Platform=iOS, Title type=Shrunk title, Scrolled=No, Action types=Icons": {
+                "componentKey": "608167843374d523d3070dea05964ba5a5a2a129",
+                "figmaName": "Platform=iOS, Title type=Shrunk title, Scrolled=No, Action types=Icons",
+                "width": 375,
+                "height": 92
+              },
+              "Platform=Android, Title type=Shrunk title, Scrolled=No, Action types=Icons": {
+                "componentKey": "344e920214f7a49a5120f0510e865937dc74720c",
+                "figmaName": "Platform=Android, Title type=Shrunk title, Scrolled=No, Action types=Icons",
+                "width": 360,
+                "height": 72
+              },
+              "Platform=iOS, Title type=Shrunk title, Scrolled=Yes, Action types=Icons": {
+                "componentKey": "bd1fee2d98f408d081df2577b9197d3fbac1c462",
+                "figmaName": "Platform=iOS, Title type=Shrunk title, Scrolled=Yes, Action types=Icons",
+                "width": 375,
+                "height": 92
+              },
+              "Platform=Android, Title type=Shrunk title, Scrolled=Yes, Action types=Icons": {
+                "componentKey": "215ec17d4ab4d35be9d2940fb111ceedb1b61bc7",
+                "figmaName": "Platform=Android, Title type=Shrunk title, Scrolled=Yes, Action types=Icons",
+                "width": 360,
+                "height": 72
+              },
+              "Platform=iOS, Title type=Normal title, Scrolled=No, Action types=Icons": {
+                "componentKey": "9d40ca717f7299286dbc1f209d6c61a31f32461b",
+                "figmaName": "Platform=iOS, Title type=Normal title, Scrolled=No, Action types=Icons",
+                "width": 375,
+                "height": 132
+              },
+              "Platform=Android, Title type=Normal title, Scrolled=No, Action types=Icons": {
+                "componentKey": "4624b655d6b05e30f8bb95eefded73bee5da261e",
+                "figmaName": "Platform=Android, Title type=Normal title, Scrolled=No, Action types=Icons",
+                "width": 360,
+                "height": 112
+              },
+              "Platform=iOS, Title type=Normal title, Scrolled=Yes, Action types=Icons": {
+                "componentKey": "df012adda5995187c4909ade76200da3ce09b9d3",
+                "figmaName": "Platform=iOS, Title type=Normal title, Scrolled=Yes, Action types=Icons",
+                "width": 375,
+                "height": 132
+              },
+              "Platform=Android, Title type=Normal title, Scrolled=Yes, Action types=Icons": {
+                "componentKey": "a18dc5605ddc8a4306fa464511d99e56494c7487",
+                "figmaName": "Platform=Android, Title type=Normal title, Scrolled=Yes, Action types=Icons",
+                "width": 360,
+                "height": 112
+              },
+              "Platform=iOS, Title type=Shrunk title, Scrolled=No, Action types=TextButton": {
+                "componentKey": "8f09f9cb379401f0cd5dbb26521c34520330d240",
+                "figmaName": "Platform=iOS, Title type=Shrunk title, Scrolled=No, Action types=TextButton",
+                "width": 375,
+                "height": 92
+              },
+              "Platform=Android, Title type=Shrunk title, Scrolled=No, Action types=TextButton": {
+                "componentKey": "14cf4a3a5768ccee42a401b4023aef1111f1e6d7",
+                "figmaName": "Platform=Android, Title type=Shrunk title, Scrolled=No, Action types=TextButton",
+                "width": 360,
+                "height": 72
+              },
+              "Platform=iOS, Title type=Shrunk title, Scrolled=Yes, Action types=TextButton": {
+                "componentKey": "8148a10244cc2f812951a9dcea40dbca60d011a0",
+                "figmaName": "Platform=iOS, Title type=Shrunk title, Scrolled=Yes, Action types=TextButton",
+                "width": 375,
+                "height": 92
+              },
+              "Platform=Android, Title type=Shrunk title, Scrolled=Yes, Action types=TextButton": {
+                "componentKey": "d1602564f05358a215fab08319c5d049b279595e",
+                "figmaName": "Platform=Android, Title type=Shrunk title, Scrolled=Yes, Action types=TextButton",
+                "width": 360,
+                "height": 72
+              },
+              "Platform=iOS, Title type=Normal title, Scrolled=No, Action types=TextButton": {
+                "componentKey": "f7dee42b2d7e0ba0b9d456fcdf919dff90ebf132",
+                "figmaName": "Platform=iOS, Title type=Normal title, Scrolled=No, Action types=TextButton",
+                "width": 375,
+                "height": 132
+              },
+              "Platform=Android, Title type=Normal title, Scrolled=No, Action types=TextButton": {
+                "componentKey": "2b0f2b22da4340c61e6b748c85759fd41826ac30",
+                "figmaName": "Platform=Android, Title type=Normal title, Scrolled=No, Action types=TextButton",
+                "width": 360,
+                "height": 112
+              },
+              "Platform=iOS, Title type=Normal title, Scrolled=Yes, Action types=TextButton": {
+                "componentKey": "319e8264efa26cb8f2a96e5b0d88175e7547734c",
+                "figmaName": "Platform=iOS, Title type=Normal title, Scrolled=Yes, Action types=TextButton",
+                "width": 375,
+                "height": 132
+              },
+              "Platform=Android, Title type=Normal title, Scrolled=Yes, Action types=TextButton": {
+                "componentKey": "9297c0b3eb1efffba45c618f3f4e0639d98f336c",
+                "figmaName": "Platform=Android, Title type=Normal title, Scrolled=Yes, Action types=TextButton",
+                "width": 360,
+                "height": 112
+              },
+              "Platform=iOS, Title type=Transparent - Dark, Scrolled=No, Action types=Icons": {
+                "componentKey": "3f2b05c536fb4ffc10b14443f88fae97380d1822",
+                "figmaName": "Platform=iOS, Title type=Transparent - Dark, Scrolled=No, Action types=Icons",
+                "width": 375,
+                "height": 92
+              },
+              "Platform=Android, Title type=Transparent - Dark, Scrolled=No, Action types=Icons": {
+                "componentKey": "595c22ce8d2c95d9fc63bde52b02bbff29ef4805",
+                "figmaName": "Platform=Android, Title type=Transparent - Dark, Scrolled=No, Action types=Icons",
+                "width": 360,
+                "height": 72
+              },
+              "Platform=iOS, Title type=Transparent - Light, Scrolled=No, Action types=Icons": {
+                "componentKey": "2d1d78fa56243c9c6c1feb9a685e39d15c5eed2f",
+                "figmaName": "Platform=iOS, Title type=Transparent - Light, Scrolled=No, Action types=Icons",
+                "width": 375,
+                "height": 92
+              },
+              "Platform=Android, Title type=Transparent - Light, Scrolled=No, Action types=Icons": {
+                "componentKey": "6a67da7f0c23e4fcdd6b37d1046a2ac7a5490498",
+                "figmaName": "Platform=Android, Title type=Transparent - Light, Scrolled=No, Action types=Icons",
+                "width": 360,
+                "height": 72
+              }
+            }
+          },
+          "Search": {
+            "variants": {
+              "Platform=iOS, Back=no, Scrolled=no, Stats=Default": {
+                "componentKey": "2db039cf3bc325bd3d63b6af9df6c1432a3799c9",
+                "figmaName": "Platform=iOS, Back=no, Scrolled=no, Stats=Default",
+                "width": 375,
+                "height": 116
+              },
+              "Platform=iOS, Back=no, Scrolled=yes, Stats=Default": {
+                "componentKey": "358ce4eea1b46c9acd2506698d5767cefc240687",
+                "figmaName": "Platform=iOS, Back=no, Scrolled=yes, Stats=Default",
+                "width": 375,
+                "height": 116
+              },
+              "Platform=iOS, Back=yes, Scrolled=no, Stats=Default": {
+                "componentKey": "b8ebac4fb881e9fd87cf1787511b45563bf30557",
+                "figmaName": "Platform=iOS, Back=yes, Scrolled=no, Stats=Default",
+                "width": 375,
+                "height": 116
+              },
+              "Platform=iOS, Back=yes, Scrolled=yes, Stats=Default": {
+                "componentKey": "0a4d2a3b06b7b4219e0b7dd67bb26ac72ae3a3f2",
+                "figmaName": "Platform=iOS, Back=yes, Scrolled=yes, Stats=Default",
+                "width": 375,
+                "height": 116
+              },
+              "Platform=Android, Back=no, Scrolled=no, Stats=Default": {
+                "componentKey": "c3cf0f5f93ce08eecf1d7e33b5db70504b4e168a",
+                "figmaName": "Platform=Android, Back=no, Scrolled=no, Stats=Default",
+                "width": 360,
+                "height": 96
+              },
+              "Platform=Android, Back=no, Scrolled=yes, Stats=Default": {
+                "componentKey": "458ceecfee0166796537f60535197d589b177ada",
+                "figmaName": "Platform=Android, Back=no, Scrolled=yes, Stats=Default",
+                "width": 360,
+                "height": 96
+              },
+              "Platform=iOS, Back=no, Scrolled=no, Stats=Typing": {
+                "componentKey": "aa256d0213ac80a084fcb4275d8b8518274f6778",
+                "figmaName": "Platform=iOS, Back=no, Scrolled=no, Stats=Typing",
+                "width": 375,
+                "height": 116
+              },
+              "Platform=iOS, Back=no, Scrolled=no, Stats=Typed": {
+                "componentKey": "d70a9870a19624af8db95170a7a1c63d557eeef0",
+                "figmaName": "Platform=iOS, Back=no, Scrolled=no, Stats=Typed",
+                "width": 375,
+                "height": 116
+              },
+              "Platform=Android, Back=no, Scrolled=no, Stats=Typing": {
+                "componentKey": "9edf11be188a17b4683c9096eca82942b96a8200",
+                "figmaName": "Platform=Android, Back=no, Scrolled=no, Stats=Typing",
+                "width": 360,
+                "height": 96
+              },
+              "Platform=Android, Back=no, Scrolled=no, Stats=Typed": {
+                "componentKey": "eb227b90e6788a9763de20316977227641a9b64d",
+                "figmaName": "Platform=Android, Back=no, Scrolled=no, Stats=Typed",
+                "width": 360,
+                "height": 96
+              },
+              "Platform=iOS, Back=yes, Scrolled=no, Stats=Vertical": {
+                "componentKey": "1ce012f57071aeecd1f193cbb6220bca0b883f30",
+                "figmaName": "Platform=iOS, Back=yes, Scrolled=no, Stats=Vertical",
+                "width": 375,
+                "height": 172
+              },
+              "Platform=Android, Back=yes, Scrolled=no, Stats=Vertical": {
+                "componentKey": "00d5af10621461c495c3ccd90580dcc1398c4a53",
+                "figmaName": "Platform=Android, Back=yes, Scrolled=no, Stats=Vertical",
+                "width": 360,
+                "height": 152
+              },
+              "Platform=Android, Back=yes, Scrolled=no, Stats=Default": {
+                "componentKey": "90a4d25426f14d3b26ca4bda1870c50838b12053",
+                "figmaName": "Platform=Android, Back=yes, Scrolled=no, Stats=Default",
+                "width": 360,
+                "height": 96
+              },
+              "Platform=Android, Back=yes, Scrolled=yes, Stats=Default": {
+                "componentKey": "5fd7be4d10f111d11828dc133aae64d4c29825d9",
+                "figmaName": "Platform=Android, Back=yes, Scrolled=yes, Stats=Default",
+                "width": 360,
+                "height": 96
+              }
+            }
+          }
+        }
+      },
+      "Tab": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutTab\n\n\niOS: Tabman.TMSystemBar",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Active?=Yes": {
+                "componentKey": "526f139f7c8acab4f81642f2c6e74828f337d4bc",
+                "figmaName": "Active?=Yes",
+                "width": 76,
+                "height": 48
+              },
+              "Active?=No": {
+                "componentKey": "c00844081b7b8eee2d8530438c8e8462d01eaf12",
+                "figmaName": "Active?=No",
+                "width": 76,
+                "height": 48
+              },
+              "Scrollable=No": {
+                "componentKey": "a6de430528cecc011bff3103a7adc59dbd9ce9f9",
+                "figmaName": "Scrollable=No",
+                "width": 375,
+                "height": 48
+              },
+              "Scrollable=Yes": {
+                "componentKey": "7c7899d166de3f418248f18bfa33a107af132fc8",
+                "figmaName": "Scrollable=Yes",
+                "width": 375,
+                "height": 48
+              }
+            }
+          }
+        }
+      },
+      "Bottom bar": {
+        "description": "[Donut 2.0]\n\n\nAndroid & iOS: (use system bottom bar)",
+        "subTypes": {
+          "Task": {
+            "variants": {
+              "Platform=iOS X, Buttons=single button": {
+                "componentKey": "aa34133e85746732f44a341fa82540e099833cb9",
+                "figmaName": "Platform=iOS X, Buttons=single button",
+                "width": 375,
+                "height": 94
+              },
+              "Platform=iOS X, Buttons=two buttons": {
+                "componentKey": "147ea4c0bff6ea0f81491fd7b12deaf9bda2a474",
+                "figmaName": "Platform=iOS X, Buttons=two buttons",
+                "width": 375,
+                "height": 94
+              },
+              "Platform=iOS X, Buttons=Text button": {
+                "componentKey": "178192ede208eceaeb0fde3d3f4efd65dea41b24",
+                "figmaName": "Platform=iOS X, Buttons=Text button",
+                "width": 375,
+                "height": 94
+              },
+              "Platform=Android, Buttons=single button": {
+                "componentKey": "dd65dc7454f74898ba90fe6f2bf6383627df23f1",
+                "figmaName": "Platform=Android, Buttons=single button",
+                "width": 360,
+                "height": 72
+              },
+              "Platform=Android, Buttons=two buttons": {
+                "componentKey": "7e31cad7541d567b01c0f6d6be45f80930e05faf",
+                "figmaName": "Platform=Android, Buttons=two buttons",
+                "width": 360,
+                "height": 72
+              },
+              "Platform=Android, Buttons=Text button": {
+                "componentKey": "01c41fb857291e3f3d27e3d0fe3fa6be58a08708",
+                "figmaName": "Platform=Android, Buttons=Text button",
+                "width": 360,
+                "height": 72
+              }
+            }
+          },
+          "Promote": {
+            "variants": {
+              "Default": {
+                "componentKey": "1c34b7497c41d8905876b8ca9bfe0ddb010d76ba",
+                "figmaName": "Platform=iOS X, Type=Like + single button",
+                "width": 375,
+                "height": 86,
+                "states": {
+                  "Like + single button": "dcc2116216d8d0d225d04a8d4af66596adfc7f6c",
+                  "Like + two buttons": "3c76cf89c998b5d15ef518f31b0df4d6b1253b49",
+                  "Promote tools + single buttons": "b8c149d938fe27942d0c95a89437286ff1743ad2",
+                  "Promote tools + two buttons": "6470dce151d62b01bcdba196773672f70913529a"
+                }
+              }
+            }
+          },
+          "Button": {
+            "variants": {
+              "Button width=Small secondary button, Platform=iOS": {
+                "componentKey": "d6593e9c1bc65731429abc3e788113c9416070e8",
+                "figmaName": "Button width=Small secondary button, Platform=iOS",
+                "width": 279,
+                "height": 48
+              },
+              "Button width=Small secondary button, Platform=Android": {
+                "componentKey": "e0595a703c58d7a4364ac6addbdb3a4b4b35d443",
+                "figmaName": "Button width=Small secondary button, Platform=Android",
+                "width": 264,
+                "height": 48
+              },
+              "Button width=Small primary button, Platform=iOS": {
+                "componentKey": "91e7b0ec3c8abc9507cdfbc9690d6a5fc3cb8cd9",
+                "figmaName": "Button width=Small primary button, Platform=iOS",
+                "width": 279,
+                "height": 48
+              },
+              "Button width=Small primary button, Platform=Android": {
+                "componentKey": "bf82412cd2d1e1ebb94aff2bb3bc3e4528fef19a",
+                "figmaName": "Button width=Small primary button, Platform=Android",
+                "width": 264,
+                "height": 48
+              },
+              "Button width=Even, Platform=iOS": {
+                "componentKey": "4066d0b70cf8c6c692a075333621919f230af2bf",
+                "figmaName": "Button width=Even, Platform=iOS",
+                "width": 279,
+                "height": 48
+              },
+              "Button width=Even, Platform=Android": {
+                "componentKey": "813a2b31a4ad5577851bdadabab4bbcc541a0372",
+                "figmaName": "Button width=Even, Platform=Android",
+                "width": 264,
+                "height": 48
+              }
+            }
+          },
+          "Tab": {
+            "variants": {
+              "Page=Homefeed, Active tab=Tab 1, Platform=Android": {
+                "componentKey": "c97d5b389c4a86a1cb5f0e0ef00b27ad10768887",
+                "figmaName": "Page=Homefeed, Active tab=Tab 1, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Homefeed, Active tab=Tab 2, Platform=Android": {
+                "componentKey": "8891a123b197ade079b02c5a33fb537bae38f0a4",
+                "figmaName": "Page=Homefeed, Active tab=Tab 2, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Homefeed, Active tab=Tab 4, Platform=Android": {
+                "componentKey": "15ea48c03384d4d4bb67b137f45a8bfe88ccd8a6",
+                "figmaName": "Page=Homefeed, Active tab=Tab 4, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Homefeed, Active tab=Tab 5, Platform=Android": {
+                "componentKey": "7954788b976b4229e05bc731ac7109782b564b49",
+                "figmaName": "Page=Homefeed, Active tab=Tab 5, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Property, Active tab=Tab 1, Platform=Android": {
+                "componentKey": "810e44b420ecf99c85cc0d23eb349bb0d49540f1",
+                "figmaName": "Page=Property, Active tab=Tab 1, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Cars, Active tab=Tab 1, Platform=Android": {
+                "componentKey": "fb53c9f47b8d6bb8c70be10a7ccf0da4547e8907",
+                "figmaName": "Page=Cars, Active tab=Tab 1, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Cars, Active tab=Tab 2, Platform=Android": {
+                "componentKey": "ac6737329949be2f5e4fbe51fb501c8cdb471495",
+                "figmaName": "Page=Cars, Active tab=Tab 2, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Cars, Active tab=Tab 4, Platform=Android": {
+                "componentKey": "b9de7f3d77d8227b4ecfa1511c8166696a590719",
+                "figmaName": "Page=Cars, Active tab=Tab 4, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Cars, Active tab=Tab 5, Platform=Android": {
+                "componentKey": "b5c63a61053755b689a76c6c920a140f554ed5c3",
+                "figmaName": "Page=Cars, Active tab=Tab 5, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Property, Active tab=Tab 2, Platform=Android": {
+                "componentKey": "4741d6fc050919cc08bb1a6f6ca8a1c218878e1c",
+                "figmaName": "Page=Property, Active tab=Tab 2, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Property, Active tab=Tab 4, Platform=Android": {
+                "componentKey": "1b793fedd6e9771e2c1a9b37aee5ce905d86dbdf",
+                "figmaName": "Page=Property, Active tab=Tab 4, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Property, Active tab=Tab 5, Platform=Android": {
+                "componentKey": "7165f4643b5b765789d1a4688f6baf0e8b26d8be",
+                "figmaName": "Page=Property, Active tab=Tab 5, Platform=Android",
+                "width": 360,
+                "height": 56
+              },
+              "Page=Homefeed, Active tab=Tab 1, Platform=iOS X": {
+                "componentKey": "3b9328a181650df77a2be30b4416245a083b389a",
+                "figmaName": "Page=Homefeed, Active tab=Tab 1, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Homefeed, Active tab=Tab 2, Platform=iOS X": {
+                "componentKey": "e4a0794e90a96bc16a87b586db6132ce41245b40",
+                "figmaName": "Page=Homefeed, Active tab=Tab 2, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Homefeed, Active tab=Tab 4, Platform=iOS X": {
+                "componentKey": "72d496ff5eb8380a333a4dcccd197c38eda9d008",
+                "figmaName": "Page=Homefeed, Active tab=Tab 4, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Homefeed, Active tab=Tab 5, Platform=iOS X": {
+                "componentKey": "db015196700e4c2dfad966a0efd5c48c2a2eb43c",
+                "figmaName": "Page=Homefeed, Active tab=Tab 5, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Property, Active tab=Tab 1, Platform=iOS X": {
+                "componentKey": "68f126da40ef0f98e6c9007a1dab4708106f6df9",
+                "figmaName": "Page=Property, Active tab=Tab 1, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Property, Active tab=Tab 2, Platform=iOS X": {
+                "componentKey": "64fe027d8190a0eb49b8ee064bc6bc35b99b887c",
+                "figmaName": "Page=Property, Active tab=Tab 2, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Property, Active tab=Tab 4, Platform=iOS X": {
+                "componentKey": "e706fb3dd990b533085f0bd48318851f6ade5574",
+                "figmaName": "Page=Property, Active tab=Tab 4, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Property, Active tab=Tab 5, Platform=iOS X": {
+                "componentKey": "9170795350a30a3281d39da569118055c4b1b3ad",
+                "figmaName": "Page=Property, Active tab=Tab 5, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Cars, Active tab=Tab 1, Platform=iOS X": {
+                "componentKey": "c9a6706d55acbd9ae390bb09eb7bee74f9b5ed35",
+                "figmaName": "Page=Cars, Active tab=Tab 1, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Cars, Active tab=Tab 2, Platform=iOS X": {
+                "componentKey": "ba04cde0f74d2d40b1bf57ecbaa5ffc815293939",
+                "figmaName": "Page=Cars, Active tab=Tab 2, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Cars, Active tab=Tab 4, Platform=iOS X": {
+                "componentKey": "01db8c760e7403df2d747b60b998544810a63570",
+                "figmaName": "Page=Cars, Active tab=Tab 4, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Page=Cars, Active tab=Tab 5, Platform=iOS X": {
+                "componentKey": "1627f2f69a827917c45714b44f7dc6ed9e6ac729",
+                "figmaName": "Page=Cars, Active tab=Tab 5, Platform=iOS X",
+                "width": 375,
+                "height": 90
+              },
+              "Active=Yes": {
+                "componentKey": "803eb6c79792921bf11172efb238281e0eac3ad9",
+                "figmaName": "Active=Yes",
+                "width": 72,
+                "height": 56
+              },
+              "Active=No": {
+                "componentKey": "6fc25577a91d27b10d72b339967c9ab0ef46e344",
+                "figmaName": "Active=No",
+                "width": 72,
+                "height": 56
+              }
+            }
+          }
+        }
+      },
+      "Subcategory card": {
+        "description": "[Donut 2.0]",
+        "componentKey": "dd4a3190979d68bde426297f66dd1861d38cc7cb",
+        "figmaName": "Subcategory card - app/3.Example",
+        "width": 432,
+        "height": 80
+      }
+    },
+    "LOADING": {
+      "Loading": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutLoadingView\niOS: CRSProgressHUD\nWeb: cds/Loading",
+        "subTypes": {
+          "Spinner": {
+            "variants": {
+              "Default": {
+                "componentKey": "a4792ac6e151a2d62833993620d7488793dc3dfb",
+                "figmaName": "Type=Medium with overlay",
+                "width": 124,
+                "height": 124,
+                "states": {
+                  "Medium with overlay": "a4792ac6e151a2d62833993620d7488793dc3dfb",
+                  "Medium with text": "9142ebb386b9a78b1c091bde92253021cbc9ea4e",
+                  "Medium": "c4cd737949ac42a585af603e60b9b454f9069318",
+                  "Small": "cf2b690df1107b549f5b8456c2a14922f7ba82ef"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "FEEDBACK_INDICATORS": {
+      "Banner": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Style=Outlined": {
+                "componentKey": "486b0ddc3aa4d6d94e11eb0df706b9547b547c61",
+                "figmaName": "Style=Outlined",
+                "width": 345,
+                "height": 128
+              },
+              "Style=BackgroundImage": {
+                "componentKey": "fe6272725371ebe5101d3fe7a1f5384e9db85d81",
+                "figmaName": "Style=BackgroundImage",
+                "width": 345,
+                "height": 152
+              },
+              "Style=Grey": {
+                "componentKey": "1bc71a7f8701f325ca94aa3386047f20227d972f",
+                "figmaName": "Style=Grey",
+                "width": 345,
+                "height": 128
+              }
+            }
+          },
+          "Thumbnail/Square": {
+            "sizes": {
+              "24": {
+                "componentKey": "f5675927d9f7f9d128a09beca20cbf95adb068ac",
+                "figmaName": "Size=24",
+                "width": 24,
+                "height": 24
+              },
+              "32": {
+                "componentKey": "e1ca6c64f4fff8f797bba6a5c500482dcf56b0e1",
+                "figmaName": "Size=32",
+                "width": 32,
+                "height": 32
+              },
+              "48": {
+                "componentKey": "13573af524f02f0b7b61546ca138906f01310506",
+                "figmaName": "Size=48",
+                "width": 48,
+                "height": 48
+              }
+            }
+          }
+        }
+      },
+      "Error Text on left with action": {
+        "description": "",
+        "componentKey": "884cedbd3e82c0b97a20d2936859911ac1f81fac",
+        "figmaName": "Error / Text on left with action",
+        "width": 363,
+        "height": 32
+      },
+      "Error Center text": {
+        "description": "",
+        "componentKey": "bbc0f32743c35cded71d8ef2f895690ad84b7939",
+        "figmaName": "Error / Center text",
+        "width": 363,
+        "height": 32
+      },
+      "Processing Text on left with action": {
+        "description": "",
+        "componentKey": "3325992c47550a5835f33b04516bf49c3a3e00dd",
+        "figmaName": "Processing / Text on left with action",
+        "width": 375,
+        "height": 32
+      },
+      "Processing Center text": {
+        "description": "",
+        "componentKey": "8f477c90cc3f6dce8114da99ef5aa1d57e8897e9",
+        "figmaName": "Processing / Center text",
+        "width": 375,
+        "height": 30
+      },
+      "Info Text on left with action": {
+        "description": "",
+        "componentKey": "3a939ff6ff482d1ce97d49e649e53a2dd8ff2900",
+        "figmaName": "Info / Text on left with action",
+        "width": 375,
+        "height": 32
+      },
+      "Info Center text": {
+        "description": "",
+        "componentKey": "ae140a9cdc81acedd216bbd4dce04b98c4febbe2",
+        "figmaName": "Info / Center text",
+        "width": 375,
+        "height": 32
+      },
+      "Snack Bar": {
+        "description": "[Donut 2.0]\n\n\nMaximum 2 lines",
+        "componentKey": "28c0b6eb9f88c819fdc3b769b1c2f70b66c224c5",
+        "figmaName": "Snack Bar - App/2. Component",
+        "width": 343,
+        "height": 48
+      },
+      "inlineError": {
+        "description": "",
+        "componentKey": "8ef7c4be7da59c4fa7680be40947b3ff1e62796f",
+        "figmaName": "inlineError - App/2. Component",
+        "width": 327,
+        "height": 276
+      }
+    },
+    "OVERLAYS": {
+      "Bottom sheet": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutBottomSheet",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "FullHeight=No": {
+                "componentKey": "4aa3cde0dc0ae52a5e794851f3fc47007e9d8fac",
+                "figmaName": "FullHeight=No",
+                "width": 375,
+                "height": 570
+              }
+            }
+          }
+        }
+      },
+      "Dialog": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutAlertDialog\niOS: AlertKit",
+        "subTypes": {
+          "Button layout": {
+            "variants": {
+              "Layout=Horizontal": {
+                "componentKey": "e266203abc7049d2d608357bc1913d69be5b3b43",
+                "figmaName": "Layout=Horizontal",
+                "width": 280,
+                "height": 80
+              },
+              "Layout=Vertical": {
+                "componentKey": "7f89a3525d6ef942d42515899707df3043529045",
+                "figmaName": "Layout=Vertical",
+                "width": 280,
+                "height": 128
+              },
+              "Layout=Vertical with Tertiary": {
+                "componentKey": "3196b81f40006f4bd304a4c8cde980007be47751",
+                "figmaName": "Layout=Vertical with Tertiary",
+                "width": 280,
+                "height": 112
+              }
+            }
+          }
+        }
+      },
+      "Promo bottom sheet": {
+        "description": "",
+        "subTypes": {
+          "./Button layout": {
+            "variants": {
+              "Button layout=Horizontal": {
+                "componentKey": "86ce85310751d19838d3f5d47af692aedee15c6b",
+                "figmaName": "Button layout=Horizontal",
+                "width": 343,
+                "height": 40
+              },
+              "Button layout=Verical": {
+                "componentKey": "7ba3cb1fc02afa3fde2a413e2c1e2966f9c6bb32",
+                "figmaName": "Button layout=Verical",
+                "width": 343,
+                "height": 88
+              },
+              "Button layout=Vertical with text button": {
+                "componentKey": "c57eb614ed43f3c2d3b6c740c913014b665a8572",
+                "figmaName": "Button layout=Vertical with text button",
+                "width": 343,
+                "height": 80
+              }
+            }
+          },
+          "./Illustration": {
+            "variants": {
+              "Height=88 px": {
+                "componentKey": "465a9a659bbe158f8790faaea63826d7dfc23708",
+                "figmaName": "Height=88 px",
+                "width": 375,
+                "height": 88
+              },
+              "Height=280 px": {
+                "componentKey": "83ddceed34a4c34462e8817473f4d55ea13296ae",
+                "figmaName": "Height=280 px",
+                "width": 375,
+                "height": 280
+              },
+              "Height=Full screen": {
+                "componentKey": "58182942771cb77b7a5ba3172e7fdb655e6940e5",
+                "figmaName": "Height=Full screen",
+                "width": 375,
+                "height": 610
+              }
+            }
+          },
+          "./Header": {
+            "variants": {
+              "Illustration position=in the front": {
+                "componentKey": "b543d516f3f8e0eea62a6c039ed60fcc31813a54",
+                "figmaName": "Illustration position=in the front",
+                "width": 375,
+                "height": 88
+              },
+              "Illustration position=in the back": {
+                "componentKey": "4f62dc3df8459bb4c34bfce97163974ba475d6b1",
+                "figmaName": "Illustration position=in the back",
+                "width": 375,
+                "height": 88
+              }
+            }
+          }
+        }
+      }
+    },
+    "TUTORIAL": {
+      "Sparkle": {
+        "description": "[Donut 2.0]\n\n\nAndroid & iOS: a lottie file",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Style=Teal Animated": {
+                "componentKey": "20bd3a7d2f23280423ac59281d7b5ec7bb61ddb4",
+                "figmaName": "Style=Teal Animated",
+                "width": 51,
+                "height": 51
+              },
+              "Style=Teal": {
+                "componentKey": "03aaf02dc42a3d9fb1b831350dbb007a10e83e7e",
+                "figmaName": "Style=Teal",
+                "width": 48,
+                "height": 48
+              },
+              "Style=Red": {
+                "componentKey": "0e16b20d78fdcb99da654db2afa7a17392e9c417",
+                "figmaName": "Style=Red",
+                "width": 48,
+                "height": 48
+              },
+              "Style=Purple": {
+                "componentKey": "1a6e0c13cef5a83e973766c554d00b1811357d38",
+                "figmaName": "Style=Purple",
+                "width": 48,
+                "height": 48
+              }
+            }
+          }
+        }
+      }
+    },
+    "CHAT": {
+      "Chat": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Inbox row": {
+            "variants": {
+              "Chat=Inbox_row, Inbox_row=Read": {
+                "componentKey": "88db72a126f698f893768ee2952d4f6237a6a7ca",
+                "figmaName": "Chat=Inbox_row, Inbox_row=Read",
+                "width": 375,
+                "height": 140
+              },
+              "Chat=Inbox_row, Inbox_row=Unread": {
+                "componentKey": "3559af7281427368677136b49186db8072b3c163",
+                "figmaName": "Chat=Inbox_row, Inbox_row=Unread",
+                "width": 375,
+                "height": 140
+              },
+              "Chat=Inbox_row, Inbox_row=Read_offer made": {
+                "componentKey": "1fe65cacb3ee754263328a774f41c50d7de05349",
+                "figmaName": "Chat=Inbox_row, Inbox_row=Read_offer made",
+                "width": 375,
+                "height": 164
+              },
+              "Chat=Inbox_row, Inbox_row=Unread_offer made": {
+                "componentKey": "bf6fefe5615715c2724311a2620f0b0c128dc1ff",
+                "figmaName": "Chat=Inbox_row, Inbox_row=Unread_offer made",
+                "width": 375,
+                "height": 164
+              },
+              "Chat=Inbox_row, Inbox_row=Read_selected": {
+                "componentKey": "7ad20d083d713ec678a3778588ad84ced60cfcb7",
+                "figmaName": "Chat=Inbox_row, Inbox_row=Read_selected",
+                "width": 375,
+                "height": 140
+              },
+              "Chat=Inbox_row, Inbox_row=Unread_selected": {
+                "componentKey": "a526339131e5a06c02aabe8ad6ae87fba3fb97e1",
+                "figmaName": "Chat=Inbox_row, Inbox_row=Unread_selected",
+                "width": 375,
+                "height": 140
+              },
+              "Chat=Inbox_row, Inbox_row=Read_not-selected": {
+                "componentKey": "a846dabe7fcbf93ace7b2faa8a405c4ae034a8e5",
+                "figmaName": "Chat=Inbox_row, Inbox_row=Read_not-selected",
+                "width": 375,
+                "height": 140
+              },
+              "Chat=Inbox_row, Inbox_row=Unread_not-selected": {
+                "componentKey": "1de63c5371fc90e8f843233757e0d6b3617fe652",
+                "figmaName": "Chat=Inbox_row, Inbox_row=Unread_not-selected",
+                "width": 375,
+                "height": 140
+              }
+            }
+          },
+          "Listing thumbnail": {
+            "variants": {
+              "Default": {
+                "componentKey": "16ba161e9823702c4a10601bbaa1b08ceb4ac073",
+                "figmaName": "Status=Listed",
+                "width": 48,
+                "height": 48,
+                "states": {
+                  "Listed": "16ba161e9823702c4a10601bbaa1b08ceb4ac073",
+                  "Reserved": "eaf2deb6b7a927b599a3121c924785c6805f3d19",
+                  "Sold": "0a296866b6d24e08008acd1afb1d8867609feaa3",
+                  "Deleted": "a70e41d214a6027146a94c80e3008d05a46fb403"
+                }
+              }
+            }
+          },
+          "Chat status": {
+            "variants": {
+              "type=Offer": {
+                "componentKey": "ad97af00add14379556d4369c4de1c9b19175bbb",
+                "figmaName": "type=Offer",
+                "width": 94,
+                "height": 20
+              },
+              "type=Offer_accepted": {
+                "componentKey": "11a86b533b88e22d84abd2f04839038e37641bdf",
+                "figmaName": "type=Offer_accepted",
+                "width": 161,
+                "height": 20
+              },
+              "type=Offer_declined": {
+                "componentKey": "f5927c6de185ce13d28ba103e8ebaffa00cfd290",
+                "figmaName": "type=Offer_declined",
+                "width": 156,
+                "height": 20
+              },
+              "type=Offer_cancelled": {
+                "componentKey": "1ae902911d5cba97e63a2b775ab5293c8fc548f1",
+                "figmaName": "type=Offer_cancelled",
+                "width": 164,
+                "height": 20
+              },
+              "type=Order_confirmed": {
+                "componentKey": "a04ac879d063e2dff72f43b4ef6642392c623e2b",
+                "figmaName": "type=Order_confirmed",
+                "width": 131,
+                "height": 20
+              },
+              "type=Order_cancelled": {
+                "componentKey": "3bd5af4321a5fa606fd2f6950bd72b49a5ea2f1f",
+                "figmaName": "type=Order_cancelled",
+                "width": 129,
+                "height": 20
+              },
+              "type=Order_open issue": {
+                "componentKey": "9acc36f5618d2c77a6b4c7fe05d0f6c0a00b4c10",
+                "figmaName": "type=Order_open issue",
+                "width": 98,
+                "height": 20
+              },
+              "type=Order_delivery": {
+                "componentKey": "47301e5fe796e9567f9ff2dbe00e2627dec09b9a",
+                "figmaName": "type=Order_delivery",
+                "width": 127,
+                "height": 20
+              },
+              "type=Rental": {
+                "componentKey": "dd5d5d6af7099c525985dba2dbde66ddda871cb0",
+                "figmaName": "type=Rental",
+                "width": 72,
+                "height": 20
+              },
+              "type=Rental_action needed": {
+                "componentKey": "508a84d769433f1049a6e7feb7222dc6d376bdce",
+                "figmaName": "type=Rental_action needed",
+                "width": 168,
+                "height": 20
+              },
+              "type=Discounted": {
+                "componentKey": "a262e70b5a0604905ceb86cce2bb07e9409f3426",
+                "figmaName": "type=Discounted",
+                "width": 47,
+                "height": 18
+              }
+            }
+          },
+          "CTA bar": {
+            "variants": {
+              "Default": {
+                "componentKey": "94f7dd9cd63e65777dd6fa51b473331ba698487a",
+                "figmaName": "State=Normal, CTA type=Task",
+                "width": 360,
+                "height": 48,
+                "states": {
+                  "Loading": "8f80f2530b568eedcf0e5c7104ddaf21eaad53d4"
+                }
+              }
+            }
+          },
+          "Navigation": {
+            "variants": {
+              "Default": {
+                "componentKey": "075806e1f32d08c16be8106c3f60905e451218c1",
+                "figmaName": "State=Normal",
+                "width": 360,
+                "height": 48,
+                "states": {
+                  "Loading": "30e0328a8cba199b296aefefbba1187c7dd9f1fc"
+                }
+              }
+            }
+          },
+          "Listing summary": {
+            "variants": {
+              "Default": {
+                "componentKey": "e1c19241065212d3200740a8be98381936c12bce",
+                "figmaName": "State=Normal",
+                "width": 360,
+                "height": 64,
+                "states": {
+                  "Loading": "9582912167600bd462fb02a2e72219178f1a42ef"
+                }
+              }
+            }
+          },
+          "Chat input": {
+            "variants": {
+              "Default": {
+                "componentKey": "fdee8f42b4f5f79f93b0f81d21ec1e54a3ebd65b",
+                "figmaName": "State=Default",
+                "width": 375,
+                "height": 104,
+                "states": {
+                  "Typing/Single line": "59322c394d943b2e4c88b5bfa7ce7fdb498a53ca",
+                  "Typing/Multi line": "169de20db862f63394f3240db807d7368eb1253b",
+                  "Filled/Single line": "43f42561383baf43cec2699d1d4c859aa2628abc",
+                  "Filled/Multi line": "0a8b767b981383b00b71703744795521e06501d8"
+                }
+              }
+            }
+          },
+          "Image cell": {
+            "variants": {
+              "Default": {
+                "componentKey": "64cb2de8965a3d42f963b1051ee9f5882a4793aa",
+                "figmaName": "State=Default",
+                "width": 216,
+                "height": 216,
+                "states": {
+                  "Uploading": "31290b15bc4b1ea6fcb1289c1e71b58d062a7b68",
+                  "Sending": "c146b419196bda9a0d42572a99f52483bd77a64b"
+                }
+              }
+            }
+          },
+          "Outgoing": {
+            "variants": {
+              "Default": {
+                "componentKey": "0d4b3fde89c1f4d90b2a5e2c5f3bf1f07a52100b",
+                "figmaName": "Type=TextMessage, State=Default",
+                "width": 94,
+                "height": 40,
+                "states": {
+                  "Offer": "39184eb3a17d9eab07d8b0f73b9c554ef6b8703a",
+                  "Multi-line": "a69c93d138f2219d4a106ff4f4c31d12322a7eef",
+                  "Typing": "400f694a8645abc18ed348021a636a5124f6af07",
+                  "Error": "f0ce156dc270f75403587474e2175deca56e5688",
+                  "Blocked - default": "a3c02d0ec0783eff26f2e86a4b639a723767c244",
+                  "Blocked - Multi-line": "81511b560f814a32ac83103894a6d0c0661e0a96"
+                }
+              }
+            }
+          },
+          "Incoming": {
+            "variants": {
+              "Default": {
+                "componentKey": "1835368cf077d0f69bc2adc398f846366e42ba9d",
+                "figmaName": "State=Default",
+                "width": 327,
+                "height": 64,
+                "states": {
+                  "Offer": "a8e939e760c7e6249f71e62a88f7a20408d535c2",
+                  "Multi-line": "29b416d368458723682e31244b9ce02c8d137679",
+                  "Typing": "49050863ca0f677b87ccf230f3f3a719fc23cfab",
+                  "Deleted": "b9f278f9a50a0c1439897ed4c4cfcac613e3998a",
+                  "Image": "58ab13f8a67dd1f78d3abb41962c4c4c5acc2967"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "FILTER_CHIP": {
+      "Filter Chip (custom) - app": {
+        "description": "",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "b10dc6ca81da9b8276350334f72ffac669764d60",
+                "figmaName": "State=Default",
+                "width": 86,
+                "height": 32,
+                "states": {
+                  "One selected": "a53b46801922be15f74a32fa77e515377d829442",
+                  "Multiple selected": "b5ef4e1a61bfe2b867db297e6e423200e5021a64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "CARD": {
+      "Card": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Selectable card/with illustration": {
+            "sizes": {
+              "Regular": {
+                "componentKey": "5a2008f880d273e48c380be374964f7deecae59f",
+                "figmaName": "Size=Regular, State=Normal",
+                "width": 343,
+                "height": 156,
+                "states": {
+                  "Disabled - default": "c9a6109a6340dc84f90c7cf6ab6782161f03b95d",
+                  "Error": "62db5f1ca3a17c4ec78622d961fc3777cdd5e73b",
+                  "Selected": "0d42eb41f0958bad65a4b31a501141dc8f8fcde5",
+                  "Disabled - selected": "1871c61e7ac1793ce57e6a4e43be29e65b171d2e"
+                }
+              },
+              "Compact": {
+                "componentKey": "db450562cfc0c479a48d9cb1299f8461573475fe",
+                "figmaName": "Size=Compact, State=Normal",
+                "width": 137,
+                "height": 174,
+                "states": {
+                  "Disabled - default": "00bd6b6db82834234a967b909ebeddb5008c52a3",
+                  "Selected": "42d1eaf154bcbd1c683a2665c4a491b69252cf4e",
+                  "Disabled - selected": "0ca888d3bd8fb8f29f95707ad4443909632aa942",
+                  "Error": "39bb2c7f1ccad9b69ad6470208ea60ac81b00858"
+                }
+              }
+            }
+          },
+          "Selectable card/Text only": {
+            "variants": {
+              "Default": {
+                "componentKey": "f6cf5b496e2864475eb44fda071681a6dd981fbb",
+                "figmaName": "State=Default, TextAlign=Right",
+                "width": 343,
+                "height": 132,
+                "states": {
+                  "Disabled - default": "94d237ee444c895d23978caf88043e81495278d5",
+                  "Error": "2d47ab7f88f5425aef4ff44ee4554af7af195843",
+                  "Selected": "a64b0bbbb7b8783a32828d2e504a83b00d95f671",
+                  "Disabled - selected": "243c8f4294a5e9b31f85c89221979cb769f57f33"
+                }
+              }
+            }
+          },
+          "Actionable card/Rich info": {
+            "variants": {
+              "Default": {
+                "componentKey": "b5756cc7937192497ebcefb656d12ced2e1694d5",
+                "figmaName": "Type=Compact, Background=Plain, State=Normal, CTA type=Buttons, Shadow=No",
+                "width": 200,
+                "height": 256,
+                "states": {
+                  "Disabled": "2971bb22c67fe70640b560d9a3c2f02f4f98e07c"
+                }
+              }
+            }
+          },
+          "Actionable card/Simple info": {
+            "variants": {
+              "Default": {
+                "componentKey": "c07a8407e7ddfe5825b5228225f510de4a5871c3",
+                "figmaName": "Shadow=No, State=Normal",
+                "width": 343,
+                "height": 84,
+                "states": {
+                  "Disabled": "a5cbb9d7170a95f6fabfa75f8409071f97f32411"
+                }
+              }
+            }
+          },
+          "Summary card/Rich info": {
+            "variants": {
+              "Default": {
+                "componentKey": "378a14a6cfff50cc622faf8072c67249b1013df9",
+                "figmaName": "State=Normal",
+                "width": 343,
+                "height": 132,
+                "states": {
+                  "Error": "f42e84544f6804c1d034ff68967065c592e92073",
+                  "Disabled": "e1dc05bdf49a45db8a62b9df73f821c8e0f52a65"
+                }
+              }
+            }
+          },
+          "Summary card/Simple info": {
+            "variants": {
+              "Default": {
+                "componentKey": "95db9d0c1e4c04ee625350d6a49f2fa6c4d6310b",
+                "figmaName": "State=Normal",
+                "width": 343,
+                "height": 84,
+                "states": {
+                  "Error": "cc39f126972f0abd44420cf802a4d12070c61b08",
+                  "Disabled": "888d109ff302b90ae66dbaa0a918101f7f88697a"
+                }
+              }
+            }
+          },
+          "Summary card/Dual action": {
+            "variants": {
+              "Default": {
+                "componentKey": "3e87a2935eeea17f83700fe1d90541eb61590d59",
+                "figmaName": "Type=Selection, State=Normal",
+                "width": 343,
+                "height": 160,
+                "states": {
+                  "Selected": "83690cfca9eddfc813faed27b03b75f911b8ae70",
+                  "Disabled - selected": "596cf5e35519a7eac7a477ff1f3a6c62d5103641",
+                  "Error": "6f15e93eefab93539a147fa8561397582b7fafd0",
+                  "Disabled - default": "60cef6d5d64dd1337d510020fec7aa68bee90cb6"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ACTIVITY": {
+      "Notification": {
+        "description": "",
+        "subTypes": {
+          "Buttons": {
+            "variants": {
+              "Buttons=Single button": {
+                "componentKey": "32102671a1694f13b99dd90ade771ab3c99c6273",
+                "figmaName": "Buttons=Single button",
+                "width": 103,
+                "height": 24
+              },
+              "Buttons=Two buttons": {
+                "componentKey": "69723b1d4897a99d2c176af45018ea5e3841d7e3",
+                "figmaName": "Buttons=Two buttons",
+                "width": 239,
+                "height": 32
+              }
+            }
+          },
+          "Left column": {
+            "variants": {
+              "Element=Listing image": {
+                "componentKey": "0573b97d0708b2eff1025f8bb07961612ced6167",
+                "figmaName": "Element=Listing image",
+                "width": 48,
+                "height": 48
+              },
+              "Element=Carousell logo": {
+                "componentKey": "779838577a79ecdfc01f13bb732b5206f7e92b25",
+                "figmaName": "Element=Carousell logo",
+                "width": 48,
+                "height": 48
+              },
+              "Element=Profile image": {
+                "componentKey": "2ed661d2c204cf822e49759b86d11e8c630dce64",
+                "figmaName": "Element=Profile image",
+                "width": 48,
+                "height": 48
+              }
+            }
+          },
+          "Right column": {
+            "variants": {
+              "Element=Expandable chevron": {
+                "componentKey": "deb37b7038d7bdbabf3cd0e57afccdfd96e88a82",
+                "figmaName": "Element=Expandable chevron",
+                "width": 24,
+                "height": 24
+              },
+              "Element=Review score": {
+                "componentKey": "6bc845117676d8764a533fd83013402b76c3e3eb",
+                "figmaName": "Element=Review score",
+                "width": 52,
+                "height": 24
+              },
+              "Element=Listing image": {
+                "componentKey": "67456e1c0587894e0beada65ec277a088aec319f",
+                "figmaName": "Element=Listing image",
+                "width": 48,
+                "height": 48
+              },
+              "Element=Profile image": {
+                "componentKey": "b04ff6e4333410957692f5e7d39ff49bdcdec584",
+                "figmaName": "Element=Profile image",
+                "width": 48,
+                "height": 48
+              }
+            }
+          },
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "8883dae6d390ee2994f1a345bfe1ded36b2031f5",
+                "figmaName": "State=Default",
+                "width": 375,
+                "height": 325,
+                "states": {
+                  "Unread": "83e84421c5e80b752cdc36a40e434029ed119e6d"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ADS": {
+      "Ads 300x250": {
+        "description": "",
+        "componentKey": "1c31c86ff7b3e509dd0a9fc922db97e76a71f1b5",
+        "figmaName": "Ads 300x250",
+        "width": 344,
+        "height": 281
+      }
+    },
+    "SPEECH_BUBBLE": {
+      "Speech bubble": {
+        "description": "Android: to be implemented with Jetpack Compose\n\niOS: CRSWhatsNewPopContentView",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "4d2e057bb85b7bc39d1e1adda30f12e818f8e9af",
+                "figmaName": "Type= Description",
+                "width": 342,
+                "height": 88,
+                "states": {
+                  "Description": "4d2e057bb85b7bc39d1e1adda30f12e818f8e9af",
+                  "Title+description": "9f4ca9004009775419dde92588b7c838a7b1dae7",
+                  "Title+description+CTA": "1a15cebdc25d2533c282220ebe182211446b4dd1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "PAGINATION": {
+      "Dot Indicator": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Active?=Yes": {
+                "componentKey": "a53ce7d2637df89ad9d39ff3ec3af0b4fcb39de6",
+                "figmaName": "Active?=Yes",
+                "width": 8,
+                "height": 8
+              },
+              "Active?=No": {
+                "componentKey": "11807a87dd12b2f5569017eba8df782209d8f831",
+                "figmaName": "Active?=No",
+                "width": 8,
+                "height": 8
+              },
+              "> 4 items?=No, Active dot's position=Middle": {
+                "componentKey": "edbbd15815aed470693827ade0d2403106ceb421",
+                "figmaName": "> 4 items?=No, Active dot's position=Middle",
+                "width": 80,
+                "height": 32
+              },
+              "> 4 items?=No, Active dot's position=First": {
+                "componentKey": "dea3c8b90a5ff0bc9e16fe6b9112a9484f30bfba",
+                "figmaName": "> 4 items?=No, Active dot's position=First",
+                "width": 80,
+                "height": 32
+              },
+              "> 4 items?=No, Active dot's position=Last": {
+                "componentKey": "2f260c7877ced34ab4faf433cc7c5fee60ca6a59",
+                "figmaName": "> 4 items?=No, Active dot's position=Last",
+                "width": 80,
+                "height": 32
+              },
+              "> 4 items?=Yes, Active dot's position=Middle": {
+                "componentKey": "99faca36c29f580684f6976656ff039cb07a704e",
+                "figmaName": "> 4 items?=Yes, Active dot's position=Middle",
+                "width": 116,
+                "height": 32
+              },
+              "> 4 items?=Yes, Active dot's position=Last": {
+                "componentKey": "ce77283150895baf9b125110f9f1ddbfe302dad8",
+                "figmaName": "> 4 items?=Yes, Active dot's position=Last",
+                "width": 116,
+                "height": 32
+              },
+              "> 4 items?=Yes, Active dot's position=First": {
+                "componentKey": "ff2309a78ad5941b25dee73215b9b8c531a54c54",
+                "figmaName": "> 4 items?=Yes, Active dot's position=First",
+                "width": 116,
+                "height": 32
+              }
+            }
+          }
+        }
+      }
+    },
+    "LISTING_PRODUCT_CARDS": {
+      "Listing card": {
+        "description": "",
+        "subTypes": {
+          "General category": {
+            "variants": {
+              "Horizontal scrollable=False": {
+                "componentKey": "88dafae2c8e99b08f21f744dac898a06e08ef9e7",
+                "figmaName": "Horizontal scrollable=False",
+                "width": 164,
+                "height": 316
+              },
+              "Horizontal scrollable=True": {
+                "componentKey": "f4ab89e532b08a3cd7363c8389d285779c6fabc5",
+                "figmaName": "Horizontal scrollable=True",
+                "width": 160,
+                "height": 312
+              }
+            }
+          },
+          "Verticals": {
+            "variants": {
+              "Default": {
+                "componentKey": "8dcab224db02874d341a9ba9ef1f25a82783dfe2",
+                "figmaName": "Type=List view, Category=Car",
+                "width": 347,
+                "height": 164,
+                "states": {
+                  "List view": "a4c65906da0a5e4d7451c43ef329e7089faca6ce",
+                  "Gallery view": "af897a456c3ced44f3de3f99db6853c4baa17fe7"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "SYSTEM": {
+      "iOS Keyboard": {
+        "description": "",
+        "subTypes": {
+          "Keyboard": {
+            "variants": {
+              "Default": {
+                "componentKey": "0fdd0a3c177f94293ecf11cc73451aaef75307f1",
+                "figmaName": "Type=iOS Search",
+                "width": 375,
+                "height": 291,
+                "states": {
+                  "iOS Search": "0fdd0a3c177f94293ecf11cc73451aaef75307f1",
+                  "iOS Alphabet": "9f5e08de97dbc327c223374a373e5e4cf022483c",
+                  "iOS Numeric": "2705879d011c6f8ad70102d6e2be2aa52d1f74c1"
+                }
+              }
+            }
+          }
+        }
+      },
+      "iOS Home indicator": {
+        "description": "",
+        "subTypes": {
+          "Home indicator": {
+            "variants": {
+              "Default": {
+                "componentKey": "eae603a70483526172af7242a6a2148b8cdb4f60",
+                "figmaName": "Type=White",
+                "width": 375,
+                "height": 34,
+                "states": {
+                  "White": "eae603a70483526172af7242a6a2148b8cdb4f60",
+                  "Dark": "83c0ed7127af9f81ac41e24c50997729e2fe34c9"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Status bar": {
+        "description": "",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "973a8e2bef8e0575cf177764340e07f6a051fd73",
+                "figmaName": "OS=iOS, State=Default",
+                "width": 375,
+                "height": 44,
+                "states": {
+                  "Inversed": "49208c75660f525456254b3afdb7e83c76a2f21a"
+                }
+              }
+            }
+          }
+        }
+      },
+      "iOS LockScreenNotification": {
+        "description": "",
+        "subTypes": {
+          "LockScreenNotification": {
+            "variants": {
+              "Notification(s)=True, Notif. Type=Default": {
+                "componentKey": "f37a1e139b9326172c7845f84709caeedb43915b",
+                "figmaName": "Notification(s)=True, Notif. Type=Default",
+                "width": 393,
+                "height": 852
+              },
+              "Notification(s)=True, Notif. Type=Pressed": {
+                "componentKey": "932d2e5459e27e86e2d4b9fb71ab2071ffd51a0b",
+                "figmaName": "Notification(s)=True, Notif. Type=Pressed",
+                "width": 393,
+                "height": 852
+              },
+              "Notification(s)=True, Notif. Type=Pressed Image": {
+                "componentKey": "65ce391564a81f86c82ca483b7b469cc707ca594",
+                "figmaName": "Notification(s)=True, Notif. Type=Pressed Image",
+                "width": 393,
+                "height": 852
+              }
+            }
+          }
+        }
+      }
+    },
+    "INPUT": {
+      "Selection": {
+        "description": "[Donut 2.0]\n\n\nAndroid: Native checkbox w/ custom selected and deselected state\n\n\niOS: Pickle/PhotoGalleryTagLabel",
+        "subTypes": {
+          "Checkbox": {
+            "variants": {
+              "Default": {
+                "componentKey": "06593dfe9d7f33cba2c86bac6b9e2a72fda946bb",
+                "figmaName": "Platform=iOS, State=Unselected-Enabled",
+                "width": 24,
+                "height": 24,
+                "states": {
+                  "Selected-Enabled": "5b6079bc3e8e9f3bb4202e02e2fe3e538b55bcb9",
+                  "Unselected-Disabled": "87a73ded8101748bf452eab24eb733b072e96472",
+                  "Selected-Disabled": "948e0154910a7322259365bfa14851b9fb74bb99"
+                }
+              }
+            }
+          },
+          "Checkbox OverImage": {
+            "variants": {
+              "Default": {
+                "componentKey": "5426d74a66ded6335dc7c333ffc7898a4ba88071",
+                "figmaName": "Platform=iOS, Type=Unselected",
+                "width": 24,
+                "height": 24,
+                "states": {
+                  "Unselected": "6b0adf588163b2b4f15d15bf5396fda19c71838e",
+                  "Selected Number": "3281a17a3240e54c659c39f09517d9c9e658f9a8",
+                  "Selected Checkmark": "f7abe448a05944e01d8c0e30aade9593f8e01879"
+                }
+              }
+            }
+          },
+          "Radio": {
+            "variants": {
+              "Default": {
+                "componentKey": "681e225d3255ed68df1595dbb71f3c31b9e49532",
+                "figmaName": "State=Unselected-Enabled",
+                "width": 24,
+                "height": 24,
+                "states": {
+                  "Selected-Enabled": "fc008ae994fdd692a0d5b9763067fd8f850061f8",
+                  "Selected-Disabled": "76fc28e526f018ebed3049f40c9f064404ed3597",
+                  "Unselected-Disabled": "735cb6701fdc099f89e8086c21ea7d602eaf7c17"
+                }
+              }
+            }
+          },
+          "Switch": {
+            "variants": {
+              "Platform=iOS, Active=Yes, Enable=Yes": {
+                "componentKey": "1022c8e62ce35decb21d7661831742feee8f2e91",
+                "figmaName": "Platform=iOS, Active=Yes, Enable=Yes",
+                "width": 54,
+                "height": 32
+              },
+              "Platform=iOS, Active=Yes, Enable=No": {
+                "componentKey": "0835a9c8939bb872f5bf6cf7cb6a705e01d3899f",
+                "figmaName": "Platform=iOS, Active=Yes, Enable=No",
+                "width": 54,
+                "height": 32
+              },
+              "Platform=iOS, Active=No, Enable=Yes": {
+                "componentKey": "6fb699e21b1f96f6fec7a5093e18aef04aaebb32",
+                "figmaName": "Platform=iOS, Active=No, Enable=Yes",
+                "width": 54,
+                "height": 32
+              },
+              "Platform=iOS, Active=No, Enable=No": {
+                "componentKey": "d1a2f05078f18aff049fcf2d02be7173c40cebc8",
+                "figmaName": "Platform=iOS, Active=No, Enable=No",
+                "width": 54,
+                "height": 32
+              },
+              "Platform=Android, Active=No, Enable=No": {
+                "componentKey": "d4e0a3af08fb14968d1ea7ebb4a4348a7ff99623",
+                "figmaName": "Platform=Android, Active=No, Enable=No",
+                "width": 36,
+                "height": 20
+              },
+              "Platform=Android, Active=Yes, Enable=No": {
+                "componentKey": "1e5035d53846aa90777657f61994b6d34e0884ca",
+                "figmaName": "Platform=Android, Active=Yes, Enable=No",
+                "width": 36,
+                "height": 20
+              },
+              "Platform=Android, Active=Yes, Enable=Yes": {
+                "componentKey": "66163b8a578469046c6d08cebcda3de31ee5a3c1",
+                "figmaName": "Platform=Android, Active=Yes, Enable=Yes",
+                "width": 36,
+                "height": 20
+              },
+              "Platform=Android, Active=No, Enable=Yes": {
+                "componentKey": "cb08d13b914289a008a3483d043a64b84de917c9",
+                "figmaName": "Platform=Android, Active=No, Enable=Yes",
+                "width": 36,
+                "height": 20
+              }
+            }
+          }
+        }
+      },
+      "List": {
+        "description": "",
+        "subTypes": {
+          "Thumbnail": {
+            "sizes": {
+              "16": {
+                "componentKey": "5a8783eddf7e44cebd57f11b5ed5b291609770c2",
+                "figmaName": "Size=16, Type=Normal icon",
+                "width": 16,
+                "height": 16
+              },
+              "24": {
+                "componentKey": "c7708b5f883cab76a0596d2d931027dd77ed7929",
+                "figmaName": "Size=24, Type=Normal icon",
+                "width": 24,
+                "height": 24
+              },
+              "32": {
+                "componentKey": "ddfc030afe664a12b5f068119b4b84d6792d4632",
+                "figmaName": "Size=32, Type=Normal icon",
+                "width": 32,
+                "height": 32
+              },
+              "48": {
+                "componentKey": "68cdd804454834f6e9294dc4906f8434f9d737dd",
+                "figmaName": "Size=48, Type=Normal icon",
+                "width": 48,
+                "height": 48
+              }
+            }
+          },
+          "List item": {
+            "sizes": {
+              "Large": {
+                "componentKey": "b5da44184d0432b3aebcdd23cdbbcabcd2adcf31",
+                "figmaName": "Title size=Large, Select type=radio or checkbox, Disabled=False",
+                "width": 343,
+                "height": 76
+              },
+              "Medium": {
+                "componentKey": "4e26f1f75349a59978a44d2f144d291d208f5943",
+                "figmaName": "Title size=Medium, Select type=radio or checkbox, Disabled=False",
+                "width": 343,
+                "height": 68
+              },
+              "small": {
+                "componentKey": "960e39b3be69ace6ad079e01bf9865bfe23a255c",
+                "figmaName": "Title size=small, Select type=radio or checkbox, Disabled=False",
+                "width": 343,
+                "height": 64
+              }
+            }
+          }
+        }
+      },
+      "Star 1. Micro": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutRatingBar\n\n\niOS: Snapsell/ReviewScoreView",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "active=yes": {
+                "componentKey": "c6794beb3996acf363879a63421ea2a7a76fecf6",
+                "figmaName": "active=yes",
+                "width": 32,
+                "height": 32
+              },
+              "active=no": {
+                "componentKey": "4be1137108c54b4fad359402277ffdf7dc436f43",
+                "figmaName": "active=no",
+                "width": 32,
+                "height": 32
+              }
+            }
+          }
+        }
+      },
+      "Star_display": {
+        "description": "[Donut 2.0]\n\n\nAndroid: DonutRatingBar\n\n\niOS: Snapsell/ReviewScoreView",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "state=full": {
+                "componentKey": "f05e974a62710acf92320fbe5720b635314fae53",
+                "figmaName": "state=full",
+                "width": 16,
+                "height": 16
+              },
+              "state=empty": {
+                "componentKey": "6d60fbdfa58a7797dea97c90c288ed2608b36673",
+                "figmaName": "state=empty",
+                "width": 16,
+                "height": 16
+              },
+              "state=half": {
+                "componentKey": "44b6b235bb7ba99ecb7c865c84b74d19f1068619",
+                "figmaName": "state=half",
+                "width": 16,
+                "height": 16
+              }
+            }
+          }
+        }
+      },
+      "Stepper": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "0e6f4e56651ea46571c84e6eefcdf6e41ba50c93",
+                "figmaName": "Type=Default",
+                "width": 121,
+                "height": 56,
+                "states": {
+                  "MinReached": "22c1830c7a19d0e4f6a31a307013eb3ed8307b88",
+                  "MaxReached": "ac144a6f46cb9d873390aaf9beec429b6b0e9c3c"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Chip": {
+        "description": "[Donut 2.0]\n\n\nAndroid: CdsChip\niOS: SingleSelectChip",
+        "subTypes": {
+          "Default": {
+            "sizes": {
+              "Small": {
+                "componentKey": "798457f5cfc384f629b0892d0606f7d2885e66f3",
+                "figmaName": "Size=Small, Type=Multi selection, Selected=Yes",
+                "width": 86,
+                "height": 32
+              },
+              "Medium": {
+                "componentKey": "1244e9b65dc3c98474c1b9b37065be66e23935a4",
+                "figmaName": "Size=Medium, Type=Multi selection, Selected=Yes",
+                "width": 95,
+                "height": 40
+              }
+            }
+          }
+        }
+      },
+      "Slider": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "913ac1f117d68404f28a62ceaf53d4f8eef00a1c",
+                "figmaName": "Status=Default",
+                "width": 343,
+                "height": 56,
+                "states": {
+                  "Disable": "d75323c77ff21153239a812470dc861006841c87"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Search bar": {
+        "description": "[Donut 2.0]\n\n\nAndroid: CdsSearchBar\niOS: Snapsell/SearchTextField, Snapsell/CRSSearchBar",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "4fd3bf51e12d3160fe4264e4a47b00209edaf3f3",
+                "figmaName": "Type=Placeholder",
+                "width": 95,
+                "height": 24,
+                "states": {
+                  "Placeholder": "4fd3bf51e12d3160fe4264e4a47b00209edaf3f3",
+                  "Typing with placeholder": "97c44b25e5d75944012803d0242f07933ea61da3",
+                  "Typing with value": "197254b9cada60eb8e4e619b5d19e5338a6e8d12",
+                  "Value": "e7b038ae25fff4f9239d79260fb4b0902be7cdf6"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Picker": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Simple": {
+            "variants": {
+              "Default": {
+                "componentKey": "69262ed6e9699b05e931aafa299e83fd57820758",
+                "figmaName": "Type=Default",
+                "width": 343,
+                "height": 68,
+                "states": {
+                  "Focused": "ee12efd3995045843d3a60cdb2866c4477dc0969",
+                  "Filled": "f59720426d8ce9ca7a41cc1337ed0cbbe16d3cbb"
+                }
+              }
+            }
+          },
+          "Date": {
+            "variants": {
+              "Default": {
+                "componentKey": "dd20870cadacd9d8400d1ca874841e152eff2eef",
+                "figmaName": "Type=Default",
+                "width": 343,
+                "height": 68,
+                "states": {
+                  "Focused": "49fe619ea70e659d3eaad99fa605278aedd884a6",
+                  "Filled": "fdc34ef8aeef21890b5b46de541dae7eb8d32d29"
+                }
+              }
+            }
+          },
+          "Layered": {
+            "variants": {
+              "Default": {
+                "componentKey": "43c4fa668d49b8d1785b38b208a209d48bf4d453",
+                "figmaName": "Type=Default",
+                "width": 343,
+                "height": 68,
+                "states": {
+                  "Focused": "e32e9f79bea8fa6cc70f70e0a144f8c1eeebf921",
+                  "Filled": "386b405d184779b550d9357983da02ba8b934dbd"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Input": {
+        "description": "[Donut 2.0]",
+        "subTypes": {
+          "Text input": {
+            "variants": {
+              "Default": {
+                "componentKey": "2c6b3ae9bdd110110e8cfb62b28296cfb519ea71",
+                "figmaName": "State=Default",
+                "width": 343,
+                "height": 68,
+                "states": {
+                  "Focus": "fccfd2a0373d1ae8ece680db734382ebf0aa5f04",
+                  "Filled": "69aef31f549ab3bc304ee09df2b2c7cae11bf76d",
+                  "Error": "481e8aa7b62df15529530a1469e8dddada2c43a9"
+                }
+              }
+            }
+          },
+          "Phone input": {
+            "variants": {
+              "Default": {
+                "componentKey": "7b15b325ff6e9b5a6f25d22e22c6acf7fc7d6bf0",
+                "figmaName": "State=Default",
+                "width": 343,
+                "height": 68,
+                "states": {
+                  "Focus": "b32bb23ce5aa2d8538969a859d18d72426f13167",
+                  "Filled": "35423addaa12f2efc22635e06e84458e2774f0a3",
+                  "Error": "4968bb2c6add4d77c12d0b50f876f2c5f275edc4"
+                }
+              }
+            }
+          },
+          "Text area input": {
+            "variants": {
+              "Default": {
+                "componentKey": "b6d19e58ec072abab2e7e8d5fea9dbda917dac9a",
+                "figmaName": "State=Default",
+                "width": 343,
+                "height": 158,
+                "states": {
+                  "Focus": "7618cfaf0114b1e78a6e10ac89c668393dcb3b14",
+                  "Filled": "c28586f3c75a355e1fe007d3db0230a115b8dd84",
+                  "Error": "6a8f68098e39f80270e0b5537e094251c4e460c7"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Media uploader": {
+        "description": "",
+        "subTypes": {
+          "Default": {
+            "variants": {
+              "Default": {
+                "componentKey": "2e2af68229d1097957344bbc589faa47d7988eac",
+                "figmaName": "State=Empty, Icon type=None",
+                "width": 88,
+                "height": 88,
+                "states": {
+                  "Empty": "2e2af68229d1097957344bbc589faa47d7988eac",
+                  "Filled": "3211f88eebf9473424ddf74eb55ef194ee9bc1ae",
+                  "Focused": "9dcc5cc4450a30a2e1e762c2625a5688abb5739d"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Selection list": {
+        "description": "[Donut 2.0]",
+        "componentKey": "beb42e793634093426cddf96dd0ecaf3e785af85",
+        "figmaName": "Selection list - app/2. Component/List",
+        "width": 343,
+        "height": 264
+      },
+      "Rating": {
+        "description": "[Donut 2.0]",
+        "componentKey": "8a876859b3f929f81fd7c742767c4b4b13e5a74e",
+        "figmaName": "Rating - App / 2. Component",
+        "width": 224,
+        "height": 72
+      },
+      "Rating_Display": {
+        "description": "[Donut 2.0]",
+        "componentKey": "8252b2c9c2b9f6524110c8778d5c09dcf1c9a411",
+        "figmaName": "Rating_Display - App / 2. Component",
+        "width": 227,
+        "height": 24
+      }
+    }
+  }
+}
