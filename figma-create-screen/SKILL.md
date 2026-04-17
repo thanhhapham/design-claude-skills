@@ -15,6 +15,17 @@ Create app or web screens in Figma using the design system component catalog.
 - **Custom shapes are only allowed for:** full-bleed backgrounds, video placeholders, image thumbnails, gradient scrims, and decorative dividers that have no DS equivalent. **Every custom shape with a solid fill MUST use a color token variable** — the only exception is `LinearGradient` fills (which have no token support).
 - **If you are using `use_figma` (JS execution), you MUST use `importComponentByKeyAsync` to place every DS component.** Do not fall back to `figma.createRectangle()` or `figma.createFrame()` as a substitute.
 - **Verify after placing:** check that each DS element has node type `"INSTANCE"` before moving on. If it is `"RECTANGLE"` or `"FRAME"`, you drew it wrong — delete and re-import.
+- **Do NOT default to the cheat sheet.** The `Common component cheat sheet` is a starting point, not an answer. For every element, run `search_design_system` (Step 0a), write a candidate shortlist (Step 0b), and pick by visual match against the reference. Past failures caused by skipping this: `Tag Generic` used where `Chips` was needed; default `Top Nav` variant (X + ⋯) used where back arrow + filter was needed.
+
+### Custom vs component — decision heuristic (for ambiguous cases)
+
+| Element signal | Decision |
+|---|---|
+| Exact DS visual properties (specific corner radius, pill shape, teal price color, typographic scale) | **Component mandatory** |
+| Decorative/positional only (page bg, scrim, image placeholder, gradient overlay) | Custom OK |
+| Avatar (no DS avatar component exists) | Custom OK — use ellipse + `background/elevated_low` |
+| Unsure | Search first. Custom only if search returns no match and no near-match in catalog |
+| Ambiguous (price badge, info pill, "View similar" link) | Pick the component unless the reference shows a style not in the library. Ask if truly 50/50. |
 
 ---
 
@@ -221,27 +232,86 @@ btn.cornerRadius = 8;
 
 ## Workflow
 
-### Step 0 — Search the design system (MANDATORY, do this first)
+### Step 0 — Search DS, build candidate shortlist, confirm build plan (MANDATORY)
 
-Before reading any catalog file or writing any code, call `search_design_system` for every distinct UI element in the screen. This is not optional — skipping it means you may recreate a component that already exists in the library.
+This step exists to prevent these historical failures:
+- Used `Tag Generic` for filter chips when `Chips` existed in the same search
+- Used the default Top Nav variant (X + ⋯) when the reference showed back arrow + filter icon
+- Used the full Listing Card (with title/attributes) when the reference showed an image-only variant
 
-**How to do it:**
-- Identify all distinct UI element types in the screen (e.g. button, avatar, badge, input, card, nav bar, tag)
-- Call `search_design_system` once per element type — you can batch related terms in one query
-- For any match returned, use `importComponentByKeyAsync` with the returned key — never hand-draw it
-- Only fall back to custom shapes for elements confirmed to have no DS match (full-bleed backgrounds, image placeholders, gradient scrims)
+Root cause in all three: jumping from the reference to the cheat sheet without comparing candidates. Fix: force the comparison, then get the user's sign-off before building.
+
+---
+
+#### Step 0a — Search (MANDATORY)
+
+For every distinct UI element in the reference, run `search_design_system` with a **descriptive** query. Capture **all** results — the right match is sometimes #2 or #3, not the first hit.
 
 **Example queries to run:**
 ```
-search_design_system("button primary")
-search_design_system("avatar user profile")
-search_design_system("badge tag chip label")
-search_design_system("input text field search bar")
-search_design_system("card product listing")
+search_design_system("chip filter pill outlined")      // distinguishes Chips vs Tag
+search_design_system("top nav back arrow filter icon") // picks the right variant
+search_design_system("listing card product image")     // returns multiple card variants
+search_design_system("button primary CTA")
 search_design_system("bottom nav bar tab")
 ```
 
-**Rule:** If `search_design_system` returns a match and you draw a custom shape instead → that is a hard violation of the skill rules. Delete and re-import the real DS component.
+**Rule:** If `search_design_system` returns a match and you draw a custom shape instead → hard violation. Delete and re-import the real DS component.
+
+---
+
+#### Step 0b — Candidate shortlist (MANDATORY, output explicitly)
+
+For each distinct element in the reference, write this block in your response so the user can audit your picks before you build. Do NOT skip — this is the step that catches Tag-vs-Chip and variant-selection mistakes.
+
+```
+Element: <visual description + user function>
+Candidates:
+  - <Name> (<key>) — <library>
+  - <Name> (<key>) — <library>
+Pick: <key> — <why this matches the reference over the alternatives>
+```
+
+**Worked example:**
+```
+Element: "outlined pill with label text, tappable, filter context (ikea, sofa bed)"
+Candidates:
+  - Chips (358519ac1939157f909e8047f47f7ac9f225d79e) — Components
+  - Tag Generic Medium (b242b07ecae797b412d3c8aaa9643b9f8c341520) — App Components (cheat sheet default)
+Pick: Chips — outlined/tappable style matches reference; Tag Generic is filled/display-only
+```
+
+**If you cannot justify the pick against the reference visual, you are not ready to build.** Search again, check the full catalog, or ask the user.
+
+---
+
+#### Step 0c — Emit build plan and wait for approval (MANDATORY for first build)
+
+Before writing a single line of build code, output a plan in this format and STOP:
+
+```
+## Build plan: <screen name>
+
+**DS components:**
+- <Role>: <Component name> (<key>) — <size/variant note>
+- <Role>: <Component name> (<key>) ×<count>
+- ...
+
+**Custom elements (no DS match):**
+- <element> — <why custom per the heuristic above>
+- ...
+
+**Open questions / assumptions:**
+- <anything unclear>
+
+Reply "go" to build, or correct any picks.
+```
+
+**Skip this step only if:**
+- The user has already specified exact components/variants in their request, OR
+- This is a rebuild after a correction and the candidate set is unchanged
+
+**What this catches:** wrong variant picks, wrong component family, over-componentization of decorative elements, and "I picked the cheat sheet default without thinking" failures. A 10-second user review here saves a 5-minute rebuild.
 
 ---
 
@@ -692,26 +762,70 @@ relativeY=718: Bottom bar (94px)    →  frame ends at 812
 
 ---
 
-## Common component cheat sheet
+## Common component cheat sheet — ⚠️ starting points, not answers
+
+> **Warning:** The keys below are *defaults for common cases*. They are NOT authoritative. Most components have 5–30 variants. Using the default without checking the reference visual is how the Tag/Chip mistake and the Top Nav variant mistake happen.
+>
+> Rules when using this table:
+> 1. The cheat sheet key is only valid if it matches the reference variant. Otherwise find the correct variant in the full catalog.
+> 2. For multi-variant components (Top Nav, Listing card, Button), see the disambiguation tables below.
+> 3. If a `search_design_system` result returned something NOT in this cheat sheet, the search result wins — the library may have newer components this table doesn't know about.
+
+### Top Nav — 16+ variants, pick by title size + action type
+
+Full map in `figma-catalog-app.json` under `Top Nav > Title&Action > variants`. Quick map:
+
+| Title size | Right action | Platform | Scrolled | Key | Size |
+|---|---|---|---|---|---|
+| Normal | Icons | iOS | No | `9d40ca717f7299286dbc1f209d6c61a31f32461b` | 375×132 |
+| Shrunk | Icons | iOS | No | `608167843374d523d3070dea05964ba5a5a2a129` | 375×92 |
+| Normal | TextButton | iOS | No | `f7dee42b2d7e0ba0b9d456fcdf919dff90ebf132` | 375×132 |
+| Normal | Icons | iOS | Yes (scrolled state) | `df012adda5995187c4909ade76200da3ce09b9d3` | 375×132 |
+| Normal | Icons | Android | No | `4624b655d6b05e30f8bb95eefded73bee5da261e` | 360×112 |
+
+**Left-icon swap:** after placing, the default may show an X (close) when the reference shows a back arrow, or vice versa. The left icon is usually a swappable nested instance/component property, not a separate top-level variant. Check the instance properties panel and swap via Plugin API (`inst.setProperties({...})` or nested instance `swapComponent`). Don't pick a different Top Nav variant just to get a different left icon.
+
+### Listing card — pick by what content the reference shows below the image
+
+| Variant | Key | Shows |
+|---|---|---|
+| Product card (image + overlays) | `4e77b7e3e7473acc42597ca162f1f3d189527a7b` | Image-dominant, price pill overlay, heart — matches search/collection screens |
+| General category (set — full detail) | `0338c46696e2deeb590bfe0ba4e798f286dffc34` | Image + title + price + attributes + actions — matches browse/feed screens |
+| Verticals (set — category-tuned) | `7dab8bfd0e3e833566f9a63eb8ef494eea0e1040` | Category-specific rendering |
+| Image Overlay (micro, set) | `cf665a46aab51fa30e105f24387a531260ec5bf7` | Just the image + overlays — for custom compositions |
+
+**Decision rule:** Does the reference show title/attribute text below the image?
+- **No** (image-dominant with only a price badge overlay) → **Product card**
+- **Yes** (title, price, condition, attributes) → **General category**
+
+Do NOT resize `General category` to try to hide its text — the internal layout doesn't clip cleanly, you'll end up with overlapping/cut-off text. Pick the right variant instead.
+
+### Button (Donut 2.0) — 3 sizes × subtypes, pick by function
+
+| Use case | Component | Default key | Sizes |
+|---|---|---|---|
+| Primary CTA, full label | Normal Button | `da7d8e4307f4be9b7358340e98f04fc584fbd6b9` | Small / **Medium** / Large |
+| Normal Button (Large) — 48px tall | — | `0f46fd8e0015b3531e4365b89b5ddb440f3d8814` | Large |
+| Normal Button (Large Secondary-dark) | — | `df6d3da8af62e0bf2945ebea85902c531b5725ec` | Dark-bg secondary |
+| Icon-only action | Icon button | `bef3e5e19d544a0d89dbef31404254ccc9e78dd6` | Small / **Medium** / Large |
+| Rounded / pill CTA (Follow, Join) | Rounded button | `34f5479f37a5fdaf878440d50c5c92bb0c87d06e` | Small / **Medium** |
+| Inline link-style | Text Button | `d34527d057d71566106f4380c346939c65281aac` | Small / **Medium** / Large |
+
+Full-width CTA → resize width to 343 (16px margin each side).
+
+### Common one-offs — read carefully, naming is the trap
 
 | Component | Key | Default size | Notes |
 |-----------|-----|-------------|-------|
-| Top Nav (iOS Normal) | `608167843374d523d3070dea05964ba5a5a2a129` | 375×132 | Includes status bar |
-| Top Nav (iOS Shrunk) | — | 375×92 | |
+| **Chips** (filter pill, outlined, interactive) | `358519ac1939157f909e8047f47f7ac9f225d79e` (set) | varies | **Use for filter chips, NOT Tag Generic.** Chips = interactive/filterable/outlined. Tag = display-only label. |
+| **Tag Generic (Medium)** — display label | `b242b07ecae797b412d3c8aaa9643b9f8c341520` | 84×20 | LIVE, Free Shipping, Brand New — NEVER for filter chips or tappable elements |
+| **Tag Generic (High)** — red emphasis | `12668f84cd0f9a4d45edf4a4d42706c70c63a04f` | 84×20 | LIVE badge, Sold |
 | **Bottom bar — Tab** (iOS) | `3b9328a181650df77a2be30b4416245a083b389a` | 375×90 | App-level nav (Home, Sell, Inbox) |
 | **Bottom bar — Task** (single) | `aa34133e85746732f44a341fa82540e099833cb9` | 375×94 | Single primary CTA (Buy Now) |
-| **Bottom bar — Button** | — (find in full catalog) | 375×~90 | Contextual icon actions (share, gift) |
-| **Bottom bar — Promote** | — (find in full catalog) | 375×~94 | Boost/promote CTA |
-| Chat input (Default) | `fdee8f42b4f5f79f93b0f81d21ec1e54a3ebd65b` | 375×104 | **For text entry only** — NOT for action buttons |
-| Chat input (Typing) | — (find in full catalog) | 375×104 | Active typing state with send button |
-| Normal Button (Medium) | `da7d8e4307f4be9b7358340e98f04fc584fbd6b9` | 86×40 | Resize w=343 for full-width |
-| Normal Button (Large) | `0f46fd8e0015b3531e4365b89b5ddb440f3d8814` | 86×48 | |
-| Normal Button (Large Secondary-dark) | `df6d3da8af62e0bf2945ebea85902c531b5725ec` | 86×48 | Dark bg secondary state |
-| Rounded button | `34f5479f37a5fdaf878440d50c5c92bb0c87d06e` | 63×32 | |
-| Icon button | `bef3e5e19d544a0d89dbef31404254ccc9e78dd6` | 40×40 | |
-| Tag Generic (Medium) | `b242b07ecae797b412d3c8aaa9643b9f8c341520` | 84×20 | Use instead of Program Specific |
-| Tag Generic (High) | `12668f84cd0f9a4d45edf4a4d42706c70c63a04f` | 84×20 | Red/high emphasis — LIVE badges |
-| Listing card | `88dafae2c8e99b08f21f744dac898a06e08ef9e7` | 164×316 | |
+| **Bottom bar — Button** | — (full catalog) | 375×~90 | Contextual icon actions (share, gift, like) |
+| **Bottom bar — Promote** | — (full catalog) | 375×~94 | Boost/promote CTA |
+| **Chat input (Default)** | `fdee8f42b4f5f79f93b0f81d21ec1e54a3ebd65b` | 375×104 | **Text entry only** — NEVER for action buttons labeled "Chat" |
+| **Chat input (Typing)** | — (full catalog) | 375×104 | Active typing state with send button |
 
 ---
 
