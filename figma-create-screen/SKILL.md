@@ -15,7 +15,9 @@ Create app or web screens in Figma using the design system component catalog.
 - **Custom shapes are only allowed for:** full-bleed backgrounds, video placeholders, image thumbnails, gradient scrims, and decorative dividers that have no DS equivalent. **Every custom shape with a solid fill MUST use a color token variable** — the only exception is `LinearGradient` fills (which have no token support).
 - **If you are using `use_figma` (JS execution), you MUST use `importComponentByKeyAsync` to place every DS component.** Do not fall back to `figma.createRectangle()` or `figma.createFrame()` as a substitute.
 - **Verify after placing:** check that each DS element has node type `"INSTANCE"` before moving on. If it is `"RECTANGLE"` or `"FRAME"`, you drew it wrong — delete and re-import.
-- **Do NOT default to the cheat sheet.** The `Common component cheat sheet` is a starting point, not an answer. For every element, run `search_design_system` (Step 0a), write a candidate shortlist (Step 0b), and pick by visual match against the reference. Past failures caused by skipping this: `Tag Generic` used where `Chips` was needed; default `Top Nav` variant (X + ⋯) used where back arrow + filter was needed.
+- **Verify the component is the one you intended (stop-on-wrong-component).** After `importComponentByKeyAsync`, check `comp.name` (and/or `inst.mainComponent.name`) contains the expected name fragment. If it doesn't, the key silently resolved to a different component (e.g. `358519ac...` "Chips" silently fell through to `Tag Generic`). STOP, delete the instance, and fix the key before placing more. See the verification wrapper in Step 4.
+- **Library-scope guard (app screens).** Only import keys that exist in `figma-catalog-app.json`. If a search result comes from a different library (web, marketing, ops) it will silently resolve to the wrong component on import. Treat it as "not found" — pick another catalog entry or custom-draw.
+- **Catalog-first, search as last resort.** Look up every element in `figma-catalog-app.json` first (Step 0a). Only call `search_design_system` if the catalog has nothing. Search returns cross-library results that silently resolve to wrong components.
 
 ### Custom vs component — decision heuristic (for ambiguous cases)
 
@@ -167,46 +169,14 @@ await applyFontStyle(usernameText, 'a1a69b77d15341d21c1571ede3eb47ba405a634b', '
 
 ## Placing DS components via `use_figma` (JS execution)
 
-When `use_figma` is your active tool (instead of figma-talk), **always import library components with `importComponentByKeyAsync`**. This is the only correct way to place a real DS instance — not `createRectangle`, not `createFrame`.
-
-```js
-// Standard pattern — use this for EVERY DS component
-const comp = await figma.importComponentByKeyAsync('da7d8e4307f4be9b7358340e98f04fc584fbd6b9');
-const inst = comp.createInstance();
-inst.x = canvasX;   // absolute canvas X = frameX + relativeX
-inst.y = canvasY;   // absolute canvas Y = frameY + relativeY
-frame.appendChild(inst);
-
-// Resize if needed (e.g. full-width button)
-inst.resize(343, 48);
-
-// Verify it's a real instance before moving on
-console.log(inst.type); // must be "INSTANCE"
-```
-
-**After appending to frame, override text labels:**
-```js
-// Scan and override — never leave default placeholder text
-const textNodes = inst.findAll(n => n.type === 'TEXT');
-// or use scan_text_nodes if on figma-talk
-```
-
-**Do NOT do this:**
-```js
-// ❌ Wrong — this is a custom shape, not a DS component
-const btn = figma.createRectangle();
-btn.resize(343, 48);
-btn.cornerRadius = 8;
-```
+Use `importComponentByKeyAsync` (key from catalog) → `createInstance()` → set `x`/`y` → `frame.appendChild(inst)`. See the `importVerified()` wrapper in Step 4 — use it for every component.
 
 ---
 
 ## Catalog and token files
 
 **App components** (375px wide phone screens):
-- Index: `/Users/thanhhapham/Skills/figma-create-screen/figma-catalog-app-index.json`
-- Full catalog: `/Users/thanhhapham/Skills/figma-create-screen/figma-catalog-app.json`
-- Component notes: `/Users/thanhhapham/Skills/figma-create-screen/component-notes.json`
+- Catalog: `/Users/thanhhapham/Skills/figma-create-screen/figma-catalog-app.json`
 - Library file key: `NmeAXg5CGWRbBtIqxVcf96`
 
 **Design tokens** (colors + typography):
@@ -232,98 +202,93 @@ btn.cornerRadius = 8;
 
 ## Workflow
 
-### Step 0 — Search DS, build candidate shortlist, confirm build plan (MANDATORY)
-
-This step exists to prevent these historical failures:
-- Used `Tag Generic` for filter chips when `Chips` existed in the same search
-- Used the default Top Nav variant (X + ⋯) when the reference showed back arrow + filter icon
-- Used the full Listing Card (with title/attributes) when the reference showed an image-only variant
-
-Root cause in all three: jumping from the reference to the cheat sheet without comparing candidates. Fix: force the comparison, then get the user's sign-off before building.
+### Step 0 — Resolve components and confirm build plan (MANDATORY)
 
 ---
 
-#### Step 0a — Search (MANDATORY)
+#### Step 0a — Catalog lookup (MANDATORY)
 
-For every distinct UI element in the reference, run `search_design_system` with a **descriptive** query. Capture **all** results — the right match is sometimes #2 or #3, not the first hit.
+For every UI element in the reference, read `figma-catalog-app.json` and navigate to the matching category. Use the `componentKey` from that entry — never a key from memory or a search result.
 
-**Example queries to run:**
-```
-search_design_system("chip filter pill outlined")      // distinguishes Chips vs Tag
-search_design_system("top nav back arrow filter icon") // picks the right variant
-search_design_system("listing card product image")     // returns multiple card variants
-search_design_system("button primary CTA")
-search_design_system("bottom nav bar tab")
-```
+**Navigate the catalog:** `appComponents > <CATEGORY> > <ComponentName> > subTypes > <SubType> > sizes or variants > componentKey`
 
-**Rule:** If `search_design_system` returns a match and you draw a custom shape instead → hard violation. Delete and re-import the real DS component.
+Use the **Component lookup** section at the bottom of this document to find the right category path quickly.
+
+Only call `search_design_system` if the catalog has no match at all. Search returns cross-library results that silently resolve to wrong components.
+
+**Rule:** If the catalog returns a match and you draw a custom shape instead → hard violation. Delete and re-import the real DS component.
 
 ---
 
-#### Step 0b — Candidate shortlist (MANDATORY, output explicitly)
+#### Step 0b — Candidate shortlist (internal reasoning, NOT user-facing)
 
-For each distinct element in the reference, write this block in your response so the user can audit your picks before you build. Do NOT skip — this is the step that catches Tag-vs-Chip and variant-selection mistakes.
+For each distinct element, think through candidates and pick. This is YOUR reasoning scaffold — it catches Tag-vs-Chip and variant-selection mistakes before they hit the canvas.
 
-```
-Element: <visual description + user function>
-Candidates:
-  - <Name> (<key>) — <library>
-  - <Name> (<key>) — <library>
-Pick: <key> — <why this matches the reference over the alternatives>
-```
+**Keep it internal.** Do NOT dump the full list to the user. Component keys, library names, and per-element justifications are not what a designer wants to review — they want to see the visual outcome and the decisions that affect it. The user only sees the short plan in Step 0c; the shortlist stays in your working memory.
 
-**Worked example:**
+**Internal scratch format (one line per element):**
 ```
-Element: "outlined pill with label text, tappable, filter context (ikea, sofa bed)"
-Candidates:
-  - Chips (358519ac1939157f909e8047f47f7ac9f225d79e) — Components
-  - Tag Generic Medium (b242b07ecae797b412d3c8aaa9643b9f8c341520) — App Components (cheat sheet default)
-Pick: Chips — outlined/tappable style matches reference; Tag Generic is filled/display-only
+<element> → <pick> (not <alternative> because <one-line reason>)
 ```
 
-**If you cannot justify the pick against the reference visual, you are not ready to build.** Search again, check the full catalog, or ask the user.
+**Example — internal only, never emitted to the user:**
+```
+filter chips → Chips (not Tag Generic — outlined/interactive matches reference; Tag is display-only)
+listing card → Product card (not General category — reference shows no title/attributes)
+top nav → Shrunk Icons, left icon swapped to back arrow (not Normal — title is a standalone heading below)
+```
+
+If you cannot justify a pick against the reference visual, you are not ready to build. Search again, check the full catalog, or surface the ambiguity as one plain-English line in the Step 0c plan.
 
 ---
 
-#### Step 0c — Emit build plan and wait for approval (MANDATORY for first build)
+#### Step 0c — Emit a short plan and wait for approval (MANDATORY for first build)
 
-Before writing a single line of build code, output a plan in this format and STOP:
+The user is a designer, not a component librarian. The plan they see should be **short, plain English, and focused on decisions they can actually judge** — visual choices, deviations from the reference, deviations from a prior screen. No component keys. No library names. No token IDs.
 
+**Length budget: ≤ 6 bullets in the main body.** If your plan is longer than that, you are dumping your thinking instead of summarizing decisions. Cut it.
+
+**Format:**
 ```
-## Build plan: <screen name>
+Plan: <screen name>
 
-**DS components:**
-- <Role>: <Component name> (<key>) — <size/variant note>
-- <Role>: <Component name> (<key>) ×<count>
-- ...
+• <non-default decision in plain English>
+• <visual deviation from reference or prior screen>
+• <genuinely ambiguous choice — as a binary question, only if you truly can't pick>
 
-**Custom elements (no DS match):**
-- <element> — <why custom per the heuristic above>
-- ...
-
-**Open questions / assumptions:**
-- <anything unclear>
-
-Reply "go" to build, or correct any picks.
+Reply "go" to build, or edit any line.
 ```
 
-**Skip this step only if:**
+**Good example:**
+```
+Plan: Modern Living Comfort — Screen 2
+
+• Filter pills use the Chips component (Screen 1 used Tag Generic — wrong)
+• Listing cards use the image-only variant (Screen 1 showed title + attributes)
+• Title sits below the nav bar; nav has only back + filter icons
+
+Reply "go" to build, or edit any line.
+```
+
+**Bad example — too long, dumps internal keys/justifications. Cut it to the ≤6-bullet plain-English format above.**
+
+**Rules for the short plan:**
+- **Skip trivial / expected choices.** Don't say "uses Top Nav for the nav" — that's assumed. Surface only what is *non-default* or *different from the reference / a prior screen*.
+- **Omit component keys, library names, token IDs.** Describe the visual: "image-only cards", "outlined filter pills".
+- **Max 1–2 questions per plan**, each binary or multiple-choice, answerable in one word.
+- **If you can pick sensibly yourself, pick.** Don't ask about every tradeoff — only ask when the user's intent is genuinely ambiguous *and* the picks would meaningfully differ.
+
+**Skip the plan entirely if:**
 - The user has already specified exact components/variants in their request, OR
-- This is a rebuild after a correction and the candidate set is unchanged
+- This is a rebuild/duplicate with unchanged picks — say "building <screen> same as <prior screen>" in one line and proceed.
 
-**What this catches:** wrong variant picks, wrong component family, over-componentization of decorative elements, and "I picked the cheat sheet default without thinking" failures. A 10-second user review here saves a 5-minute rebuild.
+**What this catches:** wrong variant picks, wrong component family, over-componentization. A 5-second user skim here saves a 5-minute rebuild — but a 5-minute plan dump wastes the user's time and defeats the purpose.
 
 ---
 
-### Step 1 — Load the index
-Read the index file first. It contains one entry per component with:
-- `defaultKey` — component key to import
-- `defaultSize` — `{w, h}` dimensions
-- `subTypes` — list of available sub-variants
-- `availableSizes` — list of size options (if applicable)
-- `notes` — composition gotchas (READ THESE before placing)
+### Step 1 — Read the catalog for each component
 
-Only open the full catalog when you need a specific non-default variant.
+Open `figma-catalog-app.json` and find each component you need. Use the category map in **Component lookup** at the bottom. For multi-variant components (Top Nav, Tag, Listing card), read the `variants` object to find the right `componentKey` for the specific subtype you need.
 
 ### Step 2 — Plan the layout
 Before placing anything:
@@ -373,44 +338,21 @@ Main Frame (375×812, dark fill)
 
 ### Step 2b — Define layers (for screens with overlapping content)
 
-If the screen has ANY of these: video/image background, floating overlays, scrim gradients, elements that overlap other elements — you MUST define a layer structure.
-
-**Layer model** (Figma z-order = child order — later children render on top):
+If the screen has video/image backgrounds, floating overlays, or overlapping elements — define a layer structure. Each layer is a transparent 375×812 frame (`fills = []`) appended to the main frame in z-order.
 
 | Layer | Purpose | Z-order |
 |-------|---------|---------|
-| **Base layer** | Full-bleed backgrounds, video, hero images | Bottom (first child, rendered behind everything) |
+| **Base layer** | Full-bleed backgrounds, video, hero images | Bottom |
 | **Content layer** | Primary UI: headers, lists, cards, action bars | Middle |
-| **Overlay layer** | Floating elements: LIVE badge, emoji reactions, scrim gradients, toasts | Top (last child, rendered in front) |
+| **Overlay layer** | Floating: LIVE badge, reactions, scrims, toasts | Top |
 
-Each layer = a transparent frame (375×812, `fills = []`) as a direct child of the main frame.
-
-```js
-// use_figma pattern:
-const baseLayer = figma.createFrame();
-baseLayer.name = "Base Layer"; baseLayer.resize(375, 812); baseLayer.fills = [];
-mainFrame.appendChild(baseLayer);
-
-const contentLayer = figma.createFrame();
-contentLayer.name = "Content Layer"; contentLayer.resize(375, 812); contentLayer.fills = [];
-mainFrame.appendChild(contentLayer);
-
-const overlayLayer = figma.createFrame();
-overlayLayer.name = "Overlay Layer"; overlayLayer.resize(375, 812); overlayLayer.fills = [];
-mainFrame.appendChild(overlayLayer);
-```
-
-**When to use layers vs single-layer:**
+**When to use:**
 | Screen type | Use layers? |
-|-------------|-------------|
-| Live stream, video player | ✅ YES — video bg + chat overlay + floating badges |
-| Product detail with hero image | ✅ YES — image bg + scrollable content + sticky CTA |
-| Standard list / settings / chat screen | ❌ NO — single content flow, no overlaps |
-| Dark onboarding with illustration | Maybe — if illustration is behind text |
+|---|---|
+| Live stream, video player, product hero | ✅ YES |
+| Standard list / settings / chat screen | ❌ NO — single content flow |
 
-**If NOT using layers:** Skip this step. All sub-frames from Step 2 go directly inside the main frame.
-
-**If using layers:** Your Step 2 frame tree must show which layer each sub-frame belongs to. The main frame's only direct children are the layer frames (2-3 max).
+**If NOT using layers:** skip. All sub-frames go directly inside the main frame.
 
 ---
 
@@ -456,77 +398,21 @@ If your screen uses the layer model, create the Base / Content / Overlay layer f
 
 ### Step 3b — Auto-layout for sub-frames
 
-Create auto-layout sub-frames **inside** the main frame using `parentId`. These are plain frames (not library components), so `parentId` IS respected and they nest correctly.
+Plain frames nested via `parentId` support auto-layout. Library components do not (`parentId` is ignored — position them with absolute canvas coords instead).
 
-**Apply auto-layout in this order:**
-1. `create_frame(...)` with `parentId` — frame is created and nested
-2. `set_layout_mode({ nodeId, layoutMode })` — enables auto-layout
-3. `set_axis_align({ nodeId, primaryAxisAlignItems, counterAxisAlignItems })` — sets alignment
-4. `set_item_spacing({ nodeId, itemSpacing })` — sets gap between children
-5. `set_padding({ nodeId, paddingLeft, paddingRight, paddingTop, paddingBottom })`
-6. `set_layout_sizing({ nodeId, layoutSizingHorizontal, layoutSizingVertical })`
+**Apply in order:** `create_frame` → `set_layout_mode` → `set_axis_align` → `set_item_spacing` → `set_padding` → `set_layout_sizing`
 
-> ⚠️ If `set_layout_mode` times out, skip all auto-layout steps for that frame and position children absolutely instead. Document affected groups for the user to apply Shift+A manually.
+> ⚠️ If `set_layout_mode` times out, position children absolutely and note which groups need Shift+A in Figma.
 
-#### When to use auto-layout
+**When to use:** horizontal rows (avatar + name + button), vertical stacks (list items, chat), card content areas. **Not for:** the main 375×812 frame, overlay elements, backgrounds.
 
-| Use it for | Don't use it for |
-|---|---|
-| Horizontal rows (avatar + name + button) | The main 375×812 screen frame |
-| Vertical stacks (settings list, chat messages) | Absolute overlay elements (scrims, LIVE badges) |
-| Card content areas (title + condition + price) | Elements that need to overlap |
-| Action icon + label pairs | Full-bleed backgrounds |
-| Any repeated-item list | |
+**Quick-reference:**
+- Horizontal row: `layoutMode=HORIZONTAL`, `counterAxisAlignItems=CENTER`, padding 16px H
+- Vertical stack: `layoutMode=VERTICAL`, `itemSpacing=4–8`, `layoutSizingVertical=HUG`
+- Space-between: `primaryAxisAlignItems=SPACE_BETWEEN`
+- Child sizing: `layoutSizingHorizontal=FILL|HUG|FIXED`, `layoutSizingVertical=FIXED|HUG`
 
-#### Quick-reference patterns
-
-**Horizontal row** (e.g. streamer header):
-```js
-const row = create_frame({ name: "Streamer row", x: 0, y: 44, width: 375, height: 56, parentId: mainFrameId })
-set_layout_mode({ nodeId: row.id, layoutMode: "HORIZONTAL" })
-set_axis_align({ nodeId: row.id, primaryAxisAlignItems: "SPACE_BETWEEN", counterAxisAlignItems: "CENTER" })
-set_padding({ nodeId: row.id, paddingLeft: 16, paddingRight: 16, paddingTop: 8, paddingBottom: 8 })
-set_fill_color({ nodeId: row.id, r: 0, g: 0, b: 0 })  // transparent on dark screens
-```
-
-**Vertical stack** (e.g. product info: title + condition + price):
-```js
-const stack = create_frame({ name: "Product info", x: 0, y: 0, width: 200, height: 60, parentId: cardRowId })
-set_layout_mode({ nodeId: stack.id, layoutMode: "VERTICAL" })
-set_axis_align({ nodeId: stack.id, primaryAxisAlignItems: "MIN", counterAxisAlignItems: "MIN" })
-set_item_spacing({ nodeId: stack.id, itemSpacing: 4 })
-set_layout_sizing({ nodeId: stack.id, layoutSizingHorizontal: "FIXED", layoutSizingVertical: "HUG" })
-```
-
-**Space-between row** (e.g. left price + right button):
-```js
-set_layout_mode({ nodeId, layoutMode: "HORIZONTAL" })
-set_axis_align({ nodeId, primaryAxisAlignItems: "SPACE_BETWEEN", counterAxisAlignItems: "CENTER" })
-```
-
-**Vertical list** (e.g. settings rows, chat messages):
-```js
-set_layout_mode({ nodeId, layoutMode: "VERTICAL" })
-set_item_spacing({ nodeId, itemSpacing: 0 })
-set_layout_sizing({ nodeId, layoutSizingHorizontal: "FIXED", layoutSizingVertical: "HUG" })
-```
-
-#### Sizing children inside auto-layout frames
-```js
-// After appending a child, set its sizing relative to the parent:
-set_layout_sizing({ nodeId: childId, layoutSizingHorizontal: "FILL", layoutSizingVertical: "FIXED" })
-// FILL = stretch to fill parent width
-// HUG = wrap tightly around content
-// FIXED = fixed pixel size
-```
-
-#### Standard spacing values (4px grid)
-| Context | Gap | Padding |
-|---|---|---|
-| Dense list rows | 4px | 12–16px H, 8px V |
-| Card content | 4–8px | 0 (card bg handles padding) |
-| Horizontal action rows | 8–12px | 16px H |
-| Section gaps | 16–24px | — |
+**Standard spacing (4px grid):** Dense rows: 4px gap, 12–16px H padding. Section gaps: 16–24px.
 
 ---
 
@@ -556,14 +442,14 @@ Before importing any component, write one sentence: **"The user [does X] with th
 | Tag for a tappable action (Follow, Buy) | Tags are display-only labels, not interactive | Rounded Button or Normal Button |
 | Rounded Button for a status label (LIVE) | Buttons imply tappability; status labels are passive | Tag Generic High |
 
-**Bottom bar subtype selection:**
-| Subtype | When to use | Key |
-|---|---|---|
-| **Tab** | App-level navigation (Home, Sell, Inbox, Me) — persistent across screens | `3b9328a181650df77a2be30b4416245a083b389a` (iOS) |
-| **Button** | Contextual icon actions on live/video screens (share, gift, like, camera) | Find in full catalog under Bottom bar → Button |
-| **Task** (single) | Single primary CTA at bottom (Buy Now, Add to Cart, Checkout) | `aa34133e85746732f44a341fa82540e099833cb9` (default) |
-| **Task** (two buttons) | Two CTAs (Make Offer + Buy Now) | Find in full catalog under Bottom bar → Task/two buttons |
-| **Promote** | Boost/promote CTA | Find in full catalog under Bottom bar → Promote |
+**Bottom bar subtype selection** (look up key in catalog `NAVIGATION > Bottom bar`):
+| Subtype | When to use |
+|---|---|
+| **Tab** | App-level navigation (Home, Sell, Inbox, Me) — persistent |
+| **Button** | Contextual icon actions on live/video screens (share, gift, like) |
+| **Task** (single) | Single primary CTA (Buy Now, Add to Cart) |
+| **Task** (two buttons) | Two CTAs (Make Offer + Buy Now) |
+| **Promote** | Boost/promote CTA |
 
 ---
 
@@ -582,18 +468,33 @@ move_node({ nodeId: inst.id, x: correctCanvasX, y: correctCanvasY })  // fine-tu
 resize_node({ nodeId: inst.id, width: 343, height: 48 })              // full-width CTA
 ```
 
-**use_figma (JS):**
+**use_figma (JS) — wrap every import with verification:**
 ```js
-const comp = await figma.importComponentByKeyAsync(defaultKey);
-const inst = comp.createInstance();
-inst.x = canvasX;
-inst.y = canvasY;
-frame.appendChild(inst);   // parentId works correctly here — appendChild nests it
-inst.resize(343, 48);
+// ── Verified-import helper. Use this for EVERY DS component. ──
+async function importVerified(key, expectedNameFragment) {
+  const comp = await figma.importComponentByKeyAsync(key);
+  const name = (comp.name || '') + ' ' + (comp.parent?.name || '');
+  if (!name.toLowerCase().includes(expectedNameFragment.toLowerCase())) {
+    throw new Error(
+      `Wrong component: key ${key} resolved to "${name.trim()}", ` +
+      `expected "${expectedNameFragment}". Likely cross-library key — ` +
+      `look up the correct key in figma-catalog-app.json.`
+    );
+  }
+  return comp;
+}
 
-// ✅ Verify — must log "INSTANCE"
+// Place-one-then-verify pattern:
+const comp = await importVerified('b10dc6ca81da9b8276350334f72ffac669764d60', 'Filter Chip');
+const inst = comp.createInstance();
+inst.x = canvasX; inst.y = canvasY;
+frame.appendChild(inst);
+inst.resize(86, 32);
+
 if (inst.type !== 'INSTANCE') throw new Error('Not a DS instance — delete and re-import');
 ```
+
+**Rule: place ONE instance of each new element type first, verify, then batch-place the rest.** If `importVerified` throws, STOP — don't continue placing other components until the key is fixed. This is what prevents a 5-minute wrong-component rebuild.
 
 **Key placement rules:**
 - Track `currentY` and advance by actual `instance.height` (not catalog `defaultSize.h`)
@@ -602,21 +503,6 @@ if (inst.type !== 'INSTANCE') throw new Error('Not a DS instance — delete and 
 - Bottom bar: `relativeY = 812 - bottomBar.height`
 - **Immediately after placing**, go to Step 5 (text override) and Step 5b (rename)
 - **After every component placed**, confirm `inst.type === 'INSTANCE'` before continuing
-
-**Always use the design system — no exceptions:**
-| Element type | ✅ Use DS component | ❌ Never substitute with |
-|---|---|---|
-| Navigation bar / back button | Top Nav or Icon button | custom rectangle + text |
-| CTA / action button | Normal Button, Rounded Button, Icon Button | rounded rect + text |
-| Text input / chat input | Chat Input (pick correct state variant) | pill rect + placeholder text |
-| Product card or listing | Listing Card | custom frame |
-| Form input | Input component | rect + border |
-| Bottom navigation | Bottom Bar | custom icon row |
-| Status bar | Status Bar component | custom rect with text |
-| Tags / badges | Tag Generic (Medium or High) | colored rect + text |
-| Avatar | custom ellipse is acceptable — no DS avatar component | — |
-| Video/image placeholder | custom rectangle is acceptable | — |
-| Gradient scrim | custom rectangle with gradient fill is acceptable | — |
 
 Use **Tag Generic** (not Program Specific) whenever you need to override tag text — Program Specific returns 0 text nodes.
 
@@ -762,70 +648,42 @@ relativeY=718: Bottom bar (94px)    →  frame ends at 812
 
 ---
 
-## Common component cheat sheet — ⚠️ starting points, not answers
+## Component lookup
 
-> **Warning:** The keys below are *defaults for common cases*. They are NOT authoritative. Most components have 5–30 variants. Using the default without checking the reference visual is how the Tag/Chip mistake and the Top Nav variant mistake happen.
->
-> Rules when using this table:
-> 1. The cheat sheet key is only valid if it matches the reference variant. Otherwise find the correct variant in the full catalog.
-> 2. For multi-variant components (Top Nav, Listing card, Button), see the disambiguation tables below.
-> 3. If a `search_design_system` result returned something NOT in this cheat sheet, the search result wins — the library may have newer components this table doesn't know about.
+**Single source of truth:** `figma-catalog-app.json` — generated from App Components library (`NmeAXg5CGWRbBtIqxVcf96`). Every key in this file is correct. Never use a key from memory.
 
-### Top Nav — 16+ variants, pick by title size + action type
+Navigate with: `appComponents > <CATEGORY> > <ComponentName> > subTypes > <SubType> > sizes or variants > componentKey`
 
-Full map in `figma-catalog-app.json` under `Top Nav > Title&Action > variants`. Quick map:
+### Category map
 
-| Title size | Right action | Platform | Scrolled | Key | Size |
-|---|---|---|---|---|---|
-| Normal | Icons | iOS | No | `9d40ca717f7299286dbc1f209d6c61a31f32461b` | 375×132 |
-| Shrunk | Icons | iOS | No | `608167843374d523d3070dea05964ba5a5a2a129` | 375×92 |
-| Normal | TextButton | iOS | No | `f7dee42b2d7e0ba0b9d456fcdf919dff90ebf132` | 375×132 |
-| Normal | Icons | iOS | Yes (scrolled state) | `df012adda5995187c4909ade76200da3ce09b9d3` | 375×132 |
-| Normal | Icons | Android | No | `4624b655d6b05e30f8bb95eefded73bee5da261e` | 360×112 |
+| Reference element | Catalog path |
+|---|---|
+| Filter pill (outlined, tappable) | `FILTER_CHIP > Filter Chip (custom) - app` |
+| Selectable chip (form / input) | `INPUT > Chip` |
+| Display label (LIVE, Free Shipping, Sold) | `DONUT_DETAIL > Tag > Tag Generic > variants > Emphasis=Low/Medium/High` |
+| Listing / product card | `LISTING_PRODUCT_CARDS > Listing card > subTypes > General category / Verticals` |
+| Top navigation bar | `NAVIGATION > Top nav > subTypes > Title&Action > variants` |
+| Bottom nav tabs | `NAVIGATION > Bottom bar > subTypes > Tab` |
+| Bottom single CTA | `NAVIGATION > Bottom bar > subTypes > Task` |
+| Primary CTA button | `BUTTONS > Normal Button` |
+| Icon action button | `BUTTONS > Icon button` |
+| Pill CTA (Follow, Join) | `BUTTONS > Rounded button` |
+| Inline link | `BUTTONS > Text Button` |
+| Chat text-entry field | `SNAPSELL > Chat input` — text entry only, NOT a button |
+| Avatar | No catalog entry — custom ellipse |
+| Image / video placeholder | No catalog entry — custom rectangle |
 
-**Left-icon swap:** after placing, the default may show an X (close) when the reference shows a back arrow, or vice versa. The left icon is usually a swappable nested instance/component property, not a separate top-level variant. Check the instance properties panel and swap via Plugin API (`inst.setProperties({...})` or nested instance `swapComponent`). Don't pick a different Top Nav variant just to get a different left icon.
+### Listing card decision
 
-### Listing card — pick by what content the reference shows below the image
+Does the reference show title + price + attributes below the image?
+- **Yes** → `General category` variant. Do NOT resize to hide text — pick the right variant.
+- **No** (image-only) → no catalog variant; **custom-draw** the image frame.
 
-| Variant | Key | Shows |
-|---|---|---|
-| Product card (image + overlays) | `4e77b7e3e7473acc42597ca162f1f3d189527a7b` | Image-dominant, price pill overlay, heart — matches search/collection screens |
-| General category (set — full detail) | `0338c46696e2deeb590bfe0ba4e798f286dffc34` | Image + title + price + attributes + actions — matches browse/feed screens |
-| Verticals (set — category-tuned) | `7dab8bfd0e3e833566f9a63eb8ef494eea0e1040` | Category-specific rendering |
-| Image Overlay (micro, set) | `cf665a46aab51fa30e105f24387a531260ec5bf7` | Just the image + overlays — for custom compositions |
+### Top Nav — pick variant from the catalog
 
-**Decision rule:** Does the reference show title/attribute text below the image?
-- **No** (image-dominant with only a price badge overlay) → **Product card**
-- **Yes** (title, price, condition, attributes) → **General category**
+Open `figma-catalog-app.json` at `NAVIGATION > Top nav > subTypes > Title&Action > variants`. Pick by: `Platform` (iOS/Android) × `Title type` (Normal/Shrunk) × `Action types` (Icons/TextButton/None) × `Scrolled` (Yes/No).
 
-Do NOT resize `General category` to try to hide its text — the internal layout doesn't clip cleanly, you'll end up with overlapping/cut-off text. Pick the right variant instead.
-
-### Button (Donut 2.0) — 3 sizes × subtypes, pick by function
-
-| Use case | Component | Default key | Sizes |
-|---|---|---|---|
-| Primary CTA, full label | Normal Button | `da7d8e4307f4be9b7358340e98f04fc584fbd6b9` | Small / **Medium** / Large |
-| Normal Button (Large) — 48px tall | — | `0f46fd8e0015b3531e4365b89b5ddb440f3d8814` | Large |
-| Normal Button (Large Secondary-dark) | — | `df6d3da8af62e0bf2945ebea85902c531b5725ec` | Dark-bg secondary |
-| Icon-only action | Icon button | `bef3e5e19d544a0d89dbef31404254ccc9e78dd6` | Small / **Medium** / Large |
-| Rounded / pill CTA (Follow, Join) | Rounded button | `34f5479f37a5fdaf878440d50c5c92bb0c87d06e` | Small / **Medium** |
-| Inline link-style | Text Button | `d34527d057d71566106f4380c346939c65281aac` | Small / **Medium** / Large |
-
-Full-width CTA → resize width to 343 (16px margin each side).
-
-### Common one-offs — read carefully, naming is the trap
-
-| Component | Key | Default size | Notes |
-|-----------|-----|-------------|-------|
-| **Chips** (filter pill, outlined, interactive) | `358519ac1939157f909e8047f47f7ac9f225d79e` (set) | varies | **Use for filter chips, NOT Tag Generic.** Chips = interactive/filterable/outlined. Tag = display-only label. |
-| **Tag Generic (Medium)** — display label | `b242b07ecae797b412d3c8aaa9643b9f8c341520` | 84×20 | LIVE, Free Shipping, Brand New — NEVER for filter chips or tappable elements |
-| **Tag Generic (High)** — red emphasis | `12668f84cd0f9a4d45edf4a4d42706c70c63a04f` | 84×20 | LIVE badge, Sold |
-| **Bottom bar — Tab** (iOS) | `3b9328a181650df77a2be30b4416245a083b389a` | 375×90 | App-level nav (Home, Sell, Inbox) |
-| **Bottom bar — Task** (single) | `aa34133e85746732f44a341fa82540e099833cb9` | 375×94 | Single primary CTA (Buy Now) |
-| **Bottom bar — Button** | — (full catalog) | 375×~90 | Contextual icon actions (share, gift, like) |
-| **Bottom bar — Promote** | — (full catalog) | 375×~94 | Boost/promote CTA |
-| **Chat input (Default)** | `fdee8f42b4f5f79f93b0f81d21ec1e54a3ebd65b` | 375×104 | **Text entry only** — NEVER for action buttons labeled "Chat" |
-| **Chat input (Typing)** | — (full catalog) | 375×104 | Active typing state with send button |
+**Left-icon swap:** after placing, the default may show X instead of a back arrow. The left icon is a swappable component property — use `inst.setProperties({…})` or swap the nested instance. Don't pick a different variant just to change the left icon.
 
 ---
 
@@ -860,7 +718,4 @@ Manual steps needed in Figma:
 
 ## Catalog refresh
 
-When the design system has been updated:
-1. Re-extract pages using the extraction scripts (run in use_figma)
-2. Run: `/usr/local/bin/node /Users/thanhhapham/Skills/app-to-desktop-conversion/generate-catalog.js`
-3. Both full catalog and index are regenerated
+When the design system has been updated, regenerate `figma-catalog-app.json` by re-extracting the App Components library from Figma via `use_figma`.
