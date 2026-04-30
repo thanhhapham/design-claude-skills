@@ -76,6 +76,7 @@ In Carousell context: Has the user already taken action that costs them somethin
 ## When To Break The Rules
 
 - **Stated-preference market research** (conjoint, MaxDiff, Van Westendorp) — purpose-built to extract preference info; Mom Test rules don't apply.
+- **Comprehension testing of finished design options** — a forced-choice "how many coins do you pay?" question with one objectively correct answer is not a hypothetical, it's a knowledge check. Showing a mock and grading right/wrong is valid even though the participant is reacting to something they haven't used. Don't refuse this as a "validation trap" — that rule applies to preference questions, not knowledge checks. See methodology-matrix → Comprehension Testing.
 - **Concept testing for go/no-go pricing** — sometimes you genuinely need stated price reactions; flag the validity caveat in the synthesis.
 - **Sensitive topics where past behaviour is hard to recall** — provide memory aids (specific dates, calendar prompts) instead of going hypothetical.
 

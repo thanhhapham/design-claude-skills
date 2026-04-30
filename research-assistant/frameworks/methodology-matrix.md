@@ -9,12 +9,32 @@ Pick the method by triangulating three axes: research type, what's being measure
 | Why does X behaviour happen? | User research | 1:1 interview, contextual inquiry |
 | Can users complete X task? | User research | Moderated usability test |
 | What mental model do users hold for X? | User research | Card sort / tree test, 1:1 interview |
+| **Which of N pre-defined design options is most understandable / least confusing?** | **User research (evaluative)** | **Comprehension survey with forced-choice right/wrong items, optionally + unmoderated think-aloud diagnostic** |
 | How big is the market for X? | Market research | Sizing survey, secondary data |
 | Which value props matter most? | Market research | MaxDiff, conjoint (suggest, don't plan in detail) |
 | What price will the market bear? | Market research | Van Westendorp PSM, conjoint |
 | What's our brand vs competitors? | Market research | Brand tracker survey, awareness funnel |
 | Are users converting on flow X? | Mixed | Funnel analysis + targeted UT |
 | Do users prefer A or B at scale? | Mixed | A/B test (suggest only — out of scope to plan) |
+
+## Discovery vs Evaluative — Pick The Right Default
+
+Before recommending a method, classify the study:
+
+- **Discovery research** — problem still being scoped, no design exists yet. Goal: understand current behaviour, surface unmet needs, build mental model. **Default: 1:1 interviews, contextual inquiry.** Mom Test rules apply hard.
+- **Evaluative research** — design options already exist, decision is choosing between them. Goal: measure comprehension, fairness, perceived clarity per option. **Default: comprehension survey (forced-choice with correct answers), optionally with unmoderated think-aloud for diagnosis.** Mom Test rules soften — a "based on this screen, how many coins do you pay?" question is a knowledge check, not a hypothetical.
+
+The two studies have opposite biases. Discovery defaults qual / depth / small N. Evaluative defaults quant / breadth / larger N. The skill must not auto-route evaluative work into a discovery interview just because the verb "understand" appears in the brief.
+
+## Comprehension Testing (First-Class Method)
+
+Distinct from generic in-app surveys. Defining feature: every key item has an objectively correct answer, scored binary.
+
+- **Use when:** comparing finished design options on clarity / understanding / fairness; checking whether copy or pricing maths is read correctly.
+- **Sample size:** 30–50 for directional read between options; 200+ for stat sig sub-group cuts (consult Data Science).
+- **Instrument:** mock image + 2–4 forced-choice items per option (one correct answer each) + 1 fairness MCQ + 1 short-answer "what does this mean for what you'd pay?"
+- **Pair with:** 4–6 unmoderated think-aloud sessions if you need to diagnose *why* a wrong answer happens.
+- **Don't confuse with:** preference testing (which option do you like?) — preference is hospitality-bias bait. Comprehension is harder to fake.
 
 ## Axis 2 — Attitudinal vs Behavioural × Qualitative vs Quantitative
 
