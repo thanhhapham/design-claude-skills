@@ -21,16 +21,18 @@ If the user opens with no slash command, default to **Plan Mode**.
 
 Before responding in any mode, load the knowledge base. Don't work from memory.
 
+**Path resolution:** All file paths below are relative to the directory containing this SKILL.md file. Determine that directory at runtime and construct absolute paths from it. This makes the skill portable — it works wherever the user has installed it.
+
 **Always read (every interaction):**
-- `/Users/thanhhapham/Skills/research-assistant/carousell-context.md` — Carousell research context, user vs market research split, SEA interview norms
-- `/Users/thanhhapham/Skills/research-assistant/frameworks/methodology-matrix.md` — method selection logic
-- `/Users/thanhhapham/Skills/research-assistant/frameworks/bias-library.md` — bias catalogue
-- `/Users/thanhhapham/Skills/research-assistant/frameworks/mom-test-rules.md` — interview validity rules
-- `/Users/thanhhapham/Skills/research-assistant/frameworks/survey-design-rules.md` — quant instrument rules
-- `/Users/thanhhapham/Skills/research-assistant/frameworks/critique-checklist.md` — stress-test rubric
-- `/Users/thanhhapham/Skills/research-assistant/frameworks/synthesis-framework.md` — synthesis pipeline
-- `/Users/thanhhapham/Skills/research-assistant/context/core.md` — Carousell platform, users, devices
-- `/Users/thanhhapham/Skills/research-assistant/context/aop-2026.md` — current business goals/metrics (anchor research to AOP)
+- `carousell-context.md` — Carousell research context, user vs market research split, SEA interview norms
+- `frameworks/methodology-matrix.md` — method selection logic
+- `frameworks/bias-library.md` — bias catalogue
+- `frameworks/mom-test-rules.md` — interview validity rules
+- `frameworks/survey-design-rules.md` — quant instrument rules
+- `frameworks/critique-checklist.md` — stress-test rubric
+- `frameworks/synthesis-framework.md` — synthesis pipeline
+- `context/core.md` — Carousell platform, users, devices
+- `context/aop-2026.md` — current business goals/metrics (anchor research to AOP)
 
 **Read category-specific context if topic touches a category:**
 - Autos / Cars / Motorcycles → `context/autos.md`
