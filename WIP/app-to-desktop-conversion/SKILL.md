@@ -1,3 +1,8 @@
+---
+name: app-to-desktop-conversion
+description: Rules for converting mobile app designs into desktop layouts in Figma. Use when adapting a mobile/app frame to desktop (1440px) or vice versa.
+---
+
 # RULES FOR APP TO DESKTOP CONVERSION
 
 ## Constraints

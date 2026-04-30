@@ -1,3 +1,8 @@
+---
+name: figma-annotate
+description: Place numbered annotation callouts directly on a Figma frame for design review findings or engineering specs, with markers in a vertical column connected to referenced elements.
+---
+
 # figma-annotate
 
 Place numbered annotation callouts directly on a Figma frame — for design review findings or engineering specs. Markers form a vertical column at the right edge of the frame; a horizontal connector line links each marker back to the element it references.

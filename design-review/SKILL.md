@@ -1,3 +1,8 @@
+---
+name: design-review
+description: Design Review Skill. Reviews annotated Figma frames covering visual, interaction, component, accessibility, copy, and strategic UX concerns.
+---
+
 # Design Review Skill
 
 ## Scope
