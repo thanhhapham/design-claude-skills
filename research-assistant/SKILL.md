@@ -19,30 +19,35 @@ If the user opens with no slash command, default to **Plan Mode**.
 
 ## Step 0 — Always Load Context First
 
-Before responding in any mode, load the knowledge base. Don't work from memory.
+Before responding in any mode, locate the skill and load the knowledge base. Don't work from memory.
 
-**Path resolution:** All file paths below are relative to the directory containing this SKILL.md file. Determine that directory at runtime and construct absolute paths from it. This makes the skill portable — it works wherever the user has installed it.
+**Path resolution — do this first, every time:**
+Run the following to find the skill's installed directory:
+```
+find ~ -name "carousell-context.md" -path "*/research-assistant/*" 2>/dev/null | head -1
+```
+Take the directory of that result as `SKILL_DIR`. All file paths below are `SKILL_DIR/<path>`. This works wherever the skill is installed — no manual configuration needed.
 
 **Always read (every interaction):**
-- `carousell-context.md` — Carousell research context, user vs market research split, SEA interview norms
-- `frameworks/methodology-matrix.md` — method selection logic
-- `frameworks/bias-library.md` — bias catalogue
-- `frameworks/mom-test-rules.md` — interview validity rules
-- `frameworks/survey-design-rules.md` — quant instrument rules
-- `frameworks/critique-checklist.md` — stress-test rubric
-- `frameworks/synthesis-framework.md` — synthesis pipeline
-- `context/core.md` — Carousell platform, users, devices
-- `context/aop-2026.md` — current business goals/metrics (anchor research to AOP)
+- `SKILL_DIR/carousell-context.md` — Carousell research context, user vs market research split, SEA interview norms
+- `SKILL_DIR/frameworks/methodology-matrix.md` — method selection logic
+- `SKILL_DIR/frameworks/bias-library.md` — bias catalogue
+- `SKILL_DIR/frameworks/mom-test-rules.md` — interview validity rules
+- `SKILL_DIR/frameworks/survey-design-rules.md` — quant instrument rules
+- `SKILL_DIR/frameworks/critique-checklist.md` — stress-test rubric
+- `SKILL_DIR/frameworks/synthesis-framework.md` — synthesis pipeline
+- `SKILL_DIR/context/core.md` — Carousell platform, users, devices
+- `SKILL_DIR/context/aop-2026.md` — current business goals/metrics (anchor research to AOP)
 
 **Read category-specific context if topic touches a category:**
-- Autos / Cars / Motorcycles → `context/autos.md`
-- Home Services / Renovation / Aircon → `context/home.md`
-- Luxury / Watches / Jewellery → `context/luxury.md`
+- Autos / Cars / Motorcycles → `SKILL_DIR/context/autos.md`
+- Home Services / Renovation / Aircon → `SKILL_DIR/context/home.md`
+- Luxury / Watches / Jewellery → `SKILL_DIR/context/luxury.md`
 
 **Read for behavioural/UX-grounded studies:**
-- `context/behavioral-insights.md` — when the study touches behavioural triggers (Scarcity, Social Proof, Loss Aversion, etc.)
-- `context/ux-principles.md` — when the study is UT or IA-related (mental models, Hick's Law, Fitts's Law, Nielsen heuristics)
-- `context/brand.md`, `context/copy.md` — when copy or brand voice is in scope
+- `SKILL_DIR/context/behavioral-insights.md` — when the study touches behavioural triggers (Scarcity, Social Proof, Loss Aversion, etc.)
+- `SKILL_DIR/context/ux-principles.md` — when the study is UT or IA-related (mental models, Hick's Law, Fitts's Law, Nielsen heuristics)
+- `SKILL_DIR/context/brand.md`, `SKILL_DIR/context/copy.md` — when copy or brand voice is in scope
 
 If the topic involves the journey or known touchpoints, **also invoke the `carousell-journey` skill** to load the canonical journey/touchpoint map.
 
