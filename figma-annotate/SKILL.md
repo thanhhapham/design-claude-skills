@@ -113,26 +113,32 @@ Always read `target.width` from the coordinate-read call (Step 2) and choose D b
 
 ### Rule 9 — Markers form a right-edge column; connector lines link back to elements
 
-All dots share the same X (just outside the frame's right edge). Only Y varies per marker. A horizontal 1px connector line runs from the element's right edge to the dot.
+All dots share the same X (just outside the frame's right edge). Only Y varies per marker. A colored connector line runs from the element's **left edge** all the way to the dot column — crossing through the element so it clearly points at it.
 
 ```js
 // CORRECT — fixed X column, variable Y
 const dotX = target.width + D - 2;      // just past right edge
 dot.x = dotX;
-dot.y = ry - D / 2;                      // ry = element centre Y
+dot.y = dotY;                            // dotY from items array (may be staggered)
 
-// Connector line from element right edge to dot
+// Connector line from element LEFT edge to dot — use priority colour, NOT white
+// White at 25% opacity is invisible against white UI backgrounds
+// Line starts at lx (element left edge), crosses the element, ends at dotX
 const line = figma.createFrame();
 line.name = `line-${n}`;
-line.fills = [{ type: "SOLID", color: { r:1, g:1, b:1 } }];
-line.opacity = 0.25;
-line.resize(dotX - lx, 1);              // lx = element right edge X
-line.x = lx;
-line.y = ry;
+line.fills = [{ type: "SOLID", color: c, opacity: 0.4 }];  // c = COL[p] matches dot colour
+line.opacity = 1;
+line.resize(Math.max(1, dotX - lx), 2);      // 2px height so it's visible
+line.x = lx;                                  // lx = element LEFT edge X
+line.y = ry - 1;                              // ry = element centre Y
 overlay.appendChild(line);
 
 // Overlay must be wider than the frame to contain the dots
 overlay.resize(target.width + D * 3, target.height);
+
+// Lock the overlay so it can't be accidentally moved or selected in Figma
+target.appendChild(overlay);
+overlay.locked = true;
 
 // WRONG — centering each dot on its element hides which column the marker is in
 dot.x = rx - D / 2;  // DON'T DO THIS
@@ -187,9 +193,10 @@ figma.closePlugin(lines.join("\n"));
 **From the output, map each finding to a specific child node:**
 - Direct children: use `child.x` and `child.y` directly — they're already relative to the target frame
 - Nested grandchildren: compute `frame_relative_x = grandchild_absX - target_absX`, same for Y
-- For each finding you need two values:
-  - `ry` = element centre Y = `child.y + child.height / 2`
-  - `lx` = element right edge X = `child.x + child.width` (connector line starts here)
+- For each finding you need three values:
+  - `ry` = element centre Y = `child.y + child.height / 2` (connector line Y; also dot default Y)
+  - `lx` = element **LEFT** edge X = `child.x` (connector line starts here and crosses through the element)
+  - `dotY` = dot top-left Y = `ry - D/2` unless staggered (see Step 4)
 - If a sub-area within a child is relevant (e.g. "bottom bar" inside a phone screen), drill down another level
 
 **If the node tree is too deep to enumerate in one call**, run a second targeted call on the specific child node id to get its grandchildren.
@@ -212,14 +219,15 @@ Read `target.width` from the Step 2 output and set D:
 Compile the final list using real coordinates from Step 2:
 
 ```js
-// [num, priorityKey, ry, lx]
-// ry  = element centre Y (frame-relative) — sets the dot's vertical position
-// lx  = element right edge X (frame-relative) — connector line starts here
+// [num, priorityKey, ry, lx, dotY]
+// ry   = element centre Y (frame-relative) — connector line Y; points at the element
+// lx   = element LEFT edge X (frame-relative) — line starts here, crosses through element
+// dotY = dot top-left Y — same as ry-D/2 unless staggered to avoid overlap
 // "H" = HIGH, "M" = MEDIUM, "L" = LOW, "E" = Eng Spec
 const items = [
-  [1, "H", 634, 212],
-  [2, "M", 602, 212],
-  [3, "H", 429, 80],
+  [1, "H", 634, 16,  621],
+  [2, "M", 602, 16,  589],
+  [3, "H", 429, 80,  416],
   ...
 ];
 ```
@@ -253,9 +261,10 @@ const COL = {
   E: { r:0.12, g:0.44, b:0.85 },  // Eng Spec blue
 };
 
-// [num, priorityKey, ry, lx]
-// ry = element centre Y (frame-relative) — dot Y position
-// lx = element right edge X (frame-relative) — connector line starts here
+// [num, priorityKey, ry, lx, dotY]
+// ry   = element centre Y — connector line Y (points at the actual element)
+// lx   = element LEFT edge X — line starts here, crosses through element to dot
+// dotY = dot top-left Y — use ry-D/2 unless staggered to avoid overlap
 const items = [
   // REPLACE WITH ACTUAL VALUES FROM STEP 2
 ];
@@ -274,46 +283,48 @@ overlay.clipsContent = false;
 overlay.resize(target.width + D * 3, target.height);
 overlay.x = 0; overlay.y = 0;
 target.appendChild(overlay);
+overlay.locked = true; // Lock so designers can't accidentally move or select it
 
 // Fixed X column — all dots just past the frame's right edge
 const dotX = target.width + D - 2;
 
-for (const [n, p, ry, lx] of items) {
+for (const [n, p, ry, lx, dotY] of items) {
   const c = COL[p];
 
-  // Connector line: thin white line from element right edge to dot column
+  // Connector line: from element LEFT edge, crossing through it, to the dot column
+  // Use priority colour at 40% opacity — visible on both light and dark UI backgrounds
   const line = figma.createFrame();
   line.name = `line-${n}`;
-  line.fills = [{ type: "SOLID", color: { r:1, g:1, b:1 } }];
-  line.opacity = 0.25;
-  line.resize(dotX - lx, 1);
+  line.fills = [{ type: "SOLID", color: c, opacity: 0.4 }];
+  line.opacity = 1;
+  line.resize(Math.max(1, dotX - lx), 2);  // 2px height so it's visible
   line.x = lx;
-  line.y = ry;
+  line.y = ry - 1;  // centred on element's Y
   overlay.appendChild(line);
 
-  // Dot
+  // Dot at fixed X column, staggered Y if needed
   const dot = figma.createEllipse();
   dot.name = `● ${n}`;
   dot.resize(D, D);
   dot.x = dotX;
-  dot.y = ry - D / 2;
+  dot.y = dotY;
   dot.fills = [{ type: "SOLID", color: c }];
   dot.strokes = [{ type: "SOLID", color: { r:1, g:1, b:1 } }];
   dot.strokeWeight = SW;
   overlay.appendChild(dot);
 
-  // Number label
+  // Number label — fontName BEFORE characters
   const t = figma.createText();
   t.name = `# ${n}`;
+  t.fontName = { family: "Inter", style: "Bold" };
   t.characters = String(n);
   t.fontSize = FS;
-  t.fontName = { family: "Inter", style: "Bold" };
   t.fills = [{ type: "SOLID", color: { r:1, g:1, b:1 } }];
   t.textAlignHorizontal = "CENTER";
   t.textAlignVertical = "CENTER";
   t.resize(D, D);
   t.x = dotX;
-  t.y = ry - D / 2;
+  t.y = dotY;
   overlay.appendChild(t);
 }
 
@@ -346,8 +357,9 @@ if (oldPanel) oldPanel.remove();
 // Build content with position tracking for styled ranges
 let content = "";
 let titleEnd = 0;
-const sectionRanges = [];   // [start, end] for HIGH / MEDIUM / LOW headers
-const principleRanges = []; // [start, end] for "   → Principle" lines
+const sectionRanges = [];    // [start, end] for HIGH / MEDIUM / LOW headers
+const principleRanges = [];  // [start, end] for "   → Principle" lines (blue)
+const suggestionRanges = []; // [start, end] for "   ✦ Suggestion" lines (gold)
 
 function ap(str) { content += str; }
 function aSection(str) {
@@ -357,6 +369,10 @@ function aSection(str) {
 function aPrinciple(str) {
   const s = content.length; content += str;
   principleRanges.push([s, content.length]);
+}
+function aSuggestion(str) {
+  const s = content.length; content += str;
+  suggestionRanges.push([s, content.length]);
 }
 
 const title = "REPLACE WITH TITLE";   // e.g. "Design Review - Seller Search"
@@ -368,18 +384,21 @@ ap("REPLACE WITH SUBTITLE\n\n");       // e.g. "10 findings - 3 HIGH - 4 MEDIUM 
 aSection("HIGH\n");
 ap("1  Finding label - detail text.\n");
 aPrinciple("   \u2192 Principle Name\n");  // e.g. "   → Fitts's Law"
+aSuggestion("   \u2726 Actionable fix here.\n");
 ap("\n");
 
 // MEDIUM section
 aSection("MEDIUM\n");
 ap("3  Finding label - detail text.\n");
 aPrinciple("   \u2192 Principle Name\n");
+aSuggestion("   \u2726 Actionable fix here.\n");
 ap("\n");
 
 // LOW section
 aSection("LOW\n");
 ap("8  Finding label - detail text.\n");
 aPrinciple("   \u2192 Principle Name\n");
+aSuggestion("   \u2726 Actionable fix here.\n");
 
 // Scale panel width proportionally to frame width
 const PW = Math.max(480, Math.round(target.width * 0.17));
@@ -423,6 +442,12 @@ for (const [s, e] of principleRanges) {
   t.setRangeFills(s, e, muteColor);
 }
 
+// Suggestion lines — gold, actionable
+const goldColor = [{ type: "SOLID", color: { r:0.96, g:0.78, b:0.26 } }];  // #F5C742
+for (const [s, e] of suggestionRanges) {
+  t.setRangeFills(s, e, goldColor);
+}
+
 panel.resize(PW, t.height + 64);
 return { createdNodeIds: [panel.id] };
 ```
@@ -451,7 +476,8 @@ return { createdNodeIds: [panel.id] };
 | LOW       | `#666677` | `{r:0.40, g:0.40, b:0.50}`   |
 | Eng Spec  | `#1E70D9` | `{r:0.12, g:0.44, b:0.85}`   |
 | Legend BG | `#111118` | `{r:0.07, g:0.07, b:0.12}`   |
-| Principle | `#739FE0` | `{r:0.45, g:0.62, b:0.88}`   |
+| Principle  | `#739FE0` | `{r:0.45, g:0.62, b:0.88}`   |
+| Suggestion | `#F5C742` | `{r:0.96, g:0.78, b:0.26}`   |
 
 ---
 
@@ -476,3 +502,6 @@ Always use these names exactly (enables idempotent cleanup):
 | 50–100 nodes in one `use_figma` call | Stream timeout before completion | Split: Call A = markers (~30 nodes), Call B = legend (~8 nodes) |
 | One text node per finding in legend | 30–50 extra nodes → timeout | Single multiline text block for entire legend |
 | `target.clipsContent` left as `true` | Dots at right edge (x > frame width) invisible — clipped by frame boundary | Set `target.clipsContent = false` before placing overlay |
+| White connector lines (opacity 0.25) | Lines invisible against white UI backgrounds | Use priority colour (`c = COL[p]`) at 40% opacity on paint, 2px height |
+| Overlay not locked | Designers accidentally select/move the annotation layer | Set `overlay.locked = true` after `target.appendChild(overlay)` |
+| `lx` = element right edge | Line appears only between element edge and dot — doesn't visually cross the element | Use `lx = child.x` (left edge) so line crosses through the element |
