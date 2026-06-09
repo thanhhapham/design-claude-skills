@@ -37,6 +37,7 @@ Before reading the design, load the knowledge base. This is not optional — sur
 - Read `/Users/thanhhapham/Skills/design-review/context/brand.md` — visual identity, tone, CarouRed, Fabriga, illustrations
 - Read `/Users/thanhhapham/Skills/design-review/context/copy.md` — sentence case, currency, vocabulary, error messages, CTAs
 - Read `/Users/thanhhapham/Skills/design-review/context/aop-2026.md` — full AOP with pillar/goal/metric detail
+- Read `/Users/thanhhapham/Skills/design-review/context/spacing.md` — LDP/PDP spacing system: Section/Block/Group/Unit hierarchy, spacing values (0/8/16/24/32px), page top margin rule
 
 **Read category-specific context based on what you see in the design:**
 - If Autos / Cars / Motorcycles / Carousell Select: Read `context/autos.md`
