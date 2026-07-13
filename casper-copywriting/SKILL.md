@@ -15,52 +15,19 @@ This skill helps you write, audit, and generate copy that aligns with Carousell'
 
 ---
 
-## Core Rules (Quick Reference)
+## Core Rules
 
-### Grammar & Mechanics
-- **Sentence case** always (e.g., "View your listings", not "View Your Listings")
-- **Simple past tense** over present perfect (e.g., "You reached your limit", not "You've reached your limit") — unless the time factor matters
-- **No periods** in headers, buttons, or CTAs — only use if multiple sentences
-- **No Oxford comma** (e.g., "A, B and C", not "A, B, and C")
-- **Contractions encouraged** (e.g., "you're", "don't", "we're") — they sound friendlier
-- **Numbers**: use digits (3 days, not three days); spell out zero unless it's money ($0, not zero)
+The full rule set is the single source of truth in [copy.md](copy.md) — Carousell's complete content style guide. Read it before auditing or generating copy. It covers:
 
-### Tone & Voice
-- **Active voice** by default (e.g., "We're investigating the issue") — passive only for notifications/errors where the action matters more than the actor
-- **Avoid "please"** unless it's Carousell's fault (e.g., "Please re-enter your details" after a crash, not "Please adjust your price")
-- **Avoid "sorry"** unless it's Carousell's fault; say "We're sorry this happened" not "We're sorry for this incident"
-- **Use "they/them"** for gender-neutral pronouns, not "he/she" or "him/her"
-- **Use "and"** not "&" (except in brand names like "Health & Beauty")
-- **No slang** — keep it accessible (users range from teens to elderly)
+- Grammar & mechanics — sentence case, simple past tense, no periods on CTAs, no Oxford comma, contractions, numbers, currency
+- Tone & voice — active voice (with the notification/error passive exception), "please"/"sorry" usage, they/them pronouns, no slang
+- Special formatting — quotation marks for exact UI text, "and" not "&", links, slashes, promo codes
+- Carousell terminology — Listings, Store, Buyers, Mobile number, Meet-up (noun) vs meet up (verb), Listing form
+- Professional Seller capitalization rules
+- Directing users without relying on "button" or colour
+- Error messages, empty states, notifications, microcopy patterns, tone calibration by context
 
-### Special Formatting
-- **Quotation marks** signal exact product text (e.g., "Tap 'List' to view your drafts" — quote the actual button/label)
-- **Single quotes by default** ('like this') unless quoting within a quote ("he said 'like this'")
-- **Links**: embed in verb+noun phrase, never show raw URLs (e.g., "Share your thoughts with us" not "Share your thoughts at https://...")
-- **Slashes with no spaces**: "Bump/Spotlight", not "Bump / Spotlight"
-- **Promo codes in angle brackets & CAPS**: Use promo code <SHIPTOME> for $5 off
-- **No exclamation marks** in serious contexts (suspensions, scams, COVID-19 messaging); max 1 per screen elsewhere
-
-### Carousell Terminology
-Use these exact terms:
-- ✅ "Listings" (not items, products)
-- ✅ "Store" (not shop, stall)
-- ✅ "Buyers" (not customers)
-- ✅ "Mobile number" (not handphone, phone number)
-- ✅ "Like the listing" (not favourite)
-- ✅ "Meet-up" (noun, deal method) vs "meet up" (verb, action)
-- ✅ "Listing form" (not sell form)
-
-### Professional Seller Rules (when applicable)
-When copy mentions "Professional seller" or account types:
-- **Always capitalize "Professional" and "Personal"** — they're proper nouns (e.g., "You're on a Professional account", "Professional seller badge")
-- Never say "professional account seller" — use either "Professional account" or "Professional seller", never both
-- Never say "Professional badge" — the badge says "Professional seller", so quote it as such
-
-### Directing Users
-- Don't call it a **button** — just say "Tap 'Set up contract'" (obvious enough it's clickable)
-- **Don't use colour** to direct (some users are colourblind) — say "Tap 'Request for contract' in Chat", not "Tap the green button"
-- Use quotation marks for exact UI text (menu items, button labels, tabs)
+The quick 5-rule checklist below is the fast gate-check derived from that guide — use it for handover, not as a replacement for the full guide.
 
 ---
 
@@ -201,34 +168,19 @@ If copy mentions "Professional account", "Professional seller", "account types",
 - Flag capitalization (must be "Professional" and "Personal", not lowercase)
 - Example: "You've been switched to a Professional account" ✓ vs "You've been switched to a professional account" ✗
 
-### When passive voice is OK
-Notifications and error messages where the action matters more than the actor:
-- ✅ "Your card won't be charged now" (passive, user-focused)
-- ✅ "Account suspended" (passive, highlights outcome)
-- ✅ "Promo code applied" (passive)
-
-### When to avoid contractions
-- Don't contract the main verb (✗ "Contact us if you've any questions")
-- Don't contract a noun + verb (✗ "The item'll be delivered")
-- When you really need to stress "not": "Do not leave the page" (stronger than "Don't leave")
-
-### Numbers & formatting
-- **Prices**: Singapore S$30.50, Malaysia RM30, Philippines PHP1,000 (no space after currency)
-- **Ranges**: S$30.50–39 (use en dash, no space, drop currency on second number)
-- **Time**: 6PM–9PM, May–September (en dash for ranges)
-- **Commas**: 1,000 | 100,000 (not 1000 or 100000)
+Passive-voice exceptions, contraction edge cases, and currency/number formatting (including per-market ranges and time formats) are covered in [copy.md](copy.md) — that's the canonical version if you spot any discrepancy with older notes elsewhere.
 
 ---
 
 ## What to Reference
 
-This skill embeds Carousell's complete content style guide, covering:
-- Grammar & mechanics (punctuation, capitalization, tense, numbers)
+This skill's workflows point to [copy.md](copy.md), Carousell's complete content style guide, covering:
+- Grammar & mechanics (punctuation, capitalization, tense, numbers, currency)
 - Tone & voice (active voice, contractions, emotional language)
 - Special cases (links, quotation marks, directing users)
 - Carousell terminology (listings, store, buyers, etc.)
 - Professional seller rules
-- Context-specific guidance (notifications, errors, serious contexts)
+- Context-specific guidance (notifications, errors, empty states, serious contexts, tone calibration)
 
 When you ask why a rule exists, I'll explain the rationale from the guide (readability, consistency, friendliness, accessibility, brand coherence).
 
