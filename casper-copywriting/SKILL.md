@@ -87,6 +87,8 @@ C) "Change your prices" — Most concise, action-focused
 
 **Output:** 2-3 solid options, each with a different angle or tone.
 
+Make options sound like a person talking: casual openers, questions, idioms and short two-beat lines. Vary the opener, structure and key words across options, not just the wording of one sentence.
+
 For each option:
 - The copy itself
 - **Tone/angle** (e.g., "Friendly", "Action-driven", "Minimal")
